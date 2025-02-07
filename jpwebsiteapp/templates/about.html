@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Video Section: First Section -->
+<section id="video-section" class="py-5" style="background-color: #000000;">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Video Section (Left) -->
+            <div class="col-md-6">
+                <div class="video-container">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Text Section (Right) -->
+            <div class="col-md-6" style="background-color: #ff0000; color: #ffffff; padding: 20px;">
+                <h2 class="text-uppercase font-weight-bold">We Promised, We Delivered</h2>
+                <p>When Jubilee administration took over Kenya’s leadership in 2013, President Uhuru Kenyatta promised to roll-out programmes that would dignify and empower the lives of Kenyans. True to his word, Kenya has recorded unprecedented transformation under the Jubilee regime. In fact, the Jubilee administration has outperformed all previous governments, with impeccable and unmatched development track record over the last decade.</p>
+                <p>At the heart of Jubilee’s stellar performance record is mega infrastructural projects that dot the country, exemplary COVID-19 management and the overarching Big Four agenda, among other programmes.</p>
+                <p>It is also under the Jubilee administration that devolution took effect and turned out to be a game-changer, taking development to every corner of Kenya.</p>
+
+                <!-- Signature Section -->
+                <div class="mt-4">
+                    <h4 class="font-weight-bold">UK Signature white</h4>
+                    <p>The BIG 4 in action</p>
+                    <img src="{% static 'party_images/uk-signature-white.png' %}" alt="UK Signature" class="img-fluid" />
+                </div>
+
+                <!-- Links -->
+                <div class="mt-4">
+                    <a href="#legacy-booklet" class="btn btn-light btn-lg">Download Legacy Booklet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section: Second Section with alternating background colors -->
+<section id="about-jubilee" class="container mt-5 py-5" style="background-color: #ffffff;">
+    <div class="row align-items-center">
+        <!-- Words Section (Left) -->
+        <div class="col-md-6">
+            <h1 class="text-danger font-weight-bold">The HOME for all Kenyans</h1>
+            <p class="lead font-weight-bold" id="about-text">
+                The New Jubilee Party is committed to uniting every Kenyan under a shared vision of peace, progress, and prosperity. We welcome the active participation of all Kenyans regardless of tribe or age to join us as we transform this country and dignify our people. Tusonge Mbele Pamoja.
+            </p>
+            <p class="lead font-weight-bold d-none" id="more-text">
+                We welcome the active participation of all Kenyans — majorities, minorities, women, youth, men, disabled persons, etc.—in our party. We believe that all voices count as does the contribution of everyone. Since the Jubilee administration came into power in 2013, we have been on a race – a race to transform Kenya through investing in massive development-oriented projects. The race to development is like a relay race where the runner hands over the baton to the next teammate. The next runner must be motivated by the team spirit to win and run towards the finish line. In matters development, the Jubilee government has set the pace for the next government. The next President will not have to face the hurdles that the Jubilee administration has faced. President Uhuru Kenyatta has built most of the infrastructure needed to make Kenya a first-world economy and transform it into the economic and commercial Hub of Africa. Moving forward, the new Jubilee Party is ready to work with other progressive parties and coalitions, as a senior partner, to not only see to fruition the enabling foundation for prosperity that it has laid, but to also protect its impeccable legacy.
+            </p>
+            <button class="btn btn-lg btn-danger mt-3" id="toggle-button" onclick="toggleText()">Show More</button>
+        </div>
+
+        <!-- Photo Section (Right) -->
+        <div class="col-md-6 text-center">
+            <img src="{% static 'party_images/uniting-Kenyans.png' %}" class="img-fluid rounded" alt="Jubilee Unity Image">
+        </div>
+    </div>
+</section>
+
+<!-- Vision Section: Third Section -->
+<section id="vision-section" class="py-5" style="background-color: #ff0000; color: #ffffff;">
+    <div class="container text-center">
+        <h2 class="font-weight-bold">Our Vision for the Future</h2>
+        <p>Empowering the next generation with strong leadership, strategic vision, and unwavering commitment to Kenya's prosperity.</p>
+        <a href="#join" class="btn btn-light btn-lg">Join the Movement</a>
+    </div>
+</section>
+
+<!-- Lower Section with Links -->
+<section id="cta-section" class="py-5" style="background-color: #ffffff;">
+    <div class="container text-center">
+        <h3 class="font-weight-bold">Be Part of the Transformation</h3>
+        <p>Together, we can continue to build a prosperous Kenya for all.</p>
+        <a href="#contact" class="btn btn-danger btn-lg">Get Involved</a>
+    </div>
+</section>
+
+{% endblock %}

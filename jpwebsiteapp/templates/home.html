@@ -1,0 +1,364 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Hero Section with Carousel -->
+<section id="hero-section">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img src="{% static 'party_images/tusonge mbele pamoja.png' %}" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <h1 class="text-light fw-bold">
+                        <span style="color: white;">Tusonge Mbele</span>
+                        <span style="color: red;">PAMOJA</span>
+                    </h1>
+                    <a href="/about/" class="btn btn-lg btn-danger mt-3">Learn More</a>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="{% static 'party_images/join the winning party.png' %}" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <h1 class="text-light fw-bold">
+                        <span style="color: white;">Join the Winning</span>
+                        <span style="color: red;">TEAM</span>
+                    </h1>
+                    <a href="/about/" class="btn btn-lg btn-danger mt-3">Learn More</a>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="{% static 'party_images/2-Jubilee-10-years-of-transformation.jpg' %}" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <h1 class="text-light fw-bold">
+                        <span style="color: white;">Jubilee</span>
+                        <span style="color: red;">DEED</span> it
+                    </h1>
+                    <a href="/about/" class="btn btn-lg btn-danger mt-3">Learn More</a>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+                <img src="{% static 'party_images/1-Jubilee-The-winning-Team.jpg' %}" class="d-block w-100" alt="Slide 4">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <h1 class="text-light fw-bold">
+                        <span style="color: white;">We are ready for</span>
+                        <span style="color: red;">TAKE-OFF</span>
+                    </h1>
+                    <a href="/about/" class="btn btn-lg btn-danger mt-3">Learn More</a>
+                </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="carousel-item">
+                <img src="{% static 'party_images/the future is bright.png' %}" class="d-block w-100" alt="Slide 5">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <h1 class="text-light fw-bold">
+                        <span style="color: white;">Our Future is Bright with</span>
+                        <span style="color: red;">Jubilee</span>
+                    </h1>
+                    <a href="/about/" class="btn btn-lg btn-danger mt-3">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section id="join-section" class="container mt-5">
+    <div class="row align-items-center">
+        <!-- Left Side -->
+        <div class="col-md-6">
+            <h1 class="text-danger">Form Ni Jubilee</h1>
+            <p class="lead font-weight-bold text-justify">Are you an aspiring candidate?</p>
+            <p class="lead font-weight-bold text-justify">Are you looking for a party where you are guaranteed transparent elections?</p>
+            <p class="lead font-weight-bold text-justify">Jubilee is that party.</p>
+            <p class="lead font-weight-bold text-justify">Join the winning team today!</p>
+            <a href="#" class="btn btn-lg btn-danger">Nomination Application</a>
+        </div>
+
+        <!-- Center Image -->
+        <div class="col-md-4 text-center">
+            <img src="{% static 'party_images/joining.png' %}" class="img-fluid" alt="Jubilee Party Image">
+        </div>
+
+        <!-- Right Side -->
+        <div class="col-md-2">
+            <h1 class="text-danger">Join The Movement</h1>
+            <a href="#" class="btn btn-lg btn-outline-danger d-block mb-3">Register as a Member</a>
+            <a href="#" class="btn btn-lg btn-outline-danger d-block mb-3">Register as an Aspirant</a>
+            <a href="#" class="btn btn-lg btn-outline-danger d-block mb-3">Volunteer</a>
+            <a href="#" class="btn btn-lg btn-outline-danger d-block mb-3">Your Voice Matters</a>
+        </div>
+    </div>
+</section>
+
+<section id="highlight-section" class="py-5" style="background-color: red;">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Words Section -->
+            <div class="col-md-6 text-white">
+                <hr class="border-light mb-3" style="width: 50px; height: 2px;">
+                <h4>Our Transformation Journey</h4>
+                <h1>We Came.</h1>
+                <h2>We Saw</h2>
+                <h3>We Conquered</h3>
+                <a href="{% url 'achievements' %}" class="btn btn-sm btn-light text-danger fw-bold">More</a>
+            </div>
+            <!-- Slideshow Section -->
+            <div class="col-md-6 position-relative">
+                <div id="image-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="position-relative">
+                                <img src="{% static 'party_images/Infrustracture.jpg' %}" class="d-block w-100 rounded" alt="Slide 1">
+                                <div class="hover-text">
+                                    <h1>Infrastructure</h1>
+                                    <p>Enabling the Economy through massive investment in infrastructure</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="position-relative">
+                                <img src="{% static 'party_images/social-welfare.jpg' %}" class="d-block w-100 rounded" alt="Slide 2">
+                                <div class="hover-text">
+                                    <h1>Social Welfare</h1>
+                                    <p>Caring for our vulnerable</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-item">
+                            <div class="position-relative">
+                                <img src="{% static 'party_images/manufacturing.jpg' %}" class="d-block w-100 rounded" alt="Slide 2">
+                                <div class="hover-text">
+                                    <h1>Manufacturing</h1>
+                                    <p>Kick-starting industrial revolution</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="carousel-item">
+                            <div class="position-relative">
+                                <img src="{% static 'party_images/affordable-housing.jpg' %}" class="d-block w-100 rounded" alt="Slide 2">
+                                <div class="hover-text">
+                                    <h1>Affordable Housing</h1>
+                                    <p>Committed to providing decent shelter for all.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="carousel-item">
+                            <div class="position-relative">
+                                <img src="{% static 'party_images/Universal-health.jpg' %}" class="d-block w-100 rounded" alt="Slide 2">
+                                <div class="hover-text">
+                                    <h1>Universal health</h1>
+                                    <p>Providing quality and affordable healthcare for all Kenyans.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add More Slides -->
+                        <!-- Repeat the above pattern for up to 8 photos -->
+                    </div>
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#image-carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#image-carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="volunteer-section" class="container my-5">
+    <div class="row align-items-center">
+        <!-- Left Section with Circular Image -->
+        <div class="col-md-6 text-center">
+            <img src="{% static 'party_images/volunteer.png' %}" alt="Volunteer Image" class="rounded-circle img-fluid">
+        </div>
+
+        <!-- Right Section with Heading and Button -->
+        <div class="col-md-6 text-center">
+            <h2>Volunteer with Us</h2>
+            <button id="volunteerBtn" class="btn btn-danger">
+                Click Here <i class="fas fa-arrow-right"></i>
+            </button>
+
+            <!-- Volunteer Form (Hidden by default) -->
+            <div id="volunteerForm" class="mt-4" style="display: none;">
+                <h3 class="text-danger">Become a Volunteer</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phoneNumber" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+                <button id="closeBtn" class="btn btn-danger mt-3">Close</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="concerns-section" class="container-fluid my-5 py-5" >
+    <div class="row align-items-center">
+        <!-- Left Section with Image -->
+        <div class="col-md-6 text-center">
+            <img src="{% static 'party_images/Jubilee-Party-Passion-1024x683.jpg' %}" alt="Concerns Image" class="img-fluid rounded-circle shadow-lg" id="concernsImage">
+        </div>
+
+        <!-- Right Section with Heading and Button -->
+        <div class="col-md-6 text-center">
+            <h2 class="text-white-50 mb-4">Your Voice Matters</h2>
+            <p class="lead text-white mb-5">We value your thoughts and concerns. Share them with us, and together, let's shape the future of Jubilee!</p>
+            <button id="concernsBtn" class="btn btn-danger btn-lg px-4 py-2 rounded-pill">
+                Click Here <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Concerns Form (Hidden by default) -->
+    <div id="concernsForm" class="mt-5" style="display: none;">
+        <h3 class="text-danger text-center mb-4">Share Your Concerns with Us</h3>
+        <form>
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control form-control-lg" id="firstName" placeholder="Enter your first name">
+            </div>
+            <div class="mb-3">
+                <label for="secondName" class="form-label">Second Name</label>
+                <input type="text" class="form-control form-control-lg" id="secondName" placeholder="Enter your second name">
+            </div>
+            <div class="mb-3">
+                <label for="surname" class="form-label">Surname</label>
+                <input type="text" class="form-control form-control-lg" id="surname" placeholder="Enter your surname">
+            </div>
+            <div class="mb-3">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control form-control-lg" id="phoneNumber" placeholder="254712345678">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control form-control-lg" id="email" placeholder="name@gmail.com">
+            </div>
+            <div class="mb-3">
+                <label for="issues" class="form-label">What are the most important issues you want to make sure the Jubilee administration tackles?</label>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <input type="checkbox" id="economy"> Economy
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="corruption"> Corruption
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="unemployment"> Unemployment
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="healthcare"> Access to affordable healthcare
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="water"> Water
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="education"> Education
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="infrastructure"> Infrastructure
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="housing"> Housing
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="climateChange"> Climate change
+                    </li>
+                    <li class="list-group-item">
+                        <input type="checkbox" id="otherIssues"> Any Other Issue Not in the List...
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-3">
+                <label for="story" class="form-label">Has the Jubilee government impacted your life? Please share your story with us.</label>
+                <textarea class="form-control form-control-lg" id="story" rows="3" placeholder="Share your story..."></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="thanks" class="form-label">What would you like to thank us for?</label>
+                <textarea class="form-control form-control-lg" id="thanks" rows="3" placeholder="Thank us for..."></textarea>
+            </div>
+            <div class="mb-3">
+                <p class="text-white">
+                    Any information shared with the Jubilee party is held with the utmost confidence.
+                </p>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg px-4 py-2 rounded-pill">Submit</button>
+        </form>
+        <button id="closeConcernsForm" class="btn btn-secondary btn-lg mt-3 px-4 py-2 rounded-pill">Close</button>
+    </div>
+</section>
+
+<section id="testimonials-section" class="container-fluid my-5">
+    <div class="row text-center">
+        <!-- Testimonial 1 -->
+        <div class="col-md-4">
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    <h5 class="text-danger">John Doe</h5>
+                    <p>“Jeff & I wanted to say a big thank you for your being the support we need. As a family, we are grateful!”</p>
+                    <!-- Logo Image -->
+                    <img src="{% static 'party_images/jup-logo-300x241.png' %}" alt="Jubilee Party Logo" class="testimonial-logo">
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="col-md-4">
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    <h5 class="text-danger">Jane Smith</h5>
+                    <p>"I support the Jubilee Party for their commitment to the people's welfare. They listen and act!"</p>
+                    <!-- Logo Image -->
+                    <img src="{% static 'party_images/jup-logo-300x241.png' %}" alt="Jubilee Party Logo" class="testimonial-logo">
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="col-md-4">
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    <h5 class="text-danger">Samuel Kimani</h5>
+                    <p>"I can't even believe that I spend 4 hours from Mombasa to Nairobi. I previously used to set aside a whole day to travel and get to Nairobi very tired."</p>
+                    <!-- Logo Image -->
+                    <img src="{% static 'party_images/jup-logo-300x241.png' %}" alt="Jubilee Party Logo" class="testimonial-logo">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

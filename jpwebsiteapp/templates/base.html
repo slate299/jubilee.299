@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Political Party Portfolio{% endblock %}</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Custom Party Styles (loaded after Bootstrap for priority) -->
+    <link rel="stylesheet" href="{% static 'css/party-styles.css' %}">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+                <!-- Dropdown menu -->
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle btn-secondary" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/">Home</a></li>
+                        <li><a class="dropdown-item" href="/about/">About</a></li>
+                        <li><a class="dropdown-item" href="/leadership/">Leadership</a></li>
+                        <li><a class="dropdown-item" href="/achievements/">Achievements</a></li>
+                        <li><a class="dropdown-item" href="/events/">Events</a></li>
+                        <li><a class="dropdown-item" href="/join/">Join the Movement</a></li>
+                        <li><a class="dropdown-item" href="/donate/">Donate</a></li>
+                        <li><a class="dropdown-item" href="/contact/">Contact</a></li>
+                        <li><a class="dropdown-item" href="/blog/">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Search bar -->
+                <form action="/search/" method="get" class="d-flex ms-3">
+                    <input class="form-control me-2" type="search" name="q" placeholder="Search..." aria-label="Search" required>
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </form>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/leadership/">Leadership</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/achievements/">Achievements</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/events/">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/join/">Join the Movement</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/volunteer/">Volunteer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Logo -->
+                <a class="navbar-brand ms-auto" href="/">
+                    <img src="{% static 'party_images/jup-logo-300x241.png' %}" alt="Logo" style="max-width: 100px;">
+                </a>
+
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main class="w-100 mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-red text-white text-center py-4">
+        <div class="footer-social-links mb-3">
+            <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>© 2025 Political Party. All Rights Reserved.</p>
+        <p class="footer-bottom">Made with ❤️ by Political Party Team</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Link the JavaScript file -->
+    <script src="{% static 'js/party-toggle-text.js' %}"></script>
+</body>
+</html>
