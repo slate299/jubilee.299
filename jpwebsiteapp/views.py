@@ -38,6 +38,21 @@ def contact(request):
 def blog(request):
     return render(request, 'blog.html')
 
+def big4_home(request):
+    return render(request, 'big4_home.html')
+
+def manufacturing_view(request):
+    return render(request, 'big4/manufacturing.html')
+
+def housing_view(request):
+    return render(request, 'big4/housing.html')
+
+def healthcare_view(request):
+    return render(request, 'big4/healthcare.html')
+
+def food_security_view(request):
+    return render(request, 'big4/food_security.html')
+
 # Search Results Page (Optional)
 def search(request):
     query = request.GET.get('q', '')

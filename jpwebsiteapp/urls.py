@@ -11,5 +11,10 @@ urlpatterns = [
     path('volunteer/', views.volunteer, name='volunteer'),
     path('contact/', views.contact, name='contact'),
     path('blog/', views.blog, name='blog'),
+    path('big4_home/', views.big4_home, name='big4_home'),
+    path('manufacturing/', views.manufacturing_view, name='manufacturing'),
+    path('housing/', views.housing_view, name='housing'),
+    path('healthcare/', views.healthcare_view, name='healthcare'),
+    path('food-security/', views.food_security_view, name='food_security'),
     path('search/', views.search, name='search'),  # for search results
 ]
