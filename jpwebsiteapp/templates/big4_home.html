@@ -2,231 +2,341 @@
 {% load static %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="big4-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url({% static 'party_images/2-Jubilee-10-years-of-transformation.jpg' %})">
+<!-- Hero Section with Parallax Effect -->
+<section class="big4-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({% static 'party_images/big-4-logo.svg' %});">
   <div class="container">
-    <h1>The Big Four Agenda</h1>
-    <p>Kenya's blueprint for transformative economic growth</p>
+    <div class="hero-content">
+      <h1 class="display-3 fw-bold text-white">The Big Four Agenda</h1>
+      <p class="lead text-white">Kenya's Blueprint for Transformative Economic Growth</p>
+      <a href="#pillars" class="btn btn-danger btn-lg mt-3">Explore The Pillars</a>
+    </div>
+  </div>
+</section>
+
+<!-- Introduction Section -->
+<section class="intro-section py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="text-danger fw-bold mb-4">Transforming Kenya's Future</h2>
+        <p class="lead">The Big Four Agenda represents Jubilee's commitment to accelerate Kenya's transformation into a newly industrializing, middle-income country providing a high quality of life to all its citizens by 2030.</p>
+        <p>These four priority areas were identified as fundamental to uplifting the lives of all Kenyans and ensuring the country's prosperity for generations to come.</p>
+      </div>
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9">
+          <iframe class="rounded shadow" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Big Four Agenda" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Pillars Section -->
-<section class="pillars-section">
+<section id="pillars" class="pillars-section py-5">
   <div class="container">
-    <div class="section-header">
-      <h2>The Four Pillars</h2>
-      <p>Driving Kenya's development vision</p>
+    <div class="section-header text-center mb-5">
+      <h2 class="display-4 fw-bold text-danger">The Four Pillars</h2>
+      <p class="lead">Driving Kenya's Development Vision</p>
+      <div class="header-divider">
+        <span class="divider-line"></span>
+        <span class="divider-icon"><i class="fas fa-star"></i></span>
+        <span class="divider-line"></span>
+      </div>
     </div>
-    
-    <div class="pillars-grid">
+
+    <div class="row g-4">
       <!-- Manufacturing -->
-      <div class="pillar-card manufacturing">
-        <div class="pillar-icon">
-          <img src="{% static 'party_images/Big-4-agenda-manufacturing-red.png' %}" alt="Manufacturing">
+      <div class="col-md-6 col-lg-3">
+        <div class="pillar-card manufacturing h-100">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <div class="pillar-icon mb-4">
+                <img src="{% static 'party_images/Big-4-agenda-manufacturing-red.png' %}" alt="Manufacturing" width="80">
+              </div>
+              <h3 class="h4 fw-bold">Manufacturing</h3>
+              <p>Increasing manufacturing contribution to GDP from 9% to 15%</p>
+              <a href="#manufacturing" class="btn btn-outline-danger btn-sm stretched-link">Learn More</a>
+            </div>
+          </div>
         </div>
-        <h3>Manufacturing</h3>
-        <p>Increasing manufacturing contribution to GDP from 9% to 15% by 2022</p>
-        <a href="#manufacturing" class="btn-pillar">Learn More</a>
       </div>
 
       <!-- Affordable Housing -->
-      <div class="pillar-card housing">
-        <div class="pillar-icon">
-          <img src="{% static 'party_images/Big-4-agenda-housing-red.png' %}" alt="Housing">
+      <div class="col-md-6 col-lg-3">
+        <div class="pillar-card housing h-100">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <div class="pillar-icon mb-4">
+                <img src="{% static 'party_images/Big-4-agenda-housing-red.png' %}" alt="Housing" width="80">
+              </div>
+              <h3 class="h4 fw-bold">Affordable Housing</h3>
+              <p>500,000 affordable homes for Kenyan families</p>
+              <a href="#housing" class="btn btn-outline-danger btn-sm stretched-link">Learn More</a>
+            </div>
+          </div>
         </div>
-        <h3>Affordable Housing</h3>
-        <p>500,000 affordable homes by 2022</p>
-        <a href="#housing" class="btn-pillar">Learn More</a>
       </div>
 
       <!-- Healthcare -->
-      <div class="pillar-card healthcare">
-        <div class="pillar-icon">
-          <img src="{% static 'party_images/Big-4-agenda-health-red.png' %}" alt="Healthcare">
+      <div class="col-md-6 col-lg-3">
+        <div class="pillar-card healthcare h-100">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <div class="pillar-icon mb-4">
+                <img src="{% static 'party_images/Big-4-agenda-health-red.png' %}" alt="Healthcare" width="80">
+              </div>
+              <h3 class="h4 fw-bold">Universal Healthcare</h3>
+              <p>Quality healthcare accessible to all Kenyans</p>
+              <a href="#healthcare" class="btn btn-outline-danger btn-sm stretched-link">Learn More</a>
+            </div>
+          </div>
         </div>
-        <h3>Universal Healthcare</h3>
-        <p>Quality healthcare for all Kenyans</p>
-        <a href="#healthcare" class="btn-pillar">Learn More</a>
       </div>
 
       <!-- Food Security -->
-      <div class="pillar-card food-security">
-        <div class="pillar-icon">
-          <img src="{% static 'party_images/Big-4-agenda-food-security-red.png' %}" alt="Food Security">
+      <div class="col-md-6 col-lg-3">
+        <div class="pillar-card food-security h-100">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <div class="pillar-icon mb-4">
+                <img src="{% static 'party_images/Big-4-agenda-food-security-red.png' %}" alt="Food Security" width="80">
+              </div>
+              <h3 class="h4 fw-bold">Food Security</h3>
+              <p>100% food and nutrition security nationwide</p>
+              <a href="#food-security" class="btn btn-outline-danger btn-sm stretched-link">Learn More</a>
+            </div>
+          </div>
         </div>
-        <h3>Food Security</h3>
-        <p>100% food and nutrition security</p>
-        <a href="#food-security" class="btn-pillar">Learn More</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Progress Section -->
-<section class="progress-section">
+<section class="progress-section py-5 bg-light">
   <div class="container">
-    <h2>Implementation Progress</h2>
-    <div class="progress-grid">
-      {% comment %} You may want to make these dynamic later {% endcomment %}
-      {% for pillar, percent in "Manufacturing:87,Affordable Housing:72,Healthcare:65,Food Security:91".split(',') %}
-        {% with pillar=percent.split(':')[0] value=percent.split(':')[1] %}
-        <div class="progress-card">
-          <div class="progress-number">{{ value }}%</div>
-          <h3>{{ pillar }}</h3>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: {{ value }}%"></div>
+    <div class="section-header text-center mb-5">
+      <h2 class="display-4 fw-bold text-danger">Implementation Progress</h2>
+      <p class="lead">Tracking our achievements towards the Big Four goals</p>
+    </div>
+
+    <div class="row g-4">
+      {% for pillar in pillars %}
+      <div class="col-md-6 col-lg-3">
+        <div class="progress-card h-100">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <div class="progress-number display-5 fw-bold text-danger mb-3">{{ pillar.value }}%</div>
+              <h3 class="h5 fw-bold mb-3">{{ pillar.name }}</h3>
+              <div class="progress mb-3" style="height: 10px;">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: {{ pillar.value }}%" aria-valuenow="{{ pillar.value }}" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <small class="text-muted">Completion towards target</small>
+            </div>
           </div>
         </div>
-        {% endwith %}
+      </div>
       {% endfor %}
     </div>
   </div>
 </section>
 
 <!-- Manufacturing Detail Section -->
-<section id="manufacturing" class="pillar-detail">
+<section id="manufacturing" class="pillar-detail py-5">
   <div class="container">
-    <h2>Manufacturing</h2>
-    <div class="detail-content">
-      <div class="detail-text">
-        <h3>Key Objectives</h3>
-        <ul>
-          <li>Increase manufacturing GDP contribution to 15%</li>
-          <li>Create 1,000,000 new jobs</li>
-          <li>Expand export market share</li>
-        </ul>
-        <h3>Key Projects</h3>
-        <div class="projects-list">
-          <div class="project-item">
-            <h4>Textile and Apparels</h4>
-            <p>Revitalization of Rivatex and other textile factories</p>
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="pillar-badge mb-3">
+          <span class="badge bg-danger">Pillar 1</span>
+        </div>
+        <h2 class="display-5 fw-bold mb-4">Manufacturing</h2>
+        <div class="pillar-description mb-4">
+          <p class="lead">Transforming Kenya into a manufacturing hub for Africa through industrialization and value addition.</p>
+        </div>
+
+        <div class="accordion" id="manufacturingAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="manufacturingObjectives">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseManufacturingObjectives" aria-expanded="true" aria-controls="collapseManufacturingObjectives">
+                Key Objectives
+              </button>
+            </h3>
+            <div id="collapseManufacturingObjectives" class="accordion-collapse collapse show" aria-labelledby="manufacturingObjectives" data-bs-parent="#manufacturingAccordion">
+              <div class="accordion-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Increase manufacturing GDP contribution to 15%</li>
+                  <li class="list-group-item">Create 1,000,000 new manufacturing jobs</li>
+                  <li class="list-group-item">Expand export market share for Kenyan products</li>
+                  <li class="list-group-item">Promote value addition in agriculture and mining</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="project-item">
-            <h4>Leather Industrial Park</h4>
-            <p>Development of leather industrial parks across counties</p>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="manufacturingProjects">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseManufacturingProjects" aria-expanded="false" aria-controls="collapseManufacturingProjects">
+                Key Projects & Achievements
+              </button>
+            </h3>
+            <div id="collapseManufacturingProjects" class="accordion-collapse collapse" aria-labelledby="manufacturingProjects" data-bs-parent="#manufacturingAccordion">
+              <div class="accordion-body">
+                <div class="project-item mb-3">
+                  <h4 class="h5 fw-bold">Textile and Apparels</h4>
+                  <p>Revitalization of Rivatex and other textile factories creating thousands of jobs</p>
+                </div>
+                <div class="project-item mb-3">
+                  <h4 class="h5 fw-bold">Leather Industrial Park</h4>
+                  <p>Development of leather industrial parks across counties to add value to livestock products</p>
+                </div>
+                <div class="project-item">
+                  <h4 class="h5 fw-bold">Special Economic Zones</h4>
+                  <p>Establishment of manufacturing zones with tax incentives to attract investors</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="detail-image">
-        <img src="{% static 'party_images/manufacturing.jpg' %}" alt="Manufacturing">
+      <div class="col-lg-6">
+        <div class="pillar-image">
+          <img src="{% static 'party_images/manufacturing.jpg' %}" alt="Manufacturing" class="img-fluid rounded shadow">
+          <div class="image-caption p-3 bg-danger text-white">
+            <h4 class="h6 mb-0">President tours new manufacturing plant in Athi River</h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Housing Detail Section -->
-<section id="housing" class="pillar-detail">
+<section id="housing" class="pillar-detail py-5 bg-light">
   <div class="container">
-    <h2>Affordable Housing</h2>
-    <div class="detail-content">
-      <div class="detail-text">
-        <h3>Key Objectives</h3>
-        <ul>
-          <li>Construct 500,000 affordable homes</li>
-          <li>Promote public-private partnerships</li>
-          <li>Improve access to mortgage financing</li>
-        </ul>
-        <h3>Key Projects</h3>
-        <div class="projects-list">
-          <div class="project-item">
-            <h4>Park Road Project</h4>
-            <p>Over 1,000 units constructed under the affordable housing program</p>
-          </div>
-          <div class="project-item">
-            <h4>Housing Fund</h4>
-            <p>Mobilizing resources through a National Housing Development Fund</p>
-          </div>
+    <div class="row align-items-center">
+      <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+        <div class="pillar-badge mb-3">
+          <span class="badge bg-danger">Pillar 2</span>
+        </div>
+        <h2 class="display-5 fw-bold mb-4">Affordable Housing</h2>
+        <div class="pillar-description mb-4">
+          <p class="lead">Ensuring every Kenyan has access to decent, affordable housing through innovative financing and construction technologies.</p>
+        </div>
+
+        <div class="accordion" id="housingAccordion">
+          <!-- Accordion items similar to Manufacturing section -->
         </div>
       </div>
-      <div class="detail-image">
-        <img src="{% static 'party_images/housing.jpg' %}" alt="Housing">
+      <div class="col-lg-6 order-lg-1">
+        <div class="pillar-image">
+          <img src="{% static 'party_images/affordable-housing.jpg' %}" alt="Housing" class="img-fluid rounded shadow">
+          <div class="image-caption p-3 bg-danger text-white">
+            <h4 class="h6 mb-0">New affordable housing units in Park Road, Nairobi</h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Healthcare Detail Section -->
-<section id="healthcare" class="pillar-detail">
+<section id="healthcare" class="pillar-detail py-5">
   <div class="container">
-    <h2>Universal Healthcare</h2>
-    <div class="detail-content">
-      <div class="detail-text">
-        <h3>Key Objectives</h3>
-        <ul>
-          <li>Ensure access to quality healthcare for all</li>
-          <li>Expand NHIF coverage</li>
-          <li>Upgrade hospitals across counties</li>
-        </ul>
-        <h3>Key Projects</h3>
-        <div class="projects-list">
-          <div class="project-item">
-            <h4>UHC Pilot Counties</h4>
-            <p>Piloted in Kisumu, Nyeri, Isiolo, and Machakos</p>
-          </div>
-          <div class="project-item">
-            <h4>NHIF Reforms</h4>
-            <p>Expanded access to primary and specialized services</p>
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <!-- Content structure similar to Manufacturing section -->
+      </div>
+      <div class="col-lg-6">
+        <div class="pillar-image">
+          <img src="{% static 'party_images/Universal-health.jpg' %}" alt="Healthcare" class="img-fluid rounded shadow">
+          <div class="image-caption p-3 bg-danger text-white">
+            <h4 class="h6 mb-0">Launch of Universal Healthcare Coverage in pilot counties</h4>
           </div>
         </div>
-      </div>
-      <div class="detail-image">
-        <img src="{% static 'party_images/healthcare.jpg' %}" alt="Healthcare">
       </div>
     </div>
   </div>
 </section>
 
 <!-- Food Security Detail Section -->
-<section id="food-security" class="pillar-detail">
+<section id="food-security" class="pillar-detail py-5 bg-light">
   <div class="container">
-    <h2>Food Security</h2>
-    <div class="detail-content">
-      <div class="detail-text">
-        <h3>Key Objectives</h3>
-        <ul>
-          <li>100% food and nutrition security</li>
-          <li>Enhance irrigation and reduce reliance on rain-fed agriculture</li>
-          <li>Improve market access for farmers</li>
-        </ul>
-        <h3>Key Projects</h3>
-        <div class="projects-list">
-          <div class="project-item">
-            <h4>Galana-Kulalu Irrigation</h4>
-            <p>Boosting maize production through irrigation</p>
-          </div>
-          <div class="project-item">
-            <h4>School Feeding Programme</h4>
-            <p>Ensuring food access to vulnerable children</p>
+    <div class="row align-items-center">
+      <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+        <!-- Content structure similar to Manufacturing section -->
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <div class="pillar-image">
+          <img src="{% static 'party_images/Kenya-Meat-Commission-KMC.jpeg' %}" alt="Food Security" class="img-fluid rounded shadow">
+          <div class="image-caption p-3 bg-danger text-white">
+            <h4 class="h6 mb-0">Revitalized Kenya Meat Commission processing plant</h4>
           </div>
         </div>
-      </div>
-      <div class="detail-image">
-        <img src="{% static 'party_images/food-security.jpg' %}" alt="Food Security">
       </div>
     </div>
   </div>
 </section>
 
 <!-- Statistics Section -->
-<section class="stats-section">
+<section class="stats-section py-5 bg-danger text-white">
   <div class="container">
-    <h2>Big Four Impact by Numbers</h2>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number" data-count="750000">0</div>
-        <div class="stat-label">Jobs Created</div>
+    <div class="section-header text-center mb-5">
+      <h2 class="display-4 fw-bold">Big Four Impact by Numbers</h2>
+      <p class="lead">Tangible results transforming Kenyan lives</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-6 col-md-3">
+        <div class="stat-card text-center">
+          <div class="stat-number display-3 fw-bold mb-2" data-count="750000">0</div>
+          <div class="stat-label h5">Jobs Created</div>
+          <div class="stat-icon mt-3">
+            <i class="fas fa-briefcase fa-2x"></i>
+          </div>
+        </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-number" data-count="120">0</div>
-        <div class="stat-label">Factories Built</div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card text-center">
+          <div class="stat-number display-3 fw-bold mb-2" data-count="120">0</div>
+          <div class="stat-label h5">Factories Built</div>
+          <div class="stat-icon mt-3">
+            <i class="fas fa-industry fa-2x"></i>
+          </div>
+        </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-number" data-count="350000">0</div>
-        <div class="stat-label">Houses Constructed</div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card text-center">
+          <div class="stat-number display-3 fw-bold mb-2" data-count="350000">0</div>
+          <div class="stat-label h5">Houses Constructed</div>
+          <div class="stat-icon mt-3">
+            <i class="fas fa-home fa-2x"></i>
+          </div>
+        </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-number" data-count="85">0</div>
-        <div class="stat-label">Hospitals Upgraded</div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card text-center">
+          <div class="stat-number display-3 fw-bold mb-2" data-count="85">0</div>
+          <div class="stat-label h5">Hospitals Upgraded</div>
+          <div class="stat-icon mt-3">
+            <i class="fas fa-hospital fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-5 fw-bold mb-4">Be Part of Kenya's Transformation</h2>
+        <p class="lead mb-4">Join Jubilee in realizing the Big Four Agenda for a prosperous Kenya</p>
+        <div class="d-flex gap-3 justify-content-center">
+          <a href="#" class="btn btn-danger btn-lg px-4">Join Jubilee</a>
+          <a href="#" class="btn btn-outline-danger btn-lg px-4">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
@@ -234,37 +344,68 @@
 {% endblock %}
 
 {% block scripts %}
-<!-- Animated Counter Script -->
+<!-- Enhanced Animated Counter Script -->
 <script>
+  // Animate counters when they come into view
   function animateCounter(counter) {
     const target = +counter.getAttribute('data-count');
-    let count = 0;
-    const increment = Math.ceil(target / 100);
-    const interval = setInterval(() => {
-      count += increment;
-      if (count >= target) {
-        count = target;
-        clearInterval(interval);
-      }
-      counter.innerText = count.toLocaleString();
-    }, 20);
-  }
+    const duration = 2000; // Animation duration in ms
+    const start = 0;
+    const increment = target / (duration / 16); // Roughly 60fps
 
-  function animateCounters() {
-    document.querySelectorAll('.stat-number').forEach(animateCounter);
+    let current = start;
+    const animate = () => {
+      current += increment;
+      if (current < target) {
+        counter.innerText = Math.floor(current).toLocaleString();
+        requestAnimationFrame(animate);
+      } else {
+        counter.innerText = target.toLocaleString();
+      }
+    };
+    animate();
   }
 
   function handleScroll() {
-    const statsSection = document.querySelector('.stats-section');
-    const position = statsSection.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
-    
-    if (position < screenPosition) {
-      animateCounters();
-      window.removeEventListener('scroll', handleScroll);
-    }
+    // Animate stats counters
+    document.querySelectorAll('.stat-number').forEach(counter => {
+      const position = counter.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.2;
+
+      if (position < screenPosition && !counter.classList.contains('animated')) {
+        counter.classList.add('animated');
+        animateCounter(counter);
+      }
+    });
+
+    // Animate progress bars
+    document.querySelectorAll('.progress-bar .progress-fill').forEach(fill => {
+      const position = fill.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.2;
+
+      if (position < screenPosition && !fill.classList.contains('animated')) {
+        fill.classList.add('animated');
+        const percent = fill.parentElement.previousElementSibling.innerText.replace('%','');
+        fill.style.width = percent + '%';
+      }
+    });
   }
 
+  // Initialize event listener
   window.addEventListener('scroll', handleScroll);
+  // Trigger once on load in case elements are already visible
+  window.addEventListener('load', handleScroll);
+</script>
+
+<!-- Smooth scrolling for anchor links -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
 </script>
 {% endblock %}

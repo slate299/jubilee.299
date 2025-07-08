@@ -38,8 +38,20 @@ def contact(request):
 def blog(request):
     return render(request, 'blog.html')
 
+# views.py
 def big4_home(request):
-    return render(request, 'big4_home.html')
+    # This could come from DB later!
+    raw_data = "Manufacturing:87,Affordable Housing:72,Healthcare:65,Food Security:91"
+    pillars = []
+    for item in raw_data.split(','):
+        name, value = item.split(':')
+        pillars.append({'name': name.strip(), 'value': int(value.strip())})
+
+    context = {
+        'pillars': pillars,
+    }
+    return render(request, 'big4_home.html', context)
+
 
 def manufacturing_view(request):
     return render(request, 'big4/manufacturing.html')
