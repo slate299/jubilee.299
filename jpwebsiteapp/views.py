@@ -1,10 +1,16 @@
 from django.shortcuts import render
+from .models import NewsItem, Event
+
 
 # Create your views here.
 
-# Home Page
 def home(request):
-    return render(request, 'home.html')
+    featured_news = NewsItem.objects.filter(is_featured=True).order_by('-date')[:5]
+    featured_events = Event.objects.filter(featured=True).order_by('date')[:5]  # Upcoming first
+    return render(request, 'home.html', {
+        'featured_news': featured_news,
+        'featured_events': featured_events,
+    })
 
 # About Page
 def about(request):
@@ -18,9 +24,12 @@ def leadership(request):
 def achievements(request):
     return render(request, 'achievements.html')
 
-# Events Page
+
 def events(request):
-    return render(request, 'events.html')
+    all_events = Event.objects.all().order_by('date')  # Upcoming events first
+    return render(request, 'events.html', {
+        'events': all_events,
+    })
 
 # Join the Movement Page
 def join_movement(request):
@@ -38,7 +47,22 @@ def contact(request):
 def blog(request):
     return render(request, 'blog.html')
 
-# views.py
+# Concerns Page
+def concerns(request):
+    return render(request, 'concerns.html')
+
+# News page
+def news(request):
+    news_items = NewsItem.objects.all().order_by('-date')
+    categories = ['All News', ...]
+    hero_image = 'party_images/Uhurupartyleader.jpg'
+    return render(request, 'news.html', {
+        'news_items': news_items,
+        'categories': categories,
+        'hero_image': hero_image,
+    })
+   
+# big4_page
 def big4_home(request):
     # This could come from DB later!
     raw_data = "Manufacturing:87,Affordable Housing:72,Healthcare:65,Food Security:91"

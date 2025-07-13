@@ -16,5 +16,7 @@ urlpatterns = [
     path('housing/', views.housing_view, name='housing'),
     path('healthcare/', views.healthcare_view, name='healthcare'),
     path('food-security/', views.food_security_view, name='food_security'),
+    path('concerns/', views.concerns, name='concerns'),
+    path('news/', views.news, name='news'),
     path('search/', views.search, name='search'),  # for search results
 ]

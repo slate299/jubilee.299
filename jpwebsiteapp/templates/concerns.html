@@ -1,0 +1,161 @@
+{% extends 'base.html' %} {% block content %}
+
+<section id="concerns-page" class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 bg-white p-5 rounded shadow">
+        <h2 class="text-danger fw-bold mb-4 text-center">Your Voice Matters</h2>
+        <p class="lead mb-4 text-center">
+          We value your thoughts and concerns. Share them with us and together,
+          let's shape the future of Jubilee!
+        </p>
+
+        <form>
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              class="form-control form-control-lg"
+              placeholder="Enter your first name"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="secondName" class="form-label">Second Name</label>
+            <input
+              type="text"
+              id="secondName"
+              class="form-control form-control-lg"
+              placeholder="Enter your second name"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="surname" class="form-label">Surname</label>
+            <input
+              type="text"
+              id="surname"
+              class="form-control form-control-lg"
+              placeholder="Enter your surname"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Phone Number</label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              class="form-control form-control-lg"
+              placeholder="254712345678"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control form-control-lg"
+              placeholder="name@gmail.com"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label"
+              >What are the most important issues you want Jubilee to
+              tackle?</label
+            >
+            <ul class="list-group mb-3">
+              <li class="list-group-item">
+                <input type="checkbox" id="economy" /> Economy
+              </li>
+              <li class="list-group-item">
+                <input type="checkbox" id="corruption" /> Corruption
+              </li>
+              <li class="list-group-item">
+                <input type="checkbox" id="unemployment" /> Unemployment
+              </li>
+              <li class="list-group-item">
+                <input type="checkbox" id="healthcare" /> Access to affordable
+                healthcare
+              </li>
+              <li class="list-group-item">
+                <input type="checkbox" id="water" /> Water
+              </li>
+              <li class="list-group-item">
+                <input type="checkbox" id="education" /> Education
+              </li>
+              <li class="list-group-item">
+                <input type="checkbox" id="infrastructure" /> Infrastructure
+              </li>
+              <li class="list-group-item">
+                <input type="checkbox" id="housing" /> Housing
+              </li>
+              <li class="list-group-item">
+                <input type="checkbox" id="climateChange" /> Climate Change
+              </li>
+            </ul>
+
+            <div>
+              <label for="otherIssues" class="form-label"
+                >Any Other Issue Not Listed</label
+              >
+              <input
+                type="text"
+                id="otherIssues"
+                class="form-control form-control-lg"
+                placeholder="Please specify..."
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="story" class="form-label"
+              >Has Jubilee impacted your life? Share your story:</label
+            >
+            <textarea
+              id="story"
+              rows="3"
+              class="form-control form-control-lg"
+              placeholder="Your story..."
+            ></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="thanks" class="form-label"
+              >What would you like to thank us for?</label
+            >
+            <textarea
+              id="thanks"
+              rows="3"
+              class="form-control form-control-lg"
+              placeholder="Thank you for..."
+            ></textarea>
+          </div>
+
+          <p class="text-muted small">
+            Any information shared with the Jubilee Party is held with the
+            utmost confidence.
+          </p>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn btn-danger btn-lg px-5 rounded-pill"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

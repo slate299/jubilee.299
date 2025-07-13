@@ -1,278 +1,548 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <!-- Hero Section with Carousel -->
-<section id="hero-section" class="position-relative">
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
-        </div>
-        <div class="carousel-inner">
-            <!-- Slides with gradient overlay -->
-            <div class="carousel-item active">
-                <div class="hero-gradient-overlay"></div>
-                <img src="{% static 'party_images/tusonge mbele pamoja.png' %}" class="d-block w-100" alt="Slide 1">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <h1 class="display-3 fw-bold text-uppercase mb-4">
-                        <span class="text-white">Tusonge Mbele</span>
-                        <span class="text-danger">PAMOJA</span>
-                    </h1>
-                    <div class="d-flex gap-3">
-                        <a href="/about/" class="btn btn-danger btn-lg px-4 py-2 rounded-pill">Learn More</a>
-                        <a href="#join-section" class="btn btn-outline-light btn-lg px-4 py-2 rounded-pill">Join Us</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Other slides follow same pattern -->
-        </div>
-        <!-- Controls -->
+<section id="hero-section" class="hero-section">
+  <div
+    id="heroCarousel"
+    class="hero-carousel carousel slide"
+    data-bs-ride="carousel"
+    data-bs-interval="5000"
+  >
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide-to="0"
+        class="active"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide-to="1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide-to="2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide-to="3"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide-to="4"
+      ></button>
     </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="hero-gradient-overlay"></div>
+        <img
+          src="{% static 'party_images/tusonge mbele pamoja.png' %}"
+          class="d-block w-100"
+          alt="Tusonge Mbele Pamoja"
+        />
+        <div class="carousel-caption">
+          <h1 class="fw-bold text-uppercase mb-4 fs-1">
+            <span class="text-white">Tusonge Mbele</span>
+            <span class="text-danger">PAMOJA</span>
+          </h1>
+          <div class="d-flex gap-3 flex-wrap justify-content-center">
+            <a href="/about/" class="btn btn-danger btn-lg rounded-pill"
+              >Learn More</a
+            >
+            <a
+              href="#join-section"
+              class="btn btn-outline-light btn-lg rounded-pill"
+              >Join Us</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="hero-gradient-overlay"></div>
+        <img
+          src="{% static 'party_images/join the winning party.png' %}"
+          class="d-block w-100"
+          alt="Join the Winning Team"
+        />
+        <div class="carousel-caption">
+          <h1 class="fw-bold text-uppercase mb-4 fs-1">
+            <span class="text-white">Join the Winning</span>
+            <span class="text-danger">TEAM</span>
+          </h1>
+          <div class="d-flex gap-3 flex-wrap justify-content-center">
+            <a href="/about/" class="btn btn-danger btn-lg rounded-pill"
+              >Learn More</a
+            >
+            <a
+              href="#join-section"
+              class="btn btn-outline-light btn-lg rounded-pill"
+              >Join Us</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="hero-gradient-overlay"></div>
+        <img
+          src="{% static 'party_images/2-Jubilee-10-years-of-transformation.jpg' %}"
+          class="d-block w-100"
+          alt="Jubilee 10 Years of Transformation"
+        />
+        <div class="carousel-caption">
+          <h1 class="fw-bold text-uppercase mb-4 fs-1">
+            <span class="text-white">Jubilee</span>
+            <span class="text-danger">DEED</span> it
+          </h1>
+          <div class="d-flex gap-3 flex-wrap justify-content-center">
+            <a href="/about/" class="btn btn-danger btn-lg rounded-pill"
+              >Learn More</a
+            >
+            <a
+              href="#join-section"
+              class="btn btn-outline-light btn-lg rounded-pill"
+              >Join Us</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="carousel-item">
+        <div class="hero-gradient-overlay"></div>
+        <img
+          src="{% static 'party_images/1-Jubilee-The-winning-Team.jpg' %}"
+          class="d-block w-100"
+          alt="The Winning Team"
+        />
+        <div class="carousel-caption">
+          <h1 class="fw-bold text-uppercase mb-4 fs-1">
+            <span class="text-white">We are ready for</span>
+            <span class="text-danger">TAKE-OFF</span>
+          </h1>
+          <div class="d-flex gap-3 flex-wrap justify-content-center">
+            <a href="/about/" class="btn btn-danger btn-lg rounded-pill"
+              >Learn More</a
+            >
+            <a
+              href="#join-section"
+              class="btn btn-outline-light btn-lg rounded-pill"
+              >Join Us</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="carousel-item">
+        <div class="hero-gradient-overlay"></div>
+        <img
+          src="{% static 'party_images/the future is bright.png' %}"
+          class="d-block w-100"
+          alt="The Future is Bright"
+        />
+        <div class="carousel-caption">
+          <h1 class="fw-bold text-uppercase mb-4 fs-1">
+            <span class="text-white">Our Future is Bright with</span>
+            <span class="text-danger">Jubilee</span>
+          </h1>
+          <div class="d-flex gap-3 flex-wrap justify-content-center">
+            <a href="/about/" class="btn btn-danger btn-lg rounded-pill"
+              >Learn More</a
+            >
+            <a
+              href="#join-section"
+              class="btn btn-outline-light btn-lg rounded-pill"
+              >Join Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#heroCarousel"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#heroCarousel"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </section>
 
 <section id="join-section" class="container my-5 py-5">
-    <div class="text-center mb-5">
-        <h2 class="display-4 text-danger fw-bold">FORM NI JUBILEE</h2>
-        <p class="lead">Join the winning team today!</p>
+  <div class="text-center mb-5">
+    <h2 class="display-4 text-danger fw-bold">FORM NI JUBILEE</h2>
+    <p class="lead">Join the winning team today!</p>
+  </div>
+
+  <div class="row g-4">
+    <!-- Aspirant Card -->
+    <div class="col-md-4">
+      <div class="card h-100 border-danger shadow">
+        <div class="card-body text-center p-4">
+          <div class="mb-4">
+            <i class="fas fa-user-tie fa-3x text-danger"></i>
+          </div>
+          <h3 class="card-title text-danger">Aspiring Candidate?</h3>
+          <p class="card-text">
+            Join the party with guaranteed transparent elections and equal
+            opportunities for all.
+          </p>
+          <a href="#" class="btn btn-danger mt-3">Nomination Application</a>
+        </div>
+      </div>
     </div>
 
-    <div class="row g-4">
-        <!-- Aspirant Card -->
-        <div class="col-md-4">
-            <div class="card h-100 border-danger shadow">
-                <div class="card-body text-center p-4">
-                    <div class="mb-4">
-                        <i class="fas fa-user-tie fa-3x text-danger"></i>
-                    </div>
-                    <h3 class="card-title text-danger">Aspiring Candidate?</h3>
-                    <p class="card-text">Join the party with guaranteed transparent elections and equal opportunities for all.</p>
-                    <a href="#" class="btn btn-danger mt-3">Nomination Application</a>
-                </div>
-            </div>
+    <!-- Member Card -->
+    <div class="col-md-4">
+      <div class="card h-100 border-danger shadow">
+        <div class="card-body text-center p-4">
+          <div class="mb-4">
+            <i class="fas fa-users fa-3x text-danger"></i>
+          </div>
+          <h3 class="card-title text-danger">Become a Member</h3>
+          <p class="card-text">
+            Register as a Jubilee member and be part of Kenya's transformation
+            journey.
+          </p>
+          <a href="#" class="btn btn-danger mt-3">Register Now</a>
         </div>
-
-        <!-- Member Card -->
-        <div class="col-md-4">
-            <div class="card h-100 border-danger shadow">
-                <div class="card-body text-center p-4">
-                    <div class="mb-4">
-                        <i class="fas fa-users fa-3x text-danger"></i>
-                    </div>
-                    <h3 class="card-title text-danger">Become a Member</h3>
-                    <p class="card-text">Register as a Jubilee member and be part of Kenya's transformation journey.</p>
-                    <a href="#" class="btn btn-danger mt-3">Register Now</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Volunteer Card -->
-        <div class="col-md-4">
-            <div class="card h-100 border-danger shadow">
-                <div class="card-body text-center p-4">
-                    <div class="mb-4">
-                        <i class="fas fa-hands-helping fa-3x text-danger"></i>
-                    </div>
-                    <h3 class="card-title text-danger">Volunteer</h3>
-                    <p class="card-text">Contribute your time and skills to help build a better Kenya.</p>
-                    <a href="#volunteer-section" class="btn btn-danger mt-3">Volunteer Now</a>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+
+    <!-- Volunteer Card -->
+    <div class="col-md-4">
+      <div class="card h-100 border-danger shadow">
+        <div class="card-body text-center p-4">
+          <div class="mb-4">
+            <i class="fas fa-hands-helping fa-3x text-danger"></i>
+          </div>
+          <h3 class="card-title text-danger">Volunteer</h3>
+          <p class="card-text">
+            Contribute your time and skills to help build a better Kenya.
+          </p>
+          <a href="#volunteer-section" class="btn btn-danger mt-3"
+            >Volunteer Now</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="highlight-section" class="py-5" style="background-color: red;">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Words Section -->
-            <div class="col-md-6 text-white">
-                <hr class="border-light mb-3" style="width: 50px; height: 2px;">
-                <h4>Our Transformation Journey</h4>
-                <h1>We Came.</h1>
-                <h2>We Saw</h2>
-                <h3>We Conquered</h3>
-                <a href="{% url 'achievements' %}" class="btn btn-sm btn-light text-danger fw-bold">More</a>
-            </div>
-            <!-- Slideshow Section -->
-            <div class="col-md-6 position-relative">
-                <div id="image-carousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <!-- Slide 1 -->
-                        <div class="carousel-item active">
-                            <div class="position-relative">
-                                <img src="{% static 'party_images/Infrustracture.jpg' %}" class="d-block w-100 rounded" alt="Slide 1">
-                                <div class="hover-text">
-                                    <h1>Infrastructure</h1>
-                                    <p>Enabling the Economy through massive investment in infrastructure</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="carousel-item">
-                            <div class="position-relative">
-                                <img src="{% static 'party_images/social-welfare.jpg' %}" class="d-block w-100 rounded" alt="Slide 2">
-                                <div class="hover-text">
-                                    <h1>Social Welfare</h1>
-                                    <p>Caring for our vulnerable</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="carousel-item">
-                            <div class="position-relative">
-                                <img src="{% static 'party_images/manufacturing.jpg' %}" class="d-block w-100 rounded" alt="Slide 2">
-                                <div class="hover-text">
-                                    <h1>Manufacturing</h1>
-                                    <p>Kick-starting industrial revolution</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Slide 4 -->
-                        <div class="carousel-item">
-                            <div class="position-relative">
-                                <img src="{% static 'party_images/affordable-housing.jpg' %}" class="d-block w-100 rounded" alt="Slide 2">
-                                <div class="hover-text">
-                                    <h1>Affordable Housing</h1>
-                                    <p>Committed to providing decent shelter for all.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Slide 5 -->
-                        <div class="carousel-item">
-                            <div class="position-relative">
-                                <img src="{% static 'party_images/Universal-health.jpg' %}" class="d-block w-100 rounded" alt="Slide 2">
-                                <div class="hover-text">
-                                    <h1>Universal health</h1>
-                                    <p>Providing quality and affordable healthcare for all Kenyans.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add More Slides -->
-                        <!-- Repeat the above pattern for up to 8 photos -->
-                    </div>
-                    <!-- Controls -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#image-carousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#image-carousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+<section id="highlight-section" class="py-5" style="background-color: red">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Words Section -->
+      <div class="col-md-6 text-white">
+        <hr class="border-light mb-3" style="width: 50px; height: 2px" />
+        <h4>Our Transformation Journey</h4>
+        <h1>We Came.</h1>
+        <h2>We Saw</h2>
+        <h3>We Conquered</h3>
+        <a
+          href="{% url 'achievements' %}"
+          class="btn btn-sm btn-light text-danger fw-bold"
+          >More</a
+        >
+      </div>
+      <!-- Slideshow Section -->
+      <div class="col-md-6 position-relative">
+        <div id="image-carousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="position-relative">
+                <img
+                  src="{% static 'party_images/Infrustracture.jpg' %}"
+                  class="d-block w-100 rounded"
+                  alt="Slide 1"
+                />
+                <div class="hover-text">
+                  <h1>Infrastructure</h1>
+                  <p>
+                    Enabling the Economy through massive investment in
+                    infrastructure
+                  </p>
                 </div>
+              </div>
             </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="position-relative">
+                <img
+                  src="{% static 'party_images/social-welfare.jpg' %}"
+                  class="d-block w-100 rounded"
+                  alt="Slide 2"
+                />
+                <div class="hover-text">
+                  <h1>Social Welfare</h1>
+                  <p>Caring for our vulnerable</p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="position-relative">
+                <img
+                  src="{% static 'party_images/manufacturing.jpg' %}"
+                  class="d-block w-100 rounded"
+                  alt="Slide 2"
+                />
+                <div class="hover-text">
+                  <h1>Manufacturing</h1>
+                  <p>Kick-starting industrial revolution</p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+              <div class="position-relative">
+                <img
+                  src="{% static 'party_images/affordable-housing.jpg' %}"
+                  class="d-block w-100 rounded"
+                  alt="Slide 2"
+                />
+                <div class="hover-text">
+                  <h1>Affordable Housing</h1>
+                  <p>Committed to providing decent shelter for all.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="carousel-item">
+              <div class="position-relative">
+                <img
+                  src="{% static 'party_images/Universal-health.jpg' %}"
+                  class="d-block w-100 rounded"
+                  alt="Slide 2"
+                />
+                <div class="hover-text">
+                  <h1>Universal health</h1>
+                  <p>
+                    Providing quality and affordable healthcare for all Kenyans.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Add More Slides -->
+            <!-- Repeat the above pattern for up to 8 photos -->
+          </div>
+          <!-- Controls -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#image-carousel"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon bg-dark rounded-circle"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#image-carousel"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon bg-dark rounded-circle"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <section id="volunteer-section" class="container-fluid py-5 bg-light">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="{% static 'party_images/volunteer.png' %}" alt="Volunteer with Jubilee" class="img-fluid rounded shadow">
-            </div>
-            <div class="col-lg-6">
-                <h2 class="display-5 text-danger fw-bold mb-4">Make a Difference</h2>
-                <p class="lead mb-4">Join our team of dedicated volunteers and help shape Kenya's future.</p>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img
+          src="{% static 'party_images/volunteer.png' %}"
+          alt="Volunteer with Jubilee"
+          class="img-fluid rounded shadow"
+        />
+      </div>
+      <div class="col-lg-6">
+        <h2 class="display-5 text-danger fw-bold mb-4">Make a Difference</h2>
+        <p class="lead mb-4">
+          Join our team of dedicated volunteers and help shape Kenya's future.
+        </p>
 
-                <div id="volunteerFormContainer">
-                    <button id="volunteerBtn" class="btn btn-danger btn-lg px-4 py-2 rounded-pill">
-                        Become a Volunteer <i class="fas fa-arrow-right ms-2"></i>
-                    </button>
+        <div id="volunteerFormContainer">
+          <button
+            id="volunteerBtn"
+            class="btn btn-danger btn-lg px-4 py-2 rounded-pill"
+          >
+            Become a Volunteer <i class="fas fa-arrow-right ms-2"></i>
+          </button>
 
-                    <div id="volunteerForm" class="mt-4" style="display: none;">
-                        <div class="card shadow">
-                            <div class="card-body p-4">
-                                <h3 class="text-danger mb-4">Volunteer Registration</h3>
-                                <form id="volunteerRegistrationForm">
-                                    <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <label for="fullName" class="form-label">Full Name</label>
-                                            <input type="text" class="form-control" id="fullName" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="email" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="phone" class="form-label">Phone</label>
-                                            <input type="tel" class="form-control" id="phone" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="location" class="form-label">Location</label>
-                                            <select class="form-select" id="location">
-                                                <option value="">Select County</option>
-                                                <!-- County options -->
-                                            </select>
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="skills" class="form-label">Skills/Interests</label>
-                                            <textarea class="form-control" id="skills" rows="2"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="mt-4">
-                                        <button type="submit" class="btn btn-danger">Submit</button>
-                                        <button type="button" id="closeVolunteerForm" class="btn btn-outline-secondary ms-2">Cancel</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+          <div id="volunteerForm" class="mt-4" style="display: none">
+            <div class="card shadow">
+              <div class="card-body p-4">
+                <h3 class="text-danger mb-4">Volunteer Registration</h3>
+                <form id="volunteerRegistrationForm">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="fullName" class="form-label">Full Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fullName"
+                        required
+                      />
                     </div>
-                </div>
+                    <div class="col-md-6">
+                      <label for="email" class="form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="phone" class="form-label">Phone</label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="phone"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="location" class="form-label">Location</label>
+                      <select class="form-select" id="location">
+                        <option value="">Select County</option>
+                        <!-- County options -->
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label for="skills" class="form-label"
+                        >Skills/Interests</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="skills"
+                        rows="2"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                    <button
+                      type="button"
+                      id="closeVolunteerForm"
+                      class="btn btn-outline-secondary ms-2"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<section id="concerns-section" class="py-5" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{% static 'party_images/Jubilee-Party-Passion-1024x683.jpg' %}') no-repeat center/cover;">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 text-white mb-5 mb-lg-0">
-                <h2 class="display-4 fw-bold mb-4">YOUR VOICE MATTERS</h2>
-                <p class="lead mb-4">We value your thoughts and concerns. Share them with us, and together, let's shape the future of Jubilee!</p>
-                <button id="concernsBtn" class="btn btn-danger btn-lg px-4 py-2 rounded-pill">
-                    Share Your Thoughts <i class="fas fa-arrow-right ms-2"></i>
-                </button>
-            </div>
-
-            <div class="col-lg-6">
-                <div id="concernsForm" class="card shadow-lg" style="display: none;">
-                    <div class="card-body p-4">
-                        <h3 class="text-danger mb-4">Share With Us</h3>
-                        <form id="concernsSubmissionForm">
-                            <!-- Form fields -->
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-danger">Submit</button>
-                                <button type="button" id="closeConcernsForm" class="btn btn-outline-secondary ms-2">Cancel</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section id="concerns-section" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 text-white mb-4 mb-lg-0">
+        <h2 class="display-4 fw-bold mb-4">YOUR VOICE MATTERS</h2>
+        <p class="lead mb-4">
+          We value your thoughts and concerns. Share them with us and together,
+          let's shape the future of Jubilee!
+        </p>
+        <a
+          href="{% url 'concerns' %}"
+          class="btn btn-danger btn-lg px-4 py-2 rounded-pill"
+        >
+          Share Your Thoughts <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+      </div>
     </div>
+  </div>
 </section>
 
 <section id="testimonials-section" class="py-5">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center mb-5">
       <h2 class="display-4 fw-bold text-white position-relative d-inline-block">
         Jubilee Testimonials
         <span class="title-underline"></span>
       </h2>
-      <p class="lead text-white opacity-75 mt-3">Hear from Kenyans whose lives have been transformed</p>
+      <p class="lead text-white opacity-75 mt-3">
+        Hear from Kenyans whose lives have been transformed.
+      </p>
     </div>
 
-    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+    <div
+      id="testimonialCarousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="6000"
+    >
       <!-- Indicators -->
       <div class="carousel-indicators mb-0">
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button
+          type="button"
+          data-bs-target="#testimonialCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#testimonialCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#testimonialCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#testimonialCarousel"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
       </div>
 
       <div class="carousel-inner px-lg-5">
@@ -281,21 +551,23 @@
           <div class="testimonial-item bg-white rounded-4 p-4 p-md-5 shadow">
             <div class="row align-items-center">
               <div class="col-md-3 text-center mb-4 mb-md-0">
-                <img src="{% static 'party_images/Jubilee-title-deed.jpg' %}" class="testimonial-img" alt="Beneficiary with title deed">
-                <h4 class="mt-3 mb-0 text-danger fw-bold">Jane M.</h4>
-                <small class="text-muted">Nakuru County</small>
+                <img
+                  src="{% static 'party_images/Jubilee-title-deed.jpg' %}"
+                  class="testimonial-img rounded-circle shadow"
+                  alt="Beneficiary"
+                />
               </div>
               <div class="col-md-9">
                 <blockquote class="mb-0 position-relative">
-                  <i class="fas fa-quote-left text-danger opacity-25 position-absolute" style="top: -10px; left: -20px; font-size: 3rem;"></i>
-                  <p class="fs-5">"Nitatumia title deed yangu kupata loan ambayo itanisaidia kujenga nyumba na ya ziada ntatumia kuanzisha biashara ya kuuza viatu."</p>
-                  <div class="rating mt-3 text-warning">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
+                  <i
+                    class="fas fa-quote-left text-danger opacity-25 position-absolute"
+                    style="top: -10px; left: -20px; font-size: 3rem"
+                  ></i>
+                  <p class="fs-5">
+                    "Nitatumia title deed yangu kupata loan ambayo itanisaidia
+                    kujenga nyumba na ya ziada ntatumia kuanzisha biashara ya
+                    kuuza viatu."
+                  </p>
                 </blockquote>
               </div>
             </div>
@@ -307,21 +579,22 @@
           <div class="testimonial-item bg-white rounded-4 p-4 p-md-5 shadow">
             <div class="row align-items-center">
               <div class="col-md-3 text-center mb-4 mb-md-0">
-                <img src="{% static 'party_images/Heardsman.jpg' %}" class="testimonial-img" alt="Livestock farmer">
-                <h4 class="mt-3 mb-0 text-danger fw-bold">John K.</h4>
-                <small class="text-muted">Isiolo County</small>
+                <img
+                  src="{% static 'party_images/Heardsman.jpg' %}"
+                  class="testimonial-img rounded-circle shadow"
+                  alt="Beneficiary"
+                />
               </div>
               <div class="col-md-9">
                 <blockquote class="mb-0 position-relative">
-                  <i class="fas fa-quote-left text-danger opacity-25 position-absolute" style="top: -10px; left: -20px; font-size: 3rem;"></i>
-                  <p class="fs-5">"Nashukuru rais Uhuru Kenyatta kwa kuamrisha KMC ilipe wafugaji katika siku tatu baada ya kuuza mifugo yetu."</p>
-                  <div class="rating mt-3 text-warning">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                  </div>
+                  <i
+                    class="fas fa-quote-left text-danger opacity-25 position-absolute"
+                    style="top: -10px; left: -20px; font-size: 3rem"
+                  ></i>
+                  <p class="fs-5">
+                    "Nashukuru rais Uhuru Kenyatta kwa kuamrisha KMC ilipe
+                    wafugaji katika siku tatu baada ya kuuza mifugo yetu."
+                  </p>
                 </blockquote>
               </div>
             </div>
@@ -333,21 +606,23 @@
           <div class="testimonial-item bg-white rounded-4 p-4 p-md-5 shadow">
             <div class="row align-items-center">
               <div class="col-md-3 text-center mb-4 mb-md-0">
-                <img src="{% static 'party_images/Jubilee-elderly-surporter.jpeg' %}" class="testimonial-img" alt="Elderly beneficiary">
-                <h4 class="mt-3 mb-0 text-danger fw-bold">Mama Wanjiru</h4>
-                <small class="text-muted">Murang'a County</small>
+                <img
+                  src="{% static 'party_images/Jubilee-elderly-surporter.jpeg' %}"
+                  class="testimonial-img rounded-circle shadow"
+                  alt="Beneficiary"
+                />
               </div>
               <div class="col-md-9">
                 <blockquote class="mb-0 position-relative">
-                  <i class="fas fa-quote-left text-danger opacity-25 position-absolute" style="top: -10px; left: -20px; font-size: 3rem;"></i>
-                  <p class="fs-5">"Nínyote wíra ní múrúte ní Jubilee gúkú matúrainí. Thitima nínginyu gúkú gícagi. Níkío ndírakenerera gúkorwo Jubilee."</p>
-                  <div class="rating mt-3 text-warning">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
+                  <i
+                    class="fas fa-quote-left text-danger opacity-25 position-absolute"
+                    style="top: -10px; left: -20px; font-size: 3rem"
+                  ></i>
+                  <p class="fs-5">
+                    "Nínyoníte wíra ní múrúte ní Jubilee gúkú matúrainí. Thitima
+                    nínginyu gúkú gícagi. Níkío ndírakenerera gúkorwo ho kwa
+                    Jubilee."
+                  </p>
                 </blockquote>
               </div>
             </div>
@@ -359,21 +634,23 @@
           <div class="testimonial-item bg-white rounded-4 p-4 p-md-5 shadow">
             <div class="row align-items-center">
               <div class="col-md-3 text-center mb-4 mb-md-0">
-                <img src="{% static 'party_images/lady-in-the-market.jpg' %}" class="testimonial-img" alt="Market trader">
-                <h4 class="mt-3 mb-0 text-danger fw-bold">Susan A.</h4>
-                <small class="text-muted">Nairobi County</small>
+                <img
+                  src="{% static 'party_images/lady-in-the-market.jpg' %}"
+                  class="testimonial-img rounded-circle shadow"
+                  alt="Beneficiary"
+                />
               </div>
               <div class="col-md-9">
                 <blockquote class="mb-0 position-relative">
-                  <i class="fas fa-quote-left text-danger opacity-25 position-absolute" style="top: -10px; left: -20px; font-size: 3rem;"></i>
-                  <p class="fs-5">"I can now operate under a permanent, clean and secure shed unlike before where we used to operate outside under the sun and unhygienic spaces."</p>
-                  <div class="rating mt-3 text-warning">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
+                  <i
+                    class="fas fa-quote-left text-danger opacity-25 position-absolute"
+                    style="top: -10px; left: -20px; font-size: 3rem"
+                  ></i>
+                  <p class="fs-5">
+                    "I can now operate under a permanent, clean and secure shed
+                    unlike before where we used to operate outside under the sun
+                    and unhygienic spaces."
+                  </p>
                 </blockquote>
               </div>
             </div>
@@ -382,45 +659,204 @@
       </div>
 
       <!-- Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-danger rounded-circle p-3" aria-hidden="true"></span>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#testimonialCarousel"
+        data-bs-slide="prev"
+      >
+        <span
+          class="carousel-control-prev-icon bg-danger rounded-circle p-3"
+          aria-hidden="true"
+        ></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon bg-danger rounded-circle p-3" aria-hidden="true"></span>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#testimonialCarousel"
+        data-bs-slide="next"
+      >
+        <span
+          class="carousel-control-next-icon bg-danger rounded-circle p-3"
+          aria-hidden="true"
+        ></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
   </div>
 </section>
 
-<section id="news-section" class="py-5">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="display-4 text-danger fw-bold">LATEST NEWS</h2>
-            <p class="lead">Stay updated with Jubilee Party activities</p>
-        </div>
+<!-- News Highlights Section -->
+<section
+  id="news-highlights"
+  class="py-5 text-danger position-relative overflow-hidden"
+  style="
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+  "
+>
+  <div class="container position-relative z-1">
+    <h2 class="text-center fw-bold mb-5 display-4">
+      Latest <span class="text-danger">Highlights</span>
+    </h2>
 
-        <div class="row g-4">
-            <!-- News cards -->
-        </div>
+    <!-- Carousel -->
+    <div
+      id="highlightsCarousel"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+      data-bs-interval="6000"
+    >
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        {% for news in featured_news %}
+        <button
+          type="button"
+          data-bs-target="#highlightsCarousel"
+          data-bs-slide-to="{{ forloop.counter0 }}"
+          class="{% if forloop.first %}active{% endif %}"
+          aria-label="Slide {{ forloop.counter }}"
+        ></button>
+        {% endfor %}
+      </div>
 
-        <div class="text-center mt-4">
-            <a href="/news/" class="btn btn-outline-danger btn-lg">View All News</a>
+      <!-- Slides -->
+      <div class="carousel-inner">
+        {% for news in featured_news %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="text-center p-5">
+            <div class="mb-3">
+              <hr
+                class="border-danger mx-auto"
+                style="width: 60px; height: 3px"
+              />
+            </div>
+            <h2 class="fw-bold text-danger mb-4">News & Updates</h2>
+            <h3 class="fw-bold mb-3">{{ news.title }}</h3>
+            <p class="lead mb-4">{{ news.summary|truncatewords:30 }}</p>
+            <a href="{% url 'news' %}" class="btn btn-danger btn-lg px-4">
+              Read More <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
         </div>
+        {% endfor %}
+      </div>
+
+      <!-- Controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#highlightsCarousel"
+        data-bs-slide="prev"
+      >
+        <span
+          class="fas fa-chevron-left bg-danger text-white rounded-circle p-3"
+        ></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#highlightsCarousel"
+        data-bs-slide="next"
+      >
+        <span
+          class="fas fa-chevron-right bg-danger text-white rounded-circle p-3"
+        ></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+
+    <!-- View All Button -->
+    <div class="text-center mt-5 pt-3">
+      <a
+        href="{% url 'news' %}"
+        class="btn btn-outline-danger btn-lg px-5 py-3"
+      >
+        View All News <i class="fas fa-newspaper ms-2"></i>
+      </a>
+    </div>
+  </div>
 </section>
 
 <section id="events-section" class="py-5 bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="display-4 text-danger fw-bold">UPCOMING EVENTS</h2>
-            <p class="lead">Join us in our activities across the country</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- Event cards -->
-        </div>
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-4 text-danger fw-bold">UPCOMING EVENTS</h2>
+      <p class="lead">Join us in our activities across the country</p>
     </div>
+
+    <div class="row g-4">
+      {% for event in events %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img
+            src="{{ event.image.url }}"
+            class="card-img-top"
+            alt="{{ event.title }}"
+            style="object-fit: cover; height: 200px"
+          />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">{{ event.title }}</h5>
+            <p class="text-muted mb-2">
+              <i class="fas fa-calendar-alt"></i> {{ event.date }}
+              <br />
+              <i class="fas fa-map-marker-alt"></i> {{ event.location }}
+            </p>
+            <p class="card-text">{{ event.summary|truncatewords:20 }}</p>
+            <!-- Optional: Add a 'Learn More' button if you have event detail pages -->
+            <!--
+            <a href="{% url 'event_detail' event.id %}" class="btn btn-danger mt-auto">Learn More</a>
+            -->
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-center">
+        No upcoming events at the moment. Please check back later!
+      </p>
+      {% endfor %}
+    </div>
+  </div>
 </section>
+
+{% endblock %} {% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const openBtn = document.getElementById("volunteerBtn");
+    const form = document.getElementById("volunteerForm");
+    const closeBtn = document.getElementById("closeVolunteerForm");
+
+    openBtn.addEventListener("click", function () {
+      form.style.display = "block";
+      openBtn.style.display = "none";
+    });
+
+    closeBtn.addEventListener("click", function () {
+      form.style.display = "none";
+      openBtn.style.display = "inline-block";
+    });
+
+    const formElement = document.getElementById("volunteerRegistrationForm");
+    formElement.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Form submitted! (Demo)");
+      form.style.display = "none";
+      openBtn.style.display = "inline-block";
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const words = document.querySelector("#highlight-section .text-words");
+    if (words) {
+      words.classList.add("visible");
+    }
+  });
+</script>
+
 {% endblock %}

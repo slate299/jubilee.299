@@ -1,0 +1,147 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!-- Hero Section -->
+<section class="news-hero">
+  <div
+    class="news-page news-hero d-flex flex-column justify-content-center align-items-center"
+  >
+    <!-- Add the image -->
+    <img
+      src="{% static 'party_images/Uhurupartyleader.jpg' %}"
+      alt="President Uhuru Kenyatta"
+      class="hero-img mb-4"
+    />
+    <h1 class="display-4 fw-bold mb-3">News & Updates</h1>
+    <p class="lead">Stay informed with the latest News from Jubilee Party</p>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="container my-5">
+  <div class="row">
+    <!-- News Items -->
+    <div class="col-lg-8">
+      <div class="row">
+        {% for item in news_items %}
+        <div class="col-md-6 mb-4">
+          <div class="news-card">
+            <!-- ✅ Wrap main image in button to open lightbox -->
+            <div class="news-main-image">
+              <button
+                class="thumbnail-button p-0 border-0 bg-transparent"
+                data-bs-toggle="modal"
+                data-bs-target="#lightboxModal"
+                data-bs-image="{{ item.image.url }}"
+                aria-label="View full image of {{ item.title }}"
+              >
+                <img src="{{ item.image.url }}" alt="{{ item.title }}" />
+                <figcaption class="visually-hidden">
+                  {{ item.title }}
+                </figcaption>
+              </button>
+            </div>
+
+            <!-- Extra Images Thumbnails -->
+            {% if item.extra_images.all %}
+            <div class="extra-images d-flex flex-wrap gap-2 p-2">
+              {% for extra in item.extra_images.all %}
+              <img
+                src="{{ extra.image.url }}"
+                class="extra-thumbnail"
+                alt="{{ item.title }} extra"
+                data-bs-toggle="modal"
+                data-bs-target="#lightboxModal"
+                data-bs-image="{{ extra.image.url }}"
+              />
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- Content -->
+            <div class="card-body">
+              <span class="date">{{ item.date }}</span>
+              <h3 class="card-title">{{ item.title }}</h3>
+              <p class="card-text">{{ item.summary }}</p>
+              {% if item.url %}
+              <a href="{{ item.url }}" class="btn btn-read-more">Read More</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% empty %}
+        <p>No news available at the moment.</p>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+      <!-- Categories -->
+      <div class="news-categories mb-4">
+        <h4 class="mb-3">Categories</h4>
+        {% for category in categories %}
+        <button class="category-btn {% if forloop.first %}active{% endif %}">
+          {{ category }}
+        </button>
+        {% endfor %}
+      </div>
+
+      <!-- Recent News -->
+      <div class="news-categories mb-4">
+        <h4 class="mb-3">Recent News</h4>
+        {% for item in news_items|slice:":3" %}
+        <div class="recent-news-item mb-3">
+          <a href="{{ item.url }}" class="text-dark fw-bold">
+            {{ item.title }}
+          </a>
+          <p class="small text-muted">{{ item.date }}</p>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Newsletter -->
+      <div class="news-categories">
+        <h4 class="mb-3">Subscribe to Newsletter</h4>
+        <form>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Your Email" />
+          </div>
+          <button type="submit" class="btn btn-danger w-100">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div
+  class="modal fade"
+  id="lightboxModal"
+  tabindex="-1"
+  aria-labelledby="lightboxModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <img
+        id="lightboxImage"
+        src=""
+        class="img-fluid rounded shadow"
+        alt="Large view"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox Script -->
+<script>
+  const lightboxModal = document.getElementById("lightboxModal");
+  const lightboxImage = document.getElementById("lightboxImage");
+
+  lightboxModal.addEventListener("show.bs.modal", function (event) {
+    const trigger = event.relatedTarget;
+    const imageUrl = trigger.getAttribute("data-bs-image");
+    lightboxImage.src = imageUrl;
+  });
+</script>
+{% endblock %}
