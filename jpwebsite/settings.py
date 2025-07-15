@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-#*%p#97g^8bashb@4#%@brs0myl3!dd%jrs6yqo%l5z(n*mpva
 DEBUG = True
 
 ALLOWED_HOSTS = ['jubilee-299.onrender.com']
+ALLOWED_HOSTS = ['jubilee-299.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition

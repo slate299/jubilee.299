@@ -1,4 +1,10 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends "base.html" %} 
+{% load static %}
+{% block title %}News and Updates{%endblock %} 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/news.css' %}" />
+{% endblock %} 
+{% block content %}
 
 <!-- Hero Section -->
 <section class="news-hero">

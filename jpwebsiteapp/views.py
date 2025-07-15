@@ -1,16 +1,42 @@
-from django.shortcuts import render
-from .models import NewsItem, Event
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render, get_object_or_404
+from .models import NewsItem, Event, County, Volunteer, Project
 
+#create your views here
 
-# Create your views here.
-
+#home view
 def home(request):
     featured_news = NewsItem.objects.filter(is_featured=True).order_by('-date')[:5]
-    featured_events = Event.objects.filter(featured=True).order_by('date')[:5]  # Upcoming first
+    featured_events = Event.objects.filter(featured=True).order_by('date')[:5]
+    counties = County.objects.all().order_by('name')
+
+    # If AJAX POST
+    if request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        full_name = request.POST.get('fullName')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        location_id = request.POST.get('location')
+        skills = request.POST.get('skills')
+
+        county = get_object_or_404(County, id=location_id)
+
+        Volunteer.objects.create(
+            full_name=full_name,
+            email=email,
+            phone=phone,
+            county=county,
+            skills=skills
+        )
+
+        return JsonResponse({'status': 'success'})
+
     return render(request, 'home.html', {
         'featured_news': featured_news,
         'featured_events': featured_events,
+        'counties': counties
     })
+
 
 # About Page
 def about(request):
@@ -22,8 +48,12 @@ def leadership(request):
 
 # Achievements Page
 def achievements(request):
-    return render(request, 'achievements.html')
+    projects = Project.objects.all()
+    return render(request, 'achievements.html', {'projects': projects})
 
+def project_detail(request, slug):
+    project = get_object_or_404(Project, slug=slug)
+    return render(request, 'project_detail.html', {'project': project})
 
 def events(request):
     all_events = Event.objects.all().order_by('date')  # Upcoming events first
