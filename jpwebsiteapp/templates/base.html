@@ -1,239 +1,267 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#e11b22">
-  <meta name="description" content="Official Jubilee Party of Kenya website - Building a brighter future together.">
-  <meta name="keywords" content="Jubilee Party, Kenya, politics, manifesto, leadership">
-  <meta name="author" content="Jubilee Party">
-  <title>{% block title %}jubileeParty.ke{% endblock %}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e11b22" />
+    <meta
+      name="description"
+      content="Official Jubilee Party of Kenya website - Building a brighter future together."
+    />
+    <meta
+      name="keywords"
+      content="Jubilee Party, Kenya, politics, manifesto, leadership"
+    />
+    <meta name="author" content="Jubilee Party" />
+    <title>{% block title %}jubileeParty.ke{% endblock %}</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="{% static 'party_images/jup-logo-300x241.png' %}" type="" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="{% static 'party_images/jup-logo-300x241.png' %}"
+      type="image/png"
+    />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/party-styles.css' %}" />
+     {% block extra_css %}{% endblock %}
+  </head>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="{% static 'css/party-styles.css' %}" />
-
-  {% block extra_css %}{% endblock %}
-</head>
-
-<body>
-    <!-- Add a loading spinner -->
-  <div class="page-loader">
-    <div class="spinner"></div>
-  </div>
-    <!-- Fallback for users without JavaScript -->
-  <noscript>
-    <style>
-      .page-loader {
-        display: none;
-      }
-    </style>
-  </noscript>
-
-  <!-- ======= HEADER ======= -->
-  <header>
-        <!-- Add a top announcement bar -->
-    <div class="announcement-bar">
-      <div class="container">
-        <p>#MbelePamoja - Building a Brighter Future for Kenya</p>
-      </div>
+  <body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+      <div class="spinner"></div>
     </div>
 
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <noscript>
+      <style>
+        .page-loader {
+          display: none;
+        }
+      </style>
+    </noscript>
+    <!-- ======= ANNOUNCEMENT BAR ======= -->
+    <div class="announcement-bar text-center">
+      <p class="mb-0 text-white py-2">
+        #MbelePamoja — Building a Brighter Future for Kenya
+      </p>
+    </div>
+
+<!-- ======= NAVBAR ======= -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container d-flex align-items-center justify-content-between">
+    <!-- Logo -->
+    <a class="navbar-brand" href="/">
+      <img
+        src="{% static 'party_images/jup-logo-300x241.png' %}"
+        alt="Logo"
+        style="max-height: 60px"
+      />
+    </a>
+
+    <!-- ✅ Join Us CTA -->
+    <a
+      href="https://membership.jubileeparty.ke/"
+      class="btn btn-primary order-lg-3 ms-2"
+    >
+      Join Us
+    </a>
+
+    <!-- Toggler -->
+    <button
+      class="navbar-toggler order-lg-4"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/leadership/">Leadership</a></li>
+        <li class="nav-item"><a class="nav-link" href="/achievements/">Achievements</a></li>
+        <li class="nav-item"><a class="nav-link" href="/events/">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="/big4_home/">Big 4 Agenda</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <!-- ======= MAIN CONTENT ======= -->
+    <main class="w-100 pt-5">{% block content %}{% endblock %}</main>
+
+    <!-- ======= FOOTER ======= -->
+    <footer>
       <div class="container">
-        <!-- Brand Logo -->
-        <a class="navbar-brand" href="/">
-          <img src="{% static 'party_images/jup-logo-300x241.png' %}" alt="Jubilee Party Logo" />
-        </a>
+        <div class="row">
+          <!-- Logo & Tagline -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <img
+              src="{% static 'party_images/jup-logo-300x241.png' %}"
+              alt="Jubilee Party Logo"
+              class="footer-logo mb-3"
+            />
+            <!-- <p class="mb-2 fw-bold">#Mbele Pamoja</p> -->
+            <a
+              href="https://membership.jubileeparty.ke/"
+              class="btn btn-outline-light btn-sm"
+              >Join Our Movement</a
+            >
+          </div>
 
-        <!-- Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 class="fw-bold">Quick Links</h5>
+            <ul class="list-unstyled">
+              <!-- <li><a href="/donate/"><i class="fas fa-chevron-right me-2"></i>Donate</a></li> -->
+              <li>
+                <a href="https://membership.jubileeparty.ke/"
+                  ><i class="fas fa-chevron-right me-2"></i>Join Jubilee</a
+                >
+              </li>
+              <!-- <li><a href="/contact/"><i class="fas fa-chevron-right me-2"></i>Contact</a></li> -->
+              <!-- <li><a href="/gallery/"><i class="fas fa-chevron-right me-2"></i>Gallery</a></li> -->
+              <!-- <li><a href="/manifesto/"><i class="fas fa-chevron-right me-2"></i>Manifesto</a></li> -->
+              <li>
+                <a href="/news/"
+                  ><i class="fas fa-chevron-right me-2"></i>News & Updates</a
+                >
+              </li>
+              <li>
+                <a href="/concerns/"
+                  ><i class="fas fa-chevron-right me-2"></i>Share Concerns</a
+                >
+              </li>
+            </ul>
+          </div>
 
-        <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="/leadership/">Leadership</a></li>
-            <li class="nav-item"><a class="nav-link" href="/achievements/">Achievements</a></li>
-            <li class="nav-item"><a class="nav-link" href="/events/">Events</a></li>
-            <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="/big4_home/">Big 4 Agenda</a></li>
-          </ul>
+          <!-- Contact Info -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="fw-bold">Contact</h5>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-map-marker-alt me-2"></i> Daraja House,
+                Statehouse Road, Nairobi
+              </li>
+              <li><i class="fas fa-phone-alt me-2"></i> 0709 175 000</li>
+              <li><i class="fas fa-phone-alt me-2"></i> 0709 175 111</li>
+              <li>
+                <i class="fas fa-envelope me-2"></i> info@jubileepamoja.co.ke.
+              </li>
+            </ul>
+          </div>
 
-          <!-- Search Form -->
-          <form class="d-flex search-form" action="/search/" method="get">
-            <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search" />
-            <button class="btn btn-outline-danger" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
+          <!-- Social Media -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="fw-bold">Follow Us</h5>
+            <div class="footer-social-links">
+              <a href="https://web.facebook.com/TheJubileeParty"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://x.com/jubileepartyk"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/jubileepartyk"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.tiktok.com/@jubileepartyk"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a href="https://www.youtube.com/@jubileepartyk"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
 
-  <!-- ======= MAIN CONTENT ======= -->
-  <main class="w-100 pt-5">{% block content %}{% endblock %}</main>
+        <hr style="border-color: rgba(255, 255, 255, 0.1)" />
 
-  <!-- ======= FOOTER ======= -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <!-- Logo & Tagline -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <img src="{% static 'party_images/jup-logo-300x241.png' %}" alt="Jubilee Party Logo" class="footer-logo mb-3"/>
-          <!-- <p class="mb-2 fw-bold">#Mbele Pamoja</p> -->
-          <a href="https://membership.jubileeparty.ke/" class="btn btn-outline-light btn-sm">Join Our Movement</a>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="col-lg-2 col-md-6 mb-4">
-          <h5 class="fw-bold">Quick Links</h5>
-          <ul class="list-unstyled">
-            <!-- <li><a href="/donate/"><i class="fas fa-chevron-right me-2"></i>Donate</a></li> -->
-            <li><a href="https://membership.jubileeparty.ke/"><i class="fas fa-chevron-right me-2"></i>Join Jubilee</a></li>
-            <!-- <li><a href="/contact/"><i class="fas fa-chevron-right me-2"></i>Contact</a></li> -->
-            <!-- <li><a href="/gallery/"><i class="fas fa-chevron-right me-2"></i>Gallery</a></li> -->
-            <!-- <li><a href="/manifesto/"><i class="fas fa-chevron-right me-2"></i>Manifesto</a></li> -->   
-             <li><a href="/news/"><i class="fas fa-chevron-right me-2"></i>News & Updates</a></li>
-             <li><a href="/concerns/"><i class="fas fa-chevron-right me-2"></i>Share Concerns</a></li>       
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <h5 class="fw-bold">Contact</h5>
-          <ul class="list-unstyled">
-            <li><i class="fas fa-map-marker-alt me-2"></i> Daraja House, Statehouse Road, Nairobi</li>
-            <li><i class="fas fa-phone-alt me-2"></i> 0709 175 000</li>
-            <li><i class="fas fa-phone-alt me-2"></i> 0709 175 111</li>
-            <li><i class="fas fa-envelope me-2"></i> info@jubileepamoja.co.ke.</li>
-          </ul>
-        </div>
-
-        <!-- Social Media -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <h5 class="fw-bold">Follow Us</h5>
-          <div class="footer-social-links">
-            <a href="https://web.facebook.com/TheJubileeParty"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://x.com/jubileepartyk"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.instagram.com/jubileepartyk"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@jubileepartyk"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@jubileepartyk"><i class="fa-brands fa-youtube"></i></a>
+        <div class="row align-items-center">
+          <div class="col-md-6 text-md-start text-center mb-3 mb-md-0">
+            <p class="mb-0">&copy; 2025 Jubilee Party. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end text-center">
+            <!-- <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a> -->
           </div>
         </div>
       </div>
+    </footer>
 
-      <hr style="border-color: rgba(255, 255, 255, 0.1)" />
+    <!-- Scripts -->
+    <script
+      src="https://kit.fontawesome.com/9d3446ff1d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      AOS.init();
+    </script>
 
-      <div class="row align-items-center">
-        <div class="col-md-6 text-md-start text-center mb-3 mb-md-0">
-          <p class="mb-0">&copy; 2025 Jubilee Party. All rights reserved.</p>
-        </div>
-        <div class="col-md-6 text-md-end text-center">
-          <!-- <a href="/privacy/">Privacy Policy</a>
-          <a href="/terms/">Terms of Service</a> -->
-        </div>
-      </div>
-    </div>
-  </footer>
+    <script>
+      // Remove loader when page is fully loaded
+      window.addEventListener("load", function () {
+        const loader = document.querySelector(".page-loader");
+        loader.classList.add("fade-out");
 
-  <!-- Scripts -->
-  <script src="https://kit.fontawesome.com/9d3446ff1d.js" crossorigin="anonymous"></script>
-  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
-  <!-- Navbar Scroll & Toggle Fix -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const navbar = document.querySelector('.navbar');
-      const navLinks = document.querySelectorAll('.nav-link');
-      const navbarCollapse = document.querySelector('.navbar-collapse');
-      let lastScrollTop = 0;
-
-      window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-        if (scrollTop > lastScrollTop) {
-          navbar.classList.add('hidden');
-        } else {
-          navbar.classList.remove('hidden');
-        }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        // Remove loader from DOM after animation completes
+        setTimeout(() => {
+          loader.remove();
+        }, 500); // Match this with your CSS transition duration
       });
+      // Show loader
+      function showLoader() {
+        document.querySelector(".page-loader").classList.remove("fade-out");
+      }
 
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
-            new bootstrap.Collapse(navbarCollapse).hide();
-          }
-        });
-      });
-    });
-  </script>
-  <script>
-  // Remove loader when page is fully loaded
-  window.addEventListener('load', function() {
-    const loader = document.querySelector('.page-loader');
-    loader.classList.add('fade-out');
-    
-    // Remove loader from DOM after animation completes
-    setTimeout(() => {
-      loader.remove();
-    }, 500); // Match this with your CSS transition duration
-  });
-  // Show loader
-function showLoader() {
-  document.querySelector('.page-loader').classList.remove('fade-out');
-}
+      // Hide loader
+      function hideLoader() {
+        document.querySelector(".page-loader").classList.add("fade-out");
+        setTimeout(() => {
+          document.querySelector(".page-loader").remove();
+        }, 500);
+      }
+    </script>
 
-// Hide loader
-function hideLoader() {
-  document.querySelector('.page-loader').classList.add('fade-out');
-  setTimeout(() => {
-    document.querySelector('.page-loader').remove();
-  }, 500);
-}
-
-// Example usage for AJAX:
-/*
-showLoader();
-fetch('/some-data')
-  .then(response => response.json())
-  .then(data => {
-    // Process data
-  })
-  .finally(() => hideLoader());
-*/
-</script>
-
-  {% block scripts %}{% endblock %}
-</body>
+    {% block scripts %}{% endblock %}
+  </body>
 </html>

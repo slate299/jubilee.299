@@ -1,42 +1,51 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, get_object_or_404
-from .models import NewsItem, Event, County, Volunteer, Project
+from .models import NewsItem, Event, County, Volunteer, Project, Testimonial, HeroSlide, HighlightSlide
+from .forms import ConcernForm
 
 #create your views here
 
-#home view
 def home(request):
+    hero_slides = HeroSlide.objects.all().order_by('order')
     featured_news = NewsItem.objects.filter(is_featured=True).order_by('-date')[:5]
+    highlight_slides = HighlightSlide.objects.all().order_by('order')
     featured_events = Event.objects.filter(featured=True).order_by('date')[:5]
     counties = County.objects.all().order_by('name')
+    testimonials = Testimonial.objects.all()
 
-    # If AJAX POST
-    if request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
-        full_name = request.POST.get('fullName')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        location_id = request.POST.get('location')
-        skills = request.POST.get('skills')
+    volunteer_success = False
 
-        county = get_object_or_404(County, id=location_id)
+    if request.method == 'POST':
+        # Check which form submitted: use name="form_type"
+        form_type = request.POST.get('form_type')
+        if form_type == 'volunteer':
+            full_name = request.POST.get('fullName')
+            email = request.POST.get('email')
+            phone = request.POST.get('phone')
+            location_id = request.POST.get('location')
+            skills = request.POST.get('skills')
 
-        Volunteer.objects.create(
-            full_name=full_name,
-            email=email,
-            phone=phone,
-            county=county,
-            skills=skills
-        )
-
-        return JsonResponse({'status': 'success'})
+            if full_name and email and phone and location_id and skills:
+                county = get_object_or_404(County, id=location_id)
+                Volunteer.objects.create(
+                    full_name=full_name,
+                    email=email,
+                    phone=phone,
+                    county=county,
+                    skills=skills
+                )
+                volunteer_success = True
 
     return render(request, 'home.html', {
         'featured_news': featured_news,
         'featured_events': featured_events,
-        'counties': counties
+        'counties': counties,
+        'testimonials': testimonials, 
+        'hero_slides': hero_slides,
+        'highlight_slides': highlight_slides,
+        'volunteer_success': volunteer_success,
     })
-
 
 # About Page
 def about(request):
@@ -77,9 +86,21 @@ def contact(request):
 def blog(request):
     return render(request, 'blog.html')
 
-# Concerns Page
 def concerns(request):
-    return render(request, 'concerns.html')
+    success = False
+
+    if request.method == 'POST':
+        form = ConcernForm(request.POST)
+        if form.is_valid():
+            concern = form.save(commit=False)
+            concern.issues = ', '.join(form.cleaned_data['issues'])
+            concern.save()
+            success = True  # ✅ flag for template
+            form = ConcernForm()  # Clear the form after submit
+    else:
+        form = ConcernForm()
+
+    return render(request, 'concerns.html', {'form': form, 'success': success})
 
 # News page
 def news(request):

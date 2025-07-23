@@ -1,32 +1,49 @@
-/* === Hero Section === */
+/* === About Hero Section === */
 .about-hero {
-  background: url('/static/party_images/Uhuru.jpg') center/cover no-repeat;
-  position: relative;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),
+  url("/static/party_images/tuko_pamoja.jpg") center/cover no-repeat;
   color: #fff;
-  text-align: center;
-  background-size: cover;
-  background-position: center;
-  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 60vh;
+  position: relative;
 }
 
 .about-hero-content {
-  /* background: rgba(0, 0, 0, 0.5); */
-  padding: 2rem;
-  border-radius: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .about-hero h1 {
+  color: #f8f9fa;
   font-size: 3rem;
   font-weight: 700;
-  color: #c82333;
+  text-transform: uppercase;
 }
 
 .about-hero p {
-  font-size: 1.5rem;
   color: #fff;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 40vh;
+    padding: 3rem 1rem;
+  }
+
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-hero p {
+    font-size: 1.2rem;
+  }
 }
 
 /* === About Content === */
@@ -92,12 +109,12 @@
   position: relative;
   width: 100%;
   margin: 0 auto;
-  max-width: 800px; /* Limits maximum width */
+  max-width: 600px; /* Limits maximum width */
 }
 
 .about-section iframe {
   width: 100%;
-  height: 100%;
+  height: 80%;
   position: absolute;
   top: 0;
   left: 0;
@@ -121,11 +138,11 @@
     padding: 1rem 0;
     margin-bottom: 2rem;
   }
-  
+
   .ratio-16x9 {
     margin-bottom: 1.5rem;
   }
-  
+
   .anthem-tagline {
     margin-top: 1rem;
     font-size: 1rem;

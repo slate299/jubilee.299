@@ -1,4 +1,9 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <section id="concerns-page" class="py-5">
   <div class="container">
@@ -10,138 +15,28 @@
           let's shape the future of Jubilee!
         </p>
 
-        <form>
-          <div class="mb-3">
-            <label for="firstName" class="form-label">First Name</label>
-            <input
-              type="text"
-              id="firstName"
-              class="form-control form-control-lg"
-              placeholder="Enter your first name"
-              required
-            />
-          </div>
+        <form method="POST">
+          {% csrf_token %}
 
-          <div class="mb-3">
-            <label for="secondName" class="form-label">Second Name</label>
-            <input
-              type="text"
-              id="secondName"
-              class="form-control form-control-lg"
-              placeholder="Enter your second name"
-              required
-            />
-          </div>
+          <!-- ✅ Loop through fields for Bootstrap styling -->
+              {% for field in form %}
+                <div class="mb-3">
+                  {{ field.label_tag }}
 
-          <div class="mb-3">
-            <label for="surname" class="form-label">Surname</label>
-            <input
-              type="text"
-              id="surname"
-              class="form-control form-control-lg"
-              placeholder="Enter your surname"
-              required
-            />
-          </div>
+                  {% if field.field.widget.input_type == "checkbox" %}
+                    {{ field }}
+                  {% else %}
+                    {{ field|add_class:"form-control form-control-lg" }}
+                  {% endif %}
 
-          <div class="mb-3">
-            <label for="phoneNumber" class="form-label">Phone Number</label>
-            <input
-              type="tel"
-              id="phoneNumber"
-              class="form-control form-control-lg"
-              placeholder="254712345678"
-              required
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="email" class="form-label">Email Address</label>
-            <input
-              type="email"
-              id="email"
-              class="form-control form-control-lg"
-              placeholder="name@gmail.com"
-              required
-            />
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label"
-              >What are the most important issues you want Jubilee to
-              tackle?</label
-            >
-            <ul class="list-group mb-3">
-              <li class="list-group-item">
-                <input type="checkbox" id="economy" /> Economy
-              </li>
-              <li class="list-group-item">
-                <input type="checkbox" id="corruption" /> Corruption
-              </li>
-              <li class="list-group-item">
-                <input type="checkbox" id="unemployment" /> Unemployment
-              </li>
-              <li class="list-group-item">
-                <input type="checkbox" id="healthcare" /> Access to affordable
-                healthcare
-              </li>
-              <li class="list-group-item">
-                <input type="checkbox" id="water" /> Water
-              </li>
-              <li class="list-group-item">
-                <input type="checkbox" id="education" /> Education
-              </li>
-              <li class="list-group-item">
-                <input type="checkbox" id="infrastructure" /> Infrastructure
-              </li>
-              <li class="list-group-item">
-                <input type="checkbox" id="housing" /> Housing
-              </li>
-              <li class="list-group-item">
-                <input type="checkbox" id="climateChange" /> Climate Change
-              </li>
-            </ul>
-
-            <div>
-              <label for="otherIssues" class="form-label"
-                >Any Other Issue Not Listed</label
-              >
-              <input
-                type="text"
-                id="otherIssues"
-                class="form-control form-control-lg"
-                placeholder="Please specify..."
-              />
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="story" class="form-label"
-              >Has Jubilee impacted your life? Share your story:</label
-            >
-            <textarea
-              id="story"
-              rows="3"
-              class="form-control form-control-lg"
-              placeholder="Your story..."
-            ></textarea>
-          </div>
-
-          <div class="mb-3">
-            <label for="thanks" class="form-label"
-              >What would you like to thank us for?</label
-            >
-            <textarea
-              id="thanks"
-              rows="3"
-              class="form-control form-control-lg"
-              placeholder="Thank you for..."
-            ></textarea>
-          </div>
+                  {% if field.errors %}
+                    <div class="text-danger small">{{ field.errors }}</div>
+                  {% endif %}
+                </div>
+              {% endfor %}
 
           <p class="text-muted small">
-            Any information shared with the Jubilee Party is held with the
-            utmost confidence.
+            Any information shared with the Jubilee Party is held with the utmost confidence.
           </p>
 
           <div class="text-center">
@@ -157,5 +52,33 @@
     </div>
   </div>
 </section>
+
+<!-- ✅ SweetAlert2 SUCCESS -->
+{% if success %}
+<script>
+  window.onload = function() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Thank you!',
+      text: 'Your concern has been submitted successfully.',
+      confirmButtonColor: '#e30613'
+    });
+  };
+</script>
+{% endif %}
+
+<!-- ✅ SweetAlert2 ERROR if form has errors -->
+{% if form.errors %}
+<script>
+  window.onload = function() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops!',
+      text: 'Please correct the errors in the form and try again.',
+      confirmButtonColor: '#e30613'
+    });
+  };
+</script>
+{% endif %}
 
 {% endblock %}

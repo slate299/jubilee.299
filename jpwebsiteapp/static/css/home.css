@@ -1,0 +1,868 @@
+/* Fullscreen Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#heroCarousel {
+  flex: 1;
+  height: 100%;
+}
+
+#heroCarousel,
+#heroCarousel .carousel-inner,
+#heroCarousel .carousel-item {
+  height: 100%;
+}
+
+.hero-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-gradient-overlay {
+  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,0.85) 10%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  z-index: 1;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, 0);
+  padding: 0 1rem;
+  width: 100%;
+  min-height: 20vh;
+  text-align: center;
+}
+
+.hero-caption-content {
+  z-index: 3;
+  color: #fff;
+  align-items: center;
+  text-align: center;
+}
+
+/* Title Styling */
+.hero-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  animation: fadeInDown 1s ease both;
+}
+
+.hero-title-accent {
+  color: #e11b22;
+}
+
+/* Buttons container */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  animation: fadeInUp 1.2s ease both;
+}
+
+/* Shared button styles */
+.btn-jubilee-primary,
+.btn-jubilee-outline {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+/* Primary button */
+.btn-jubilee-primary {
+  background-color: #e30613;
+  border: none;
+  color: #fff;
+}
+
+.btn-jubilee-primary:hover {
+  background-color: #c1101c;
+  color: #fff;
+}
+
+/* Outline button */
+.btn-jubilee-outline {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-jubilee-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* AOS-like animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-item {
+  transition: opacity 1s ease-in-out;
+}
+
+/* Indicators styling (optional) */
+.carousel-indicators [data-bs-target] {
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+/* JOIN SECTION */
+.join-section {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #f8f9fa; /* Light grey like Bootstrap's bg-light */
+}
+
+/* Heading */
+.join-section h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #e11b22; /* Jubilee red */
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Subheading */
+.join-section p.lead {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #555; /* softer than pure black */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Divider above heading */
+.join-section .divider-top {
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+/* Join Cards */
+.join-card {
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.join-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); 
+}
+
+/* Icon Wrapper */
+.join-card .icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(225, 27, 34, 0.1);
+  color: #e11b22;
+}
+
+.join-card .icon-wrapper i {
+  font-size: 2rem;
+}
+
+/* Card Title */
+.join-card .card-title {
+  font-weight: 700;
+}
+
+/* Buttons */
+.join-card .btn {
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.join-card .btn.btn-hover-light:hover {
+  background-color: #fff;
+  color: #e11b22;
+  border: 1px solid #e11b22;
+}
+
+.join-section .row {
+  margin-bottom: 3rem;
+}
+
+/* Responsive tweak: full-width buttons on small screens */
+@media (max-width: 767.98px) {
+  .join-card .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* === FINAL HIGHLIGHTS SECTION === */
+
+.highlight-section {
+  background: #ab0d18; /* Deep dark red */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+.highlight-section .section-divider {
+  display: flex;
+  align-items: center;
+}
+
+.highlight-section .divider-line {
+  width: 60px;
+  border-top: 3px solid #fff;
+  margin-right: 1rem;
+}
+
+.highlight-section .section-subtitle {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  opacity: 0.85;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.highlight-section .section-title {
+  letter-spacing: -0.5px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  line-height: 1.2;
+}
+
+.highlight-section .highlight-btn {
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: #e11b22;
+}
+
+.highlight-section .highlight-btn:hover {
+  background: #fff;
+  color: #960c16;
+}
+
+.highlight-section .highlight-carousel {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.highlight-section .carousel-item {
+  position: relative;
+}
+
+.highlight-section .ratio {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+/* ✅ This fixes the image stretching only */
+.highlight-section .ratio > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlight-section .highlight-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlight-section .highlight-caption {
+  position: absolute;
+
+  bottom: 10px !important; 
+  width: 100%;
+  text-align: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0.85) 10%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  color: #fff;
+  border-radius: 0 0 1rem 1rem;
+  z-index: 2;
+}
+
+.highlight-section .highlight-caption h5 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-section .highlight-caption p {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.highlight-section .highlight-btn {
+  background: #fff;
+  color: #960c16;
+  border: 2px solid #fff;
+}
+
+.highlight-section .highlight-btn:hover {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+} 
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+  .highlight-section .row {
+    text-align: center;
+  }
+
+  .highlight-section .section-title {
+    font-size: 2rem;
+  }
+
+  .highlight-section .highlight-caption {
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+/* === VOLUNTEER SECTION === */
+#volunteer-section {
+  background: #f8f9fa; 
+  padding: 4rem 0;
+}
+
+#volunteer-section h2 {
+  font-weight: 700;
+  color: #ab0d18;
+  letter-spacing: -0.5px;
+  /* text-shadow: 1px 1px 3px rgba(0,0,0,0.1); */
+}
+
+#volunteer-section p {
+  font-size: 1.125rem;
+  color: #555;
+}
+
+#volunteer-section .img-fluid {
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+#volunteer-section .img-fluid:hover {
+  transform: scale(1.02);
+}
+
+#volunteer-section #volunteerBtn {
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#volunteer-section #volunteerBtn:hover {
+  background: #a00c15;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+#volunteer-section #volunteerForm {
+  animation: fadeIn 0.5s ease forwards;
+  display: none;
+}
+
+#volunteer-section .card {
+  border-radius: 1rem;
+}
+
+#volunteer-section .card-body {
+  background: #fff;
+  border-radius: 1rem;
+}
+
+#volunteer-section label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+#volunteer-section .form-control,
+#volunteer-section .form-select {
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  transition: border-color 0.2s ease;
+}
+
+#volunteer-section .form-control:focus,
+#volunteer-section .form-select:focus {
+  border-color: #b10f1b;
+  box-shadow: 0 0 0 0.2rem rgba(177, 15, 27, 0.2);
+}
+
+#volunteer-section textarea {
+  resize: vertical;
+}
+
+/* Volunteer Form Buttons */
+#volunteerRegistrationForm .btn {
+  transition: all 0.3s ease;
+}
+
+/* Submit Button: hover to a darker shade */
+#volunteerRegistrationForm .btn-danger:hover {
+  background-color: #a00c15; /* darker shade of Jubilee red */
+  border-color: #a00c15;
+  color: #fff;
+}
+
+/* Close/Cancel Button: hover to light red background + darker border */
+#volunteerRegistrationForm .btn-outline-secondary {
+  color: #333;
+  border-color: #ccc;
+  border-radius: 50px;
+  padding: 0.6rem 1.5rem;
+}
+
+#volunteerRegistrationForm .btn-outline-secondary:hover {
+  background-color: #f8d7da; /* pale red/pink */
+  border-color: #a00c15;
+  color: #a00c15;
+   border-radius: 50px;
+  padding: 0.6rem 1.5rem;
+}
+
+/* Smooth fade animation for form */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive: Stack nicely on small screens */
+@media (max-width: 767.98px) {
+  #volunteer-section {
+    text-align: center;
+  }
+
+  #volunteer-section .ps-lg-5 {
+    padding-left: 0 !important;
+  }
+}
+
+/* === CONCERNS SECTION - RED === */
+.concerns-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background: #b10f1b; /* Deep Jubilee red */
+  color: #fff;
+  text-align: center;
+}
+
+.concerns-section .divider-line {
+  width: 60px;
+  height: 3px;
+  background: #fff; /* White for contrast */
+  opacity: 0.8;
+}
+
+.concerns-section h2 {
+  letter-spacing: -0.5px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+.concerns-section p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #f8f9fa;
+}
+
+.concerns-section .concerns-btn {
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.concerns-section .concerns-btn:hover {
+  background: #fff; /* Invert background */
+  color: #b10f1b;   /* Red text on hover */
+  transform: translateY(-2px); /* Subtle lift */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .concerns-section h2 {
+    font-size: 2rem;
+  }
+  .concerns-section p {
+    font-size: 1rem;
+  }
+}
+
+/* === TESTIMONIALS SECTION CUSTOM STYLES === */
+
+#testimonials-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #f8f9fa;
+}
+
+#testimonials-section .title-underline {
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #dc3545;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+#testimonials-section .testimonial-item {
+  display: flex;
+  border-radius: 2px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#testimonials-section .testimonial-item p {
+  min-height: 120px; 
+}
+
+#testimonials-section .testimonial-img {
+  object-fit: cover;
+}
+
+#testimonials-section .carousel-inner {
+  min-height: 350px;
+  border-radius: 1rem;
+}
+
+#testimonials-section .carousel-item {
+  justify-content: center;
+  align-items: center; /* add this here! */
+}
+
+#testimonials-section .carousel-indicators {
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#testimonials-section .carousel-indicators button {
+  width: 16px;
+  height: 8px;
+  background-color: #dc3545;
+  opacity: 1;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+#testimonials-section .carousel-indicators button:hover {
+  background-color: #000;
+}
+
+#testimonials-section .carousel-indicators .active {
+  background-color: #000;
+  opacity: 1;
+}
+
+#testimonials-section .fas.fa-quote-left {
+  display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .testimonial-item {
+    padding: 2rem;
+  }
+  
+  .testimonial-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  #testimonials-section {
+    padding: 4rem 0;
+  }
+  
+  .testimonial-item {
+    text-align: center;
+  }
+  
+  .testimonial-img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1.5rem;
+  }
+  
+  #testimonials-section .carousel-inner {
+    min-height: 350px; /* give more breathing space for stacked layout */
+  }
+}
+
+@media (max-width: 576px) {
+  #testimonials-section .display-4 {
+    font-size: 2.2rem;
+  }
+  
+  .testimonial-item p {
+    font-size: 1rem;
+  }
+}
+
+/* === NEWS SECTION === */
+#news-section {
+  background: #ab0d18; /* deep red, same as highlight */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+#news-section .section-header h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#news-section .section-header .highlight {
+  background: #fff;
+  color: #ab0d18;
+}
+
+#news-section .divider {
+  width: 60px;
+  border-top: 3px solid #fff;
+  margin: 1rem auto 0;
+}
+
+#news-section .carousel-inner {
+  min-height: 400px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+#news-section .carousel-item {
+  text-align: center;
+  min-height: 400px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#news-section .carousel-item .row {
+  min-height: 400px; /* Makes sure the row stays steady */
+}
+
+#news-section .badge {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  padding: 0.4rem 0.8rem;
+}
+
+#news-section .btn {
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#news-section .btn-light {
+  background: #fff;
+  color: #ab0d18;
+  border: 2px solid #fff;
+}
+
+#news-section .btn-light:hover {
+  background: transparent;
+  color: #fff;
+}
+
+#news-section .btn-outline-light {
+  border: 2px solid #fff;
+}
+
+#news-section .btn-outline-light:hover {
+  background: #fff;
+  color: #ab0d18;
+}
+
+#news-section .news-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#news-section .carousel-indicators {
+  position: relative;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  z-index: 5;
+}
+
+#news-section .carousel-indicators [data-bs-target] {
+  width: 16px;
+  height: 8px;
+  border-radius: 4px;
+  background: #fff;
+  opacity: 0.7;
+  border: none;
+  transition: all 0.3s;
+}
+
+#news-section .carousel-indicators .active {
+  background: #e11b22;
+  opacity: 1;
+}
+
+#news-section .carousel-indicators [data-bs-target]:hover {
+  background: #e11b22;
+}
+
+@media (max-width: 767px) {
+  #news-section .col-lg-6.p-5 {
+    padding: 2rem !important;
+  }
+
+  #news-section .carousel-item,
+  #news-section .carousel-item .row {
+    min-height: auto; /* Let it shrink naturally on mobile */
+  }
+}
+
+/* === EVENTS SECTION === */
+#events-section {
+  background: #f8f9fa; /* Light soft background */
+}
+
+.event-card {
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.event-date {
+  background: #e30613;
+  border-radius: 0.5rem;
+  min-width: 50px;
+}
+
+.event-date .fw-bold {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.divider {
+  width: 60px;
+  border-top: 3px solid #e30613;
+}
+
+.event-card .card-body {
+  padding: 1.5rem;
+}
+
+.event-card .card-footer {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.event-card .btn {
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.event-card .btn:hover {
+  background: #e30613;
+  color: #fff;
+  border-color: #e30613;
+}
+
+.no-events-alert {
+  background-color: #e30613;  /* Your strong red */
+  border: none;
+  color: #fff;
+}
+
+.no-events-alert h4,
+.no-events-alert p,
+.no-events-alert i {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  #events-section .section-header h2 {
+    font-size: 2rem;
+  }
+}

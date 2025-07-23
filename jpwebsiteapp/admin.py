@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import NewsItem, NewsImage, Event, EventImage, County, Volunteer, Project
+from .models import NewsItem, NewsImage, Event, EventImage, County, Volunteer, Project, Concern, Testimonial, HeroSlide, HighlightSlide
 
 # ✅ Inline for News extra images
 class NewsImageInline(admin.TabularInline):
@@ -38,3 +38,29 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'created_at')
     search_fields = ('title', 'description')
     list_filter = ('category',)
+
+@admin.register(Concern)
+class ConcernAdmin(admin.ModelAdmin):
+    list_display = (
+        'first_name',
+        'second_name',
+        'surname',
+        'phone_number',
+        'email',
+        'submitted_at',
+    )
+    search_fields = (
+        'first_name',
+        'second_name',
+        'surname',
+        'phone_number',
+        'email',
+        'issues',
+        'other_issues',
+    )
+    list_filter = ('submitted_at',)
+    readonly_fields = ('submitted_at',)
+
+admin.site.register(Testimonial)
+admin.site.register(HeroSlide)
+admin.site.register(HighlightSlide)

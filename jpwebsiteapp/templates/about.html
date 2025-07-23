@@ -1,97 +1,71 @@
-{% extends "base.html" %} 
-{% load static %} 
-{% block title %}About Us{% endblock%} 
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/about.css' %}" />
-{% endblock %} {% block content %}
+{% endblock %}
 
-<!-- ===== About Hero Section ===== -->
-<section class="about-hero text-center text-white py-5">
+{% block content %}
+
+<!-- ===== 1. Hero Section ===== -->
+<section id="hero" class="about-hero text-center py-5">
   <div class="container">
-    <div class="about-hero-content">
+    <div class="about-hero-content animate__animated animate__fadeInDown">
       <h1 class="display-3 fw-bold">About the Jubilee Party</h1>
-      <p class="lead fs-4">The Home for All Kenyans</p>
+      <p class="lead fw-bold fs-4">The Home for All Kenyans</p>
     </div>
   </div>
 </section>
 
-<!-- ===== About Content Section ===== -->
+<!-- ===== 2. Content Container ===== -->
 <section class="about-content py-5">
   <div class="container">
-    <!-- Founding & Vision -->
-    <div class="about-section mb-5">
+
+    <!-- === 2A. Founding & Vision === -->
+    <section id="founding" class="about-section mb-5">
       <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0">
-          <img
-            src="{% static 'party_images/Uhuru3.jpg' %}"
-            alt="Founding Vision"
-            class="img-fluid rounded shadow"
-          />
+          <img src="{% static 'party_images/Uhuru3.jpg' %}" alt="Founding Vision" class="img-fluid rounded shadow animate__animated animate__fadeInLeft" />
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 animate__animated animate__fadeInRight">
           <h2>Our Founding & Vision</h2>
           <p>
-            Founded in <strong>2016</strong> through the historic merger of
-            several parties, Jubilee was born out of the belief that
-            <strong>Kenya is stronger together</strong>. We replaced division
-            with unity and conflict with cooperation, creating a national
-            political movement that transcends ethnic and regional lines.
+            Founded in <strong>2016</strong> through the historic merger of several parties, Jubilee was born out of the belief that <strong>Kenya is stronger together</strong>. We replaced division with unity and conflict with cooperation, creating a national political movement that transcends ethnic and regional lines.
           </p>
-          <p class="fw-bold">
-            Tusonge Mbele Pamoja — Let’s move forward together.
-          </p>
+          <p class="fw-bold">Tusonge Mbele Pamoja — Let’s move forward together.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Legacy of Transformation -->
-    <div class="about-section mb-5">
+    <!-- === 2B. Legacy of Transformation === -->
+    <section id="legacy" class="about-section mb-5">
       <div class="row align-items-center flex-md-row-reverse">
         <div class="col-md-6 mb-4 mb-md-0">
-          <img
-            src="{% static 'party_images/3-jubilee-tuliahidi-tumetizima.jpg' %}"
-            alt="Legacy"
-            class="img-fluid rounded shadow"
-          />
+          <img src="{% static 'party_images/3-jubilee-tuliahidi-tumetizima.jpg' %}" alt="Legacy" class="img-fluid rounded shadow animate__animated animate__fadeInRight" />
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 animate__animated animate__fadeInLeft">
           <h2>A Legacy of Transformation</h2>
-          <p>
-            Under the leadership of <strong>President Uhuru Kenyatta</strong>,
-            the Jubilee Party has championed:
-          </p>
+          <p>Under the leadership of <strong>President Uhuru Kenyatta</strong>, the Jubilee Party has championed:</p>
           <ul class="legacy-list list-unstyled">
-            <li>
-              ✅ Massive infrastructure development – modern roads, railways,
-              and bridges
-            </li>
+            <li>✅ Massive infrastructure development – modern roads, railways, and bridges</li>
             <li>✅ Expanded access to electricity and clean energy</li>
             <li>✅ Investments in healthcare and education for all Kenyans</li>
-            <li>
-              ✅ Economic growth that positions Kenya as Africa’s next
-              powerhouse
-            </li>
+            <li>✅ Economic growth that positions Kenya as Africa’s next powerhouse</li>
           </ul>
-          <p>
-            In the <strong>2013 and 2017 general elections</strong>, millions of
-            Kenyans entrusted Jubilee with the mandate to build a
-            <strong>new Kenya</strong> — and we delivered.
-          </p>
+          <p>In the <strong>2013 and 2017 general elections</strong>, millions of Kenyans entrusted Jubilee with the mandate to build a <strong>new Kenya</strong> — and we delivered.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- A Party for Everyone -->
-    <div class="about-section mb-5">
-      <h2 class="text-center mb-4">A Party for Everyone</h2>
-      <p class="text-center mb-5">
-        The <strong>New Jubilee Party</strong> is
-        <strong>inclusive by design</strong>. We are committed to giving every
-        Kenyan a voice and leaving no one behind.
-      </p>
-      <div class="row text-center">
+    <!-- === 2C. A Party for Everyone === -->
+    <section id="inclusive" class="about-section mb-5 text-center">
+      <h2 class="mb-4 animate__animated animate__fadeInUp">A Party for Everyone</h2>
+      <p class="mb-5 animate__animated animate__fadeInUp">The <strong>New Jubilee Party</strong> is <strong>inclusive by design</strong>. We are committed to giving every Kenyan a voice and leaving no one behind.</p>
+      <div class="row">
         <div class="col-12 col-md-4 mb-4">
-          <div class="card h-100 shadow">
+          <div class="card h-100 shadow animate__animated animate__zoomIn">
             <div class="card-body">
               <h4>Women & Youth</h4>
               <p>Empowering the next generation of leaders</p>
@@ -99,7 +73,7 @@
           </div>
         </div>
         <div class="col-12 col-md-4 mb-4">
-          <div class="card h-100 shadow">
+          <div class="card h-100 shadow animate__animated animate__zoomIn">
             <div class="card-body">
               <h4>Persons with Disabilities</h4>
               <p>Ensuring equal opportunities for everyone</p>
@@ -107,7 +81,7 @@
           </div>
         </div>
         <div class="col-12 col-md-4 mb-4">
-          <div class="card h-100 shadow">
+          <div class="card h-100 shadow animate__animated animate__zoomIn">
             <div class="card-body">
               <h4>Marginalized Communities</h4>
               <p>Bridging gaps in development and representation</p>
@@ -115,89 +89,60 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Anthem Embed -->
-    <div class="about-section text-center mb-5">
-      <div class="container">
-        <h2>Our Anthem</h2>
-        <p>Tusonge Mbele Pamoja!</p>
-        <div class="ratio ratio-16x9 mb-4">
-          <iframe
-            src="https://www.youtube.com/embed/xLIcTkrJ3Go"
-            title="Jubilee Party Anthem"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <p class="anthem-tagline fw-bold">#MbelePamoja</p>
+    <!-- === 2D. Anthem Embed === -->
+    <section id="anthem" class="about-section text-center mb-5">
+      <h2 class="animate__animated animate__fadeInUp">Our Anthem</h2>
+      <p class="animate__animated animate__fadeInUp">Tusonge Mbele Pamoja!</p>
+      <div class="ratio ratio-16x9 mb-4 animate__animated animate__fadeIn">
+        <iframe src="https://www.youtube.com/embed/xLIcTkrJ3Go" title="Jubilee Party Anthem" frameborder="0" allowfullscreen></iframe>
       </div>
-    </div>
+      <p class="anthem-tagline fw-bold animate__animated animate__fadeInUp">#MbelePamoja</p>
+    </section>
 
-    <!-- Moving Forward Together -->
-    <div class="about-section mb-5">
+    <!-- === 2E. Moving Forward Together === -->
+    <section id="moving-forward" class="about-section mb-5">
       <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0">
-          <img
-            src="{% static 'party_images/logo2.jpg' %}"
-            alt="Moving Forward"
-            class="img-fluid rounded shadow"
-          />
+          <img src="{% static 'party_images/logo2.png' %}" alt="Moving Forward" class="img-fluid rounded shadow animate__animated animate__fadeInLeft" />
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 animate__animated animate__fadeInRight">
           <h2>Moving Forward Together</h2>
-          <p>
-            Kenya’s journey is like a relay —
-            <strong>each administration builds on the last</strong>. Jubilee has
-            laid the groundwork for future leaders to create a
-            <strong>modern, prosperous nation</strong>.
-          </p>
-          <p>
-            As a <strong>senior partner in Kenya’s democracy</strong>, we stand
-            ready to work with all progressive forces to
-            <strong>protect our legacy</strong> and complete the vision we
-            started.
-          </p>
+          <p>Kenya’s journey is like a relay — <strong>each administration builds on the last</strong>. Jubilee has laid the groundwork for future leaders to create a <strong>modern, prosperous nation</strong>.</p>
+          <p>As a <strong>senior partner in Kenya’s democracy</strong>, we stand ready to work with all progressive forces to <strong>protect our legacy</strong> and complete the vision we started.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Call to Action -->
-    <div class="section-dark text-center bg-danger text-white p-5 rounded">
+    <!-- === 2F. Call to Action === -->
+    <section id="cta" class="section-dark text-center bg-danger text-white p-5 rounded animate__animated animate__fadeInUp">
       <h2>The Future of Jubilee</h2>
-      <p>
-        Today, the <strong>New Jubilee Party</strong> is
-        <strong>renewed, reenergized, and ready</strong> to keep championing
-        <strong>unity, service, and development</strong> for every Kenyan —
-        <strong>in every corner of the country</strong>.
-      </p>
+      <p>Today, the <strong>New Jubilee Party</strong> is <strong>renewed, reenergized, and ready</strong> to keep championing <strong>unity, service, and development</strong> for every Kenyan — <strong>in every corner of the country</strong>.</p>
       <h3 class="mt-4">Jubilee Party: The Home for All Kenyans</h3>
       <p class="fw-bold">Tusonge Mbele Pamoja!</p>
       <a href="https://membership.jubileeparty.ke/" class="btn btn-light btn-lg mt-3">Join Us Today</a>
-    </div>
+    </section>
+
   </div>
 </section>
 
-{% endblock %} {% block scripts %}
+{% endblock %}
+
+{% block scripts %}
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const aboutSections = document.querySelectorAll(".about-section");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(
-              "animate__animated",
-              "animate__fadeInUp"
-            );
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    aboutSections.forEach((section) => {
-      observer.observe(section);
-    });
+    const aboutSections = document.querySelectorAll(".about-section, .about-hero-content, .section-dark, .card");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    aboutSections.forEach(section => observer.observe(section));
   });
 </script>
 {% endblock %}
