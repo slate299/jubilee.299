@@ -1,0 +1,183 @@
+/* === About Hero Section === */
+.about-hero {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),
+  url("/static/party_images/tuko_pamoja.jpg") center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  position: relative;
+}
+
+.about-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-hero h1 {
+  color: #f8f9fa;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.about-hero p {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 40vh;
+    padding: 3rem 1rem;
+  }
+
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-hero p {
+    font-size: 1.2rem;
+  }
+}
+
+/* === About Content === */
+.about-content {
+  padding: 4rem 0;
+}
+
+.about-section {
+  margin-bottom: 4rem;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.anthem-tagline {
+  font-size: 1.25rem;
+  color: #c82333; /* Jubilee red or your preferred highlight */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.legacy-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.inclusion-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.inclusion-card {
+  flex: 1;
+  min-width: 200px;
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.inclusion-card h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* === Anthem Video Section === */
+.about-section.text-center {
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.ratio-16x9 {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 600px; /* Limits maximum width */
+}
+
+.about-section iframe {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.anthem-tagline {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: #c82333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* More specific mobile fixes */
+@media (max-width: 768px) {
+  .about-section.text-center {
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .ratio-16x9 {
+    margin-bottom: 1.5rem;
+  }
+
+  .anthem-tagline {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* CTA Banner */
+.section-dark {
+  background: #c82333; /* Jubilee red */
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.section-dark .btn {
+  font-weight: 600;
+}
+
+.section-dark h2,
+.section-dark h3 {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+  .about-hero p {
+    font-size: 1.1rem;
+  }
+  .about-section iframe {
+    height: 250px;
+  }
+  .about-section iframe {
+    height: 400px;
+  }
+}
