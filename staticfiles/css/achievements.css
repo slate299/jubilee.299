@@ -197,6 +197,37 @@ a.btn:hover {
   color: #fff;
 }
 
+.about-transformation-section {
+  position: relative;
+  background-color: #1a1a1a; /* fallback in case no Bootstrap bg-dark */
+  padding: 3rem 0;
+  color: #fff;
+}
+
+.about-transformation-section h2 {
+  color: #e30613; /* Jubilee Red */
+}
+
+.uhuru-signature {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  opacity: 0.95;
+  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+  transition: opacity 0.3s ease;
+}
+
+.uhuru-signature:hover {
+  opacity: 1;
+}
+
+@media (max-width: 576px) {
+  .uhuru-signature {
+    max-width: 150px;
+  }
+}
+
 /* ======= Infrastructure Section ======= */
 .infrastructure-highlights .highlight-item {
   display: flex;

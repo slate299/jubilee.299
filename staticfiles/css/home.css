@@ -162,6 +162,14 @@
   background: #f8f9fa; /* Light grey like Bootstrap's bg-light */
 }
 
+/* JOIN SECTION */
+.join-section {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #f8f9fa; /* Light grey like Bootstrap's bg-light */
+}
+
 /* Heading */
 .join-section h2 {
   font-size: clamp(2rem, 5vw, 3rem);
@@ -193,13 +201,13 @@
 .join-card {
   border-radius: 1rem;
   background: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .join-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* Icon Wrapper */
@@ -258,7 +266,7 @@
   background: #ab0d18; /* Deep dark red */
   color: #fff;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   padding: 4rem 0;
 }
 
@@ -284,7 +292,7 @@
 
 .highlight-section .section-title {
   letter-spacing: -0.5px;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   line-height: 1.2;
 }
 
@@ -292,7 +300,7 @@
   border-radius: 50px;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: #e11b22;
 }
 
@@ -304,7 +312,7 @@
 .highlight-section .highlight-carousel {
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .highlight-section .carousel-item {
@@ -339,11 +347,16 @@
 .highlight-section .highlight-caption {
   position: absolute;
 
-  bottom: 10px !important; 
+  bottom: 10px !important;
   width: 100%;
   text-align: center;
   padding: 1rem 2rem;
-  background: linear-gradient(180deg, rgba(0,0,0,0.85) 10%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.85) 10%,
+    rgba(0, 0, 0, 0.4) 60%,
+    transparent 100%
+  );
   color: #fff;
   border-radius: 0 0 1rem 1rem;
   z-index: 2;
@@ -371,7 +384,7 @@
   background: transparent;
   color: #fff;
   border: 2px solid #fff;
-} 
+}
 
 /* Responsive tweaks */
 @media (max-width: 991.98px) {
@@ -390,7 +403,7 @@
 
 /* === VOLUNTEER SECTION === */
 #volunteer-section {
-  background: #f8f9fa; 
+  background: #f8f9fa;
   padding: 4rem 0;
 }
 
@@ -408,7 +421,7 @@
 
 #volunteer-section .img-fluid {
   border-radius: 1rem;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 
@@ -488,14 +501,20 @@
   background-color: #f8d7da; /* pale red/pink */
   border-color: #a00c15;
   color: #a00c15;
-   border-radius: 50px;
+  border-radius: 50px;
   padding: 0.6rem 1.5rem;
 }
 
 /* Smooth fade animation for form */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive: Stack nicely on small screens */
@@ -527,7 +546,7 @@
 
 .concerns-section h2 {
   letter-spacing: -0.5px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .concerns-section p {
@@ -546,7 +565,7 @@
 
 .concerns-section .concerns-btn:hover {
   background: #fff; /* Invert background */
-  color: #b10f1b;   /* Red text on hover */
+  color: #b10f1b; /* Red text on hover */
   transform: translateY(-2px); /* Subtle lift */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
@@ -589,7 +608,7 @@
 }
 
 #testimonials-section .testimonial-item p {
-  min-height: 120px; 
+  min-height: 120px;
 }
 
 #testimonials-section .testimonial-img {
@@ -639,7 +658,7 @@
   .testimonial-item {
     padding: 2rem;
   }
-  
+
   .testimonial-img {
     width: 100px;
     height: 100px;
@@ -650,17 +669,17 @@
   #testimonials-section {
     padding: 4rem 0;
   }
-  
+
   .testimonial-item {
     text-align: center;
   }
-  
+
   .testimonial-img {
     width: 100px;
     height: 100px;
     margin-bottom: 1.5rem;
   }
-  
+
   #testimonials-section .carousel-inner {
     min-height: 350px; /* give more breathing space for stacked layout */
   }
@@ -670,7 +689,7 @@
   #testimonials-section .display-4 {
     font-size: 2.2rem;
   }
-  
+
   .testimonial-item p {
     font-size: 1rem;
   }
@@ -681,7 +700,7 @@
   background: #ab0d18; /* deep red, same as highlight */
   color: #fff;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   padding: 6rem 0;
 }
 
@@ -701,11 +720,20 @@
   margin: 1rem auto 0;
 }
 
+.news-row {
+  min-height: 400px;
+}
+
+.news-image-wrapper {
+  position: relative;
+  min-height: 250px;
+}
+                                                                                 
 #news-section .carousel-inner {
   min-height: 400px;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 #news-section .carousel-item {
@@ -753,6 +781,13 @@
 }
 
 #news-section .news-image {
+  position: absolute;
+  top: 0;
+  left: 0;   /* Add this if missing */
+  right: 0;  /* Add this if missing */
+  bottom: 0; /* Optional if h-100 works */
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -809,7 +844,7 @@
 
 .event-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .event-date {
@@ -850,7 +885,7 @@
 }
 
 .no-events-alert {
-  background-color: #e30613;  /* Your strong red */
+  background-color: #e30613; /* Your strong red */
   border: none;
   color: #fff;
 }
