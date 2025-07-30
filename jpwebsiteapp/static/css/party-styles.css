@@ -10,14 +10,47 @@
   --white: #fff;
   --black: #000;
   --transition: all 0.3s ease;
-}
-
-:root {
   --jubilee-red: #e30613;
   --jubilee-dark: #1a1a1a;
   --jubilee-light: #f8f9fa;
   --jubilee-white: #ffffff;
   --jubilee-black: #000000;
+}
+
+/* ==== GLOBAL FIX ==== */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-top: 0;
+}
+
+/* Ensure containers never overflow */
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+/* Ensure loader covers only the viewport */
+.page-loader {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Defensive fix: no horizontal scroll on rows */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Defensive fix for any images: never overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ====== Loader ====== */
@@ -56,169 +89,147 @@
 }
 
 /* ====== Header ====== */
+/* ====== NAVBAR FIXES ====== */
 .announcement-bar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  background: linear-gradient(135deg, #c00511, #000);
-  color: var(--white);
-  z-index: 1051;
-  font-size: 14px;
-}
-
-.announcement-bar p {
-  margin: 0;
-  padding: 6px 0;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.navbar {
-  position: fixed;
-  top: 34px; /* Announcement bar height */
-  left: 0;
   right: 0;
-  width: 100%;
-  background: var(--white);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ddd;
-  z-index: 1050;
-  transition: var(--transition);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  z-index: 1040;
+  background: linear-gradient(135deg, #c00511, #000);
 }
 
-.navbar .container {
+/* === BEAUTIFUL RESPONSIVE NAVBAR === */
+.navbar {
+  margin-top: 35px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  background-color: var(--jubilee-white);
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.navbar-brand {
+  margin-right: 1rem;
+}
+
+.navbar-brand img {
+  height: 45px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
 }
 
 .navbar-toggler {
   border: none;
-  outline: none;
-  padding: 6px 10px;
-}
-
-.navbar-collapse {
-  flex-basis: 100%;
-}
-
-.navbar-nav {
-  margin-left: auto;
-}
-
-.navbar-nav .nav-link {
-  margin-right: 20px;
-  font-weight: 600;
-  color: var(--dark-color);
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
+  font-size: 1.25rem;
   color: var(--primary-color);
 }
 
-.btn.btn-primary {
-  background: var(--primary-color);
-  border: none;
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* NAV ITEMS */
+.navbar-nav {
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 1.2rem;
+}
+
+.navbar-nav .nav-link {
   font-weight: 600;
-  transition: background 0.2s ease;
-  padding: 10px 25px;
-  border-radius: 50px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 1rem;
+  position: relative;
+  letter-spacing: 0.5px;
+  color: var(--dark-color);
+  position: relative;
+  padding: 0.5rem 0;
+  transition: var(--transition);
 }
 
-.btn.btn-primary:hover {
-  background: #c00511;
+.navbar-nav .nav-link:hover {
+  color: var(--jubilee-black);
 }
 
-@media (max-width: 991px) {
+.navbar-nav .nav-link:hover::after {
+  background-color: var(--black); /* black underline on hover */
+}
+
+/* Hover underline effect */
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--primary-color);
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: background-colour 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* JOIN US BUTTON STYLING */
+.navbar .btn-danger {
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border-radius: 30px;
+  background-color: var(--primary-color);
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.navbar .btn-danger:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+.navbar-shrink {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+/* 1. Prevent the collapse from taking up full space */
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+
+/* === MOBILE ADJUSTMENTS === */
+@media (max-width: 992px) {
   .navbar-nav {
-    background: var(--white);
-    padding: 10px 20px;
-    border-radius: 4px;
+    margin-top: 2rem;
   }
 
-  .navbar-nav .nav-link {
-    display: block;
-    margin: 0;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+  .navbar-nav .nav-item {
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+    text-align: center;
   }
 
-  .navbar-nav .nav-link:last-child {
-    border-bottom: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-
-  .announcement-bar p {
-    font-size: 13px;
-    padding: 5px 10px;
-  }
-}
-
-@media (max-width: 576px) {
-  .navbar {
-    padding: 8px 10px;
-  }
-
-  .navbar .container {
-    max-width: 100%;
-    padding: 0;
-  }
-
-  .navbar-nav {
-    padding: 8px 0;
-    border-radius: 0;
-  }
-
-  .navbar-nav .nav-link {
-    text-align: left;
-    padding: 12px 20px;
-  }
-
-  .announcement-bar p {
-    font-size: 12px;
-    padding: 4px 10px;
-  }
-
-  .btn.btn-primary {
-    margin-left: 10px;
-    padding: 8px 20px;
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 400px) {
-  .navbar {
-    padding: 6px 8px;
-  }
-
-  .navbar-nav .nav-link {
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-
-  .announcement-bar p {
-    font-size: 11px;
-  }
-
-  .btn.btn-primary {
-    font-size: 13px;
-    padding: 8px 15px;
+  .navbar .btn-danger {
+    width: 100%;
   }
 }
 
@@ -238,6 +249,10 @@ footer::before {
   width: 100%;
   height: 5px;
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 footer h5 {

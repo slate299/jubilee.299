@@ -1,0 +1,270 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Flagship Projects - Kenya Government Delivery Unit{% endblock %}
+
+{% block content %}
+<div class="delivery-flagship-page">
+    <!-- Header Section -->
+    <header class="delivery-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>Flagship Projects</h1>
+                    <p class="lead">Tracking Kenya's transformative development agenda</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <img src="{% static 'delivery/images/flag_of_kenya.png' %}" alt="Kenya Flag" class="header-flag">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="delivery-breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Flagship Projects</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="delivery-main">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="flagship-intro mb-5">
+                <h2 class="section-title">The Big Four Agenda &amp; Other Priority Projects</h2>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p>The Government of Kenya is implementing transformative projects across the country as part of the Big Four Agenda and other national priorities. These flagship projects are carefully monitored by the Delivery Unit to ensure timely implementation and maximum impact to citizens.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Big Four Pillars -->
+            <section class="big-four-pillars mb-5">
+                <h2 class="section-title">The Big Four Pillars</h2>
+                <div class="row g-4">
+                    <!-- Manufacturing -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pillar-card manufacturing">
+                            <div class="pillar-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3>Manufacturing</h3>
+                            <p>Expanding Kenya's manufacturing sector to 15% of GDP</p>
+                            <a href="#manufacturing" class="btn btn-pillar">View Projects</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Affordable Housing -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pillar-card housing">
+                            <div class="pillar-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3>Affordable Housing</h3>
+                            <p>500,000 affordable homes by 2022</p>
+                            <a href="#housing" class="btn btn-pillar">View Projects</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Universal Healthcare -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pillar-card healthcare">
+                            <div class="pillar-icon">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <h3>Universal Healthcare</h3>
+                            <p>Quality healthcare for all Kenyans</p>
+                            <a href="#healthcare" class="btn btn-pillar">View Projects</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Food Security -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pillar-card agriculture">
+                            <div class="pillar-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3>Food Security</h3>
+                            <p>100% food and nutrition security</p>
+                            <a href="#agriculture" class="btn btn-pillar">View Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects by Sector -->
+            <section class="projects-by-sector">
+                <!-- Manufacturing Projects -->
+                <div id="manufacturing" class="sector-section mb-5">
+                    <h2 class="sector-title">Manufacturing Projects</h2>
+                    <div class="row g-4">
+                        {% for project in manufacturing_projects %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card">
+                                {% if project.image %}
+                                <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                                {% endif %}
+                                <div class="card-body">
+                                    <h3>{{ project.title }}</h3>
+                                    <p class="project-location"><i class="fas fa-map-marker-alt"></i> {{ project.location }}</p>
+                                    <p>{{ project.description|truncatewords:30 }}</p>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar" role="progressbar" style="width: {{ project.completion_percentage }}%" 
+                                            aria-valuenow="{{ project.completion_percentage }}" aria-valuemin="0" aria-valuemax="100">
+                                            {{ project.completion_percentage }}%
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Housing Projects -->
+                <div id="housing" class="sector-section mb-5">
+                    <h2 class="sector-title">Affordable Housing Projects</h2>
+                    <div class="row g-4">
+                        {% for project in housing_projects %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card">
+                                {% if project.image %}
+                                <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                                {% endif %}
+                                <div class="card-body">
+                                    <h3>{{ project.title }}</h3>
+                                    <p class="project-location"><i class="fas fa-map-marker-alt"></i> {{ project.location }}</p>
+                                    <p>{{ project.description|truncatewords:30 }}</p>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar" role="progressbar" style="width: {{ project.completion_percentage }}%" 
+                                            aria-valuenow="{{ project.completion_percentage }}" aria-valuemin="0" aria-valuemax="100">
+                                            {{ project.completion_percentage }}%
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Healthcare Projects -->
+                <div id="healthcare" class="sector-section mb-5">
+                    <h2 class="sector-title">Universal Healthcare Projects</h2>
+                    <div class="row g-4">
+                        {% for project in healthcare_projects %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card">
+                                {% if project.image %}
+                                <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                                {% endif %}
+                                <div class="card-body">
+                                    <h3>{{ project.title }}</h3>
+                                    <p class="project-location"><i class="fas fa-map-marker-alt"></i> {{ project.location }}</p>
+                                    <p>{{ project.description|truncatewords:30 }}</p>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar" role="progressbar" style="width: {{ project.completion_percentage }}%" 
+                                            aria-valuenow="{{ project.completion_percentage }}" aria-valuemin="0" aria-valuemax="100">
+                                            {{ project.completion_percentage }}%
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Agriculture Projects -->
+                <div id="agriculture" class="sector-section mb-5">
+                    <h2 class="sector-title">Food Security Projects</h2>
+                    <div class="row g-4">
+                        {% for project in agriculture_projects %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-card">
+                                {% if project.image %}
+                                <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                                {% endif %}
+                                <div class="card-body">
+                                    <h3>{{ project.title }}</h3>
+                                    <p class="project-location"><i class="fas fa-map-marker-alt"></i> {{ project.location }}</p>
+                                    <p>{{ project.description|truncatewords:30 }}</p>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar" role="progressbar" style="width: {{ project.completion_percentage }}%" 
+                                            aria-valuenow="{{ project.completion_percentage }}" aria-valuemin="0" aria-valuemax="100">
+                                            {{ project.completion_percentage }}%
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other Projects -->
+            <section class="other-projects mb-5">
+                <h2 class="section-title">Other Priority Projects</h2>
+                <div class="row g-4">
+                    {% for project in other_projects %}
+                    <div class="col-md-6 col-lg-3">
+                        <div class="project-card-sm">
+                            <h3>{{ project.title }}</h3>
+                            <p class="project-sector">{{ project.get_sector_display }}</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" role="progressbar" style="width: {{ project.completion_percentage }}%" 
+                                    aria-valuenow="{{ project.completion_percentage }}" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                            <a href="{% url 'project_detail' project.slug %}" class="btn btn-outline-primary btn-sm">Details</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="delivery-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Kenya Government Delivery Unit</h4>
+                    <p>Monitoring and facilitating the implementation of Kenya's development agenda</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/projects">All Projects</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact Us</h4>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Harambee House, Nairobi</p>
+                        <p><i class="fas fa-phone"></i> +254 20 221 0000</p>
+                        <p><i class="fas fa-envelope"></i> info@delivery.go.ke</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {% now "Y" %} Government of Kenya. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock %}

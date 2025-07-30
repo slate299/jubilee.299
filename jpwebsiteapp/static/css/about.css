@@ -1,40 +1,88 @@
-/* === About Hero Section === */
-.about-hero {
+/* ===== ABOUT_HERO ===== */
+#hero.about-hero {
+  height: 100vh;
+  padding: 5rem 0;
   background: linear-gradient(
-      rgba(0, 0, 0, 0.5), 
-      rgba(0, 0, 0, 0.5)
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
     ),
-  url("/static/party_images/tuko_pamoja.jpg") center/cover no-repeat;
-  color: #fff;
+    url("/static/party_images/tuko_pamoja.jpg") center/cover no-repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60vh;
   position: relative;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  animation: bgFadeIn 2s ease-in-out;
+}
+
+@keyframes bgFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .about-hero-content {
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
+  color: #fff;
 }
 
 .about-hero h1 {
-  color: #f8f9fa;
-  font-size: 3rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 .about-hero p {
-  color: #fff;
   font-size: 1.5rem;
-  margin-top: 1rem;
+  color: #f1f1f1;
+}
+
+/* Call-to-action button */
+.btn-cta {
+  background-color: #e30613;
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-cta:hover {
+  background-color: #c20511;
+  transform: scale(1.05);
+  color: #fff;
+}
+
+/* Make columns narrower on desktops to bring them closer */
+.tighter-columns > .col-md-6 {
+  flex: 0 0 46%;
+  max-width: 46%;
+}
+
+/* Reduce horizontal gap */
+.tighter-columns {
+  justify-content: center;
+  gap: 4%;
 }
 
 @media (max-width: 768px) {
-  .about-hero {
-    min-height: 40vh;
-    padding: 3rem 1rem;
+  /* Full width on small screens */
+  .tighter-columns > .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .tighter-columns {
+    gap: 0;
   }
 
   .about-hero h1 {
@@ -44,140 +92,364 @@
   .about-hero p {
     font-size: 1.2rem;
   }
+
+  .btn-cta {
+    font-size: 1rem;
+    padding: 0.6rem 1.4rem;
+  }
 }
 
-/* === About Content === */
-.about-content {
+/* ===== FOUNDING_VISION ===== */
+.about-content-section {
+  background-color: #f8f9fa;
   padding: 4rem 0;
 }
 
-.about-section {
-  margin-bottom: 4rem;
-}
-
-.about-section h2 {
-  font-size: 2rem;
+.about-content-section .section-title {
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
 }
 
-.about-section p {
-  font-size: 1.1rem;
+.about-content-section .text-danger {
+  color: #e30613 !important;
+}
+
+.about-content-section p {
   line-height: 1.7;
 }
 
-.anthem-tagline {
-  font-size: 1.25rem;
-  color: #c82333; /* Jubilee red or your preferred highlight */
-  text-transform: uppercase;
-  letter-spacing: 1px;
+/* Enlarged and fitted image */
+.image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.image-wrapper img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper img:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .about-content-section .section-title {
+    font-size: 2rem;
+  }
+
+  .about-content-section p {
+    font-size: 1rem;
+  }
+
+  .about-content-section .lead {
+    font-size: 1.1rem;
+  }
+
+  .image-wrapper img {
+    max-height: none;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/* ===== LEGACY ===== */
+.about-legacy-section {
+  background-color: #ab0d18; /* Jubilee red */
+  color: #fff;
+  padding: 5rem 0;
+}
+
+.about-legacy-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.about-legacy-section .text-black {
+  color: #111 !important;
+}
+
+.about-legacy-section p {
+  line-height: 1.7;
 }
 
 .legacy-list li {
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
-}
-
-.inclusion-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.inclusion-card {
-  flex: 1;
-  min-width: 200px;
-  background: #f8f9fa;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.inclusion-card h4 {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-/* === Anthem Video Section === */
-.about-section.text-center {
-  margin-bottom: 3rem;
-  padding: 2rem 0;
-}
-
-.ratio-16x9 {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
   position: relative;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 600px; /* Limits maximum width */
 }
 
-.about-section iframe {
-  width: 100%;
-  height: 80%;
+/* Optional: Make ✅ emoji a bit bolder */
+.legacy-list li::before {
+  content: "✅";
   position: absolute;
-  top: 0;
   left: 0;
-  border: none;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  top: 0;
 }
 
-.anthem-tagline {
-  display: block;
-  margin-top: 1.5rem;
-  font-size: 1.25rem;
-  color: #c82333;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+/* Image Styling */
+.about-legacy-section .image-wrapper img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 
-/* More specific mobile fixes */
+.about-legacy-section .image-wrapper img:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .about-section.text-center {
-    padding: 1rem 0;
-    margin-bottom: 2rem;
+  .about-legacy-section .section-title {
+    font-size: 2rem;
   }
 
-  .ratio-16x9 {
-    margin-bottom: 1.5rem;
-  }
-
-  .anthem-tagline {
-    margin-top: 1rem;
+  .legacy-list li {
     font-size: 1rem;
   }
 }
 
-/* CTA Banner */
-.section-dark {
-  background: #c82333; /* Jubilee red */
-  color: #fff;
-  border-radius: 1rem;
+/* ===== PARTY FOR EVERYONE ===== */
+.about-inclusive-section {
+  background-color: #f8f9fa;
+  padding: 5rem 0;
 }
 
-.section-dark .btn {
+.about-inclusive-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.inclusive-card {
+  border: 2px solid #e30613;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.inclusive-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inclusive-card h4 {
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
-.section-dark h2,
-.section-dark h3 {
-  font-weight: 700;
-  color: #fff;
+.inclusive-card p {
+  font-size: 1rem;
 }
 
-/* Responsive tweaks */
+.inclusive-divider .inclusive-divider-line {
+  width: 60px;
+  height: 3px;
+  background-color: red;
+  border-radius: 2px;
+}
+
+/* Responsive fixes */
 @media (max-width: 768px) {
-  .about-hero h1 {
+  .about-inclusive-section .section-title {
     font-size: 2rem;
   }
-  .about-hero p {
-    font-size: 1.1rem;
+
+  .inclusive-card h4 {
+    font-size: 1.2rem;
   }
-  .about-section iframe {
-    height: 250px;
+
+  .inclusive-card p {
+    font-size: 0.95rem;
   }
-  .about-section iframe {
-    height: 400px;
-  }
+}
+
+/* Anthem Section Styling */
+#anthem {
+  background-color: #b30000; /* Jubilee red */
+  color: white;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Divider and Music Icon Styling */
+#anthem .anthem-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#anthem .anthem-divider .anthem-divider-line {
+  width: 60px;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#anthem .anthem-divider i {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0; /* remove unnecessary margin */
+  animation: pulse 1.5s infinite;
+}
+
+/* Optional: Music icon pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Heading */
+#anthem h2 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+/* Lead paragraph */
+#anthem p.lead {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Anthem Tagline */
+.anthem-tagline {
+  font-size: 1.1rem;
+  color: #fff;
+  background: #ed0225ff;
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive YouTube iframe */
+#anthem .ratio iframe {
+  border: 4px solid white;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Animation Tweaks */
+#anthem .animate__animated {
+  --animate-duration: 1.2s;
+}
+
+/* ===== MOVING FORWARD ===== */
+#moving-forward img {
+  object-fit: cover;
+  max-height: 420px;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== CTA ===== */
+.cta-section {
+  background-color: #ab0d18; /* Bold Jubilee red */
+  color: #ffffff; 
+  padding: 4rem 2rem;
+  border-radius: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.cta-heading {
+  color: #f8f9fa;
+  font-weight: 900;
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.cta-text {
+  color: #ffffff;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-subheading {
+  color: #000000;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.cta-tagline {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.cta-tagline {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.join-btn {
+  color: #d1001f;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px #ffffff88;
+}
+
+.join-btn:hover {
+  background-color: #f8f9fa;
+  color: #b0001a;
+  transform: scale(1.05);
+}
+
+.cta-divider {
+  width: 80px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 100px;
+  position: relative;
+}
+
+.cta-divider::before,
+.cta-divider::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 6px;
+  background: #000;
+  top: 0;
+  border-radius: 100px;
+}
+
+.cta-divider::before {
+  left: -50px;
+}
+
+.cta-divider::after {
+  right: -50px;
 }
