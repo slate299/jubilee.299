@@ -848,7 +848,7 @@
 }
 
 .event-date {
-  background: #e30613;
+  background: #b10f1b;
   border-radius: 0.5rem;
   min-width: 50px;
 }
@@ -885,7 +885,7 @@
 }
 
 .no-events-alert {
-  background-color: #e30613; /* Your strong red */
+  background-color: #b10f1b; /* Your strong red */
   border: none;
   color: #fff;
 }

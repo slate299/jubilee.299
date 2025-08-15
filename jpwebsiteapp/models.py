@@ -75,25 +75,33 @@ class Volunteer(models.Model):
 
 class Project(models.Model):
     CATEGORY_CHOICES = [
+        ('ict', 'ICT'),
+        ('healthcare', 'Healthcare'),
+        ('social_inclusion', 'Social Inclusion'),
+        ('education', 'Education'),
+        ('youth_women', 'Youth and Women'),
+        ('security', 'Security'),
+        ('lands', 'Lands'),
         ('infrastructure', 'Infrastructure'),
-        ('health', 'Health'),
-        ('digital', 'Digital'),
-        ('other', 'Other'),
+        ('food_security', 'Food Security'),
+        ('energy', 'Energy'),
+        ('ease_business', 'Ease of Doing Business'),
+        ('huduma_centers', 'Huduma Centers'),
     ]
 
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
-    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='other')
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
     description = models.TextField()
     image = models.ImageField(upload_to='project_images/')
     created_at = models.DateTimeField(auto_now_add=True)
+    is_featured = models.BooleanField(default=False)  # ✅ NEW FIELD
 
     def __str__(self):
         return self.title
 
     def get_category_display(self):
         return dict(self.CATEGORY_CHOICES).get(self.category, 'Other')
-
 
 class Concern(models.Model):
     first_name = models.CharField(max_length=100)

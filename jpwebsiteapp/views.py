@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, get_object_or_404
 from .models import NewsItem, Event, County, Volunteer, Project, Testimonial, HeroSlide, HighlightSlide
 from .forms import ConcernForm
+from itertools import zip_longest
 
 #create your views here
 
@@ -55,14 +56,30 @@ def about(request):
 def leadership(request):
     return render(request, 'leadership.html')
 
+# Legacy Page
+def legacy(request):
+    featured_projects = Project.objects.filter(is_featured=True)[:3]
+    return render(request, 'legacy.html', {
+        'featured_projects': featured_projects
+    })
+
 # Achievements Page
 def achievements(request):
-    projects = Project.objects.all()
-    return render(request, 'achievements.html', {'projects': projects})
+    categories = Project.CATEGORY_CHOICES
+    projects = Project.objects.all()  # Get all projects
+    featured_projects = Project.objects.filter(is_featured=True)[:3]
 
+    return render(request, 'achievements.html', {
+        'categories': categories,
+        'projects': projects,
+        'featured_projects': featured_projects,
+    })
+
+# Project Detail Page
 def project_detail(request, slug):
     project = get_object_or_404(Project, slug=slug)
     return render(request, 'project_detail.html', {'project': project})
+
 
 def events(request):
     all_events = Event.objects.all().order_by('date')  # Upcoming events first
@@ -114,19 +131,8 @@ def news(request):
     })
    
 # big4_page
-def big4_home(request):
-    # This could come from DB later!
-    raw_data = "Manufacturing:87,Affordable Housing:72,Healthcare:65,Food Security:91"
-    pillars = []
-    for item in raw_data.split(','):
-        name, value = item.split(':')
-        pillars.append({'name': name.strip(), 'value': int(value.strip())})
-
-    context = {
-        'pillars': pillars,
-    }
-    return render(request, 'big4_home.html', context)
-
+def big4(request):
+    return render(request, 'big4.html')
 
 def manufacturing_view(request):
     return render(request, 'big4/manufacturing.html')

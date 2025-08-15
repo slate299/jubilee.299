@@ -1,0 +1,548 @@
+/* === Achievements Hero Section === */
+.achievements-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  url("/static/party_images/nai_skyline2.jpg") center center/cover no-repeat;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  /* background: rgba(0, 0, 0, 0.5); optional dark overlay behind text/image */
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.achievements-hero h1 {
+  color: #c82333;
+  font-weight: 1000;
+}
+
+.achievements-hero img {
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 1rem;
+}
+
+/* === Hero Tagline === */
+.hero-tagline {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+/* === Hero Button === */
+.btn-hero {
+  display: inline-block;
+  background: #c82333; /* Jubilee red */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-hero:hover {
+  background: #a71d2a;
+  color: #fff;
+}
+
+.btn-hero i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-hero:hover i {
+  transform: translateY(2px);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .hero-tagline {
+    font-size: 1rem;
+  }
+  .btn-hero {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+/* ======= Promise Section Styling ======= */
+#promise-section {
+  background-color: #b71c1c; /* Keep original red */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  position: relative;
+}
+
+#promise-section .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+#promise-section .section-divider {
+  width: 60px;
+  height: 4px;
+  background-color: #fff;
+  margin: 0.75rem auto 2rem auto;
+  border-radius: 2px;
+}
+
+#promise-section p.lead {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#promise-section .signature-wrapper {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+#promise-section .uk-signature {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1); /* Makes signature white */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#promise-section .uk-signature:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+#promise-section .signature-wrapper p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  #promise-section .section-title {
+    font-size: 1.75rem;
+  }
+  #promise-section p.lead {
+    font-size: 1rem;
+  }
+}
+
+/* ======= Key Achievements Section ======= */
+#key-achievements {
+  background-color: #f8f9fa;
+}
+
+#key-achievements .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+#key-achievements .section-divider {
+  width: 80px;
+  height: 3px;
+  background-color: #b71c1c;
+  margin: 0.5rem auto 1.5rem auto;
+  border-radius: 2px;
+}
+
+#key-achievements .lead {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.achievement-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.achievement-card .achievement-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.achievement-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.achievement-body {
+  padding: 1rem;
+}
+
+.achievement-body h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.achievement-body p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Centered "See All Achievements" button */
+#key-achievements .btn-danger {
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#key-achievements .btn-danger:hover {
+  transform: scale(1.05);
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 991px) {
+  .achievement-card .achievement-img img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  #key-achievements .section-title {
+    font-size: 2rem;
+  }
+  
+  .achievement-card .achievement-img img {
+    height: 180px;
+  }
+
+  .achievement-body h3 {
+    font-size: 1.1rem;
+  }
+
+  .achievement-body p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .achievement-card .achievement-img img {
+    height: 160px;
+  }
+
+  #key-achievements .btn-danger {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* ===== Big Four Intro Section ===== */
+#bigfour-intro {
+  background-color: #b71c1c;
+  color: #fff;
+}
+
+#bigfour-intro .section-title {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Divider Line */
+#bigfour-intro .section-divider {
+  width: 60px;
+  height: 4px;
+  background-color: #fff;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 2px;
+}
+
+#bigfour-intro .section-subtext {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.big-four-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.big-four-list li {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.big-four-list i {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+#bigfour-intro .btn {
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#bigfour-intro .btn:hover {
+  background-color: #fff;
+  color: #b71c1c;
+}
+
+/* ===== Responsive Styling ===== */
+@media (max-width: 768px) {
+  #bigfour-intro .section-title {
+    font-size: 1.6rem;
+  }
+  .big-four-list li {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== Infrastructure Showcase ===== */
+#infrastructure-showcase {
+  background-color: #f8f9fa;
+}
+
+#infrastructure-showcase .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #b71c1c;
+}
+
+#infrastructure-showcase .section-divider {
+  width: 60px;
+  height: 4px;
+  background-color: #b71c1c;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 2px;
+}
+
+#infrastructure-showcase .lead {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* ===== Highlights ===== */
+.infrastructure-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+}
+
+.highlight-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: #b71c1c;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.highlight-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .video-wrapper {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #infrastructure-showcase .section-title {
+    font-size: 1.6rem;
+  }
+  .highlight-item {
+    padding: 0.9rem;
+  }
+  .highlight-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
+
+/* ===== Devolution ===== */
+#devolution-impact .section-divider {
+  width: 80px;
+  height: 4px;
+  background: #fff;
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+/* Impact Cards */
+.impact-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.impact-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icons */
+.impact-icon {
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+/* Numbers */
+.impact-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .impact-card {
+    padding: 20px;
+  }
+  .impact-number {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===== Legacy Highlight Section ===== */
+#legacy-highlight {
+  background: linear-gradient(135deg, #f5f5f5, #ffffff);
+}
+
+#legacy-highlight .section-divider {
+  width: 60px;
+  height: 4px;
+  background-color: #b71c1c;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+#legacy-highlight h2 {
+  font-weight: 700;
+  color: #b71c1c;
+}
+
+#legacy-highlight p {
+  line-height: 1.7;
+}
+
+#legacy-highlight .btn-danger {
+  border-radius: 50px;
+  font-weight: 500;
+  padding: 0.8rem 2.5rem;
+  transition: all 0.3s ease;
+}
+
+#legacy-highlight .btn-danger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Mobile Adjustments ===== */
+@media (max-width: 991px) {
+  #legacy-highlight .text-lg-start {
+    text-align: center !important;
+  }
+
+  #legacy-highlight .ps-lg-4 {
+    padding-left: 0 !important;
+  }
+
+  #legacy-highlight .btn-danger {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+}
+
+/* ===== Global Responsive Video Wrapper ===== */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 1rem; /* Matches rounded sections */
+  border: 6px solid #fff; /* White frame for contrast */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-color: #000; /* Prevents empty space flash */
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+/* Hover Effect for Embedded Videos */
+.video-wrapper:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Mobile Adjustments ===== */
+@media (max-width: 576px) {
+  .video-wrapper {
+    border-radius: 0.75rem;
+    border-width: 4px;
+  }
+}

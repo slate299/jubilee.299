@@ -207,24 +207,27 @@
   <section id="volunteer-section" class="py-6">
     <div class="container">
       <div class="row align-items-center">
+
         <!-- Left Image -->
-        <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-delay="0" data-aos-duration="1200">
           <img src="{% static 'party_images/volunteer.png' %}"
-               alt="Volunteer with Jubilee"
-               width="800"
-               height="600"
-               class="img-fluid rounded-3 shadow-lg"
-               data-aos="fade-right" />
+              alt="Volunteer with Jubilee"
+              width="800"
+              height="600"
+              class="img-fluid rounded-3 shadow-lg" />
         </div>
+
         <!-- Right Text & Form -->
-        <div class="col-lg-6" data-aos="fade-left">
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1200">
           <div class="ps-lg-5">
             <h2 class="display-5 fw-bold mb-4">Make a Difference</h2>
             <p class="lead mb-4">Join our team of dedicated volunteers and help shape Kenya's future.</p>
+
             <div id="volunteerFormContainer">
               <button id="volunteerBtn" class="btn btn-lg px-4 py-2">
                 Become a Volunteer <i class="fas fa-arrow-right ms-2"></i>
               </button>
+
               <div id="volunteerForm" class="mt-4">
                 <div class="card border-0 shadow">
                   <div class="card-body p-4 p-md-5">
@@ -235,34 +238,41 @@
                           novalidate>
                       {% csrf_token %}
                       <input type="hidden" name="form_type" value="volunteer" />
+
                       <div class="row g-3">
                         <div class="col-md-6">
                           <label for="fullName" class="form-label">Full Name</label>
                           <input type="text"
-                                 class="form-control"
-                                 id="fullName"
-                                 name="fullName"
-                                 required />
+                                class="form-control"
+                                id="fullName"
+                                name="fullName"
+                                required />
                           <div class="invalid-feedback">Please provide your full name.</div>
                         </div>
+
                         <div class="col-md-6">
                           <label for="email" class="form-label">Email</label>
                           <input type="email" class="form-control" id="email" name="email" required />
                           <div class="invalid-feedback">Please provide a valid email.</div>
                         </div>
+
                         <div class="col-md-6">
                           <label for="phone" class="form-label">Phone</label>
                           <input type="tel" class="form-control" id="phone" name="phone" required />
                           <div class="invalid-feedback">Please provide your phone number.</div>
                         </div>
+
                         <div class="col-md-6">
                           <label for="location" class="form-label">Location</label>
                           <select class="form-select" id="location" name="location" required>
                             <option value="" disabled selected>Select County</option>
-                            {% for county in counties %}<option value="{{ county.id }}">{{ county.name }}</option>{% endfor %}
+                            {% for county in counties %}
+                              <option value="{{ county.id }}">{{ county.name }}</option>
+                            {% endfor %}
                           </select>
                           <div class="invalid-feedback">Please select your county.</div>
                         </div>
+
                         <div class="col-12">
                           <label for="skills" class="form-label">Skills/Interests</label>
                           <textarea class="form-control"
@@ -274,6 +284,7 @@
                           <div class="invalid-feedback">Please describe your skills/interests.</div>
                         </div>
                       </div>
+
                       <div class="mt-4">
                         <button type="submit" class="btn btn-danger">Submit Application</button>
                         <button type="button"
@@ -287,11 +298,13 @@
               <!-- End Form -->
             </div>
             <!-- End Form Container -->
+
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <!-- Concerns Section - Red Call to Action -->
   <section id="concerns-section"
            class="concerns-section py-6 position-relative overflow-hidden text-white">

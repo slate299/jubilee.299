@@ -1,0 +1,113 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}Big_4-Agenda{%endblock %} 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/big_4.css' %}" />
+{% endblock %} 
+
+{% block content %}
+<!-- ======= Hero Section ======= -->
+<section id="big4-hero" class="text-center d-flex align-items-center justify-content-center">
+  <div class="container" data-aos="fade-up" data-aos-duration="1000">
+    
+    <!-- logo SVG -->
+    <div class="logo mb-4">
+      <img src="{% static 'party_images/big-4-logo.svg'%}" alt="big4-logo" class="img-fluid">
+    </div>
+
+    <!-- Headline -->
+    <h1 class="display-4 fw-bold mb-3">Empowering the Nation</h1>
+    <p class="lead mb-4">Delivering on the Big Four Agenda for a prosperous Kenya</p>
+
+    <!-- CTA Button -->
+    <a href="#intro-section" class="btn btn-danger btn-lg">
+      <i class="fas fa-play me-2"></i> Watch Video
+    </a>
+
+  </div>
+</section>
+
+<!-- ======= Big Four Pillars Section ======= -->
+<section id="big4-pillars" class="text-white">
+  <!-- Horizontal Skyline Divider -->
+  <div class="container py-5">
+    <div class="row g-4">
+      <!-- Universal Healthcare -->
+      <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="card bg-transparent border-0 h-100 clickable-card" onclick="window.location.href='#health-section'">
+          <div class="card-body text-center">
+            <img src="{% static 'party_images/health.svg' %}" alt="Healthcare" class="pillar-icon mb-3">
+            <h5 class="card-title">Universal Healthcare</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Affordable Housing -->
+      <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="card bg-transparent border-0 h-100 clickable-card" onclick="window.location.href='#housing-section'">
+          <div class="card-body text-center">
+            <img src="{% static 'party_images/housing.svg' %}" alt="Affordable Housing" class="pillar-icon mb-3">
+            <h5 class="card-title">Affordable Housing</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manufacturing -->
+      <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="card bg-transparent border-0 h-100 clickable-card" onclick="window.location.href='#manufacturing-section'">
+          <div class="card-body text-center">
+            <img src="{% static 'party_images/manufacturing.svg' %}" alt="Manufacturing" class="pillar-icon mb-3">
+            <h5 class="card-title">Manufacturing</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Food Security -->
+      <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="card bg-transparent border-0 h-100 clickable-card" onclick="window.location.href='#food-section'">
+          <div class="card-body text-center">
+            <img src="{% static 'party_images/food-security.svg' %}" alt="Food Security" class="pillar-icon mb-3">
+            <h5 class="card-title">Food Security</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======= Vision Video Section ======= -->
+<section id="intro-section" class="intro-section py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Column -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+        <h2 class="text-danger fw-bold mb-4">Transforming Kenya's Future</h2>
+        <p class="lead">
+          The Big Four Agenda represents Jubilee's commitment to accelerate
+          Kenya's transformation into a newly industrializing, middle-income
+          country providing a high quality of life to all its citizens by 2030.
+        </p>
+        <p>
+          These four priority areas were identified as fundamental to uplifting
+          the lives of all Kenyans and ensuring the country's prosperity for
+          generations to come.
+        </p>
+      </div>
+      
+      <!-- Video Column -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+        <div class="video-wrapper ratio ratio-16x9 rounded-4 shadow-lg overflow-hidden">
+          <iframe
+            src="https://www.youtube.com/embed/iB_Gl8_FSrM"
+            title="Big Four Agenda"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

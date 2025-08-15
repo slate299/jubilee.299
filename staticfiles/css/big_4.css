@@ -1,0 +1,136 @@
+/* ===== Hero Section ===== */
+#big4-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  url("/static/party_images/nai_skyline.jpg") center center/cover no-repeat;
+  height: 80vh;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+#big4-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#big4-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Center logo container */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* keeps text centered if added */
+}
+
+/* Remove any inline gap and center image */
+.logo img {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+  height: auto;
+}
+
+/* Headline */
+#big4-hero h1 {
+  font-size: 3rem;
+}
+
+/* Lead text */
+#big4-hero p {
+  font-size: 1.2rem;
+}
+
+/* Button */
+#big4-hero .btn {
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  #big4-hero {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+
+  .logo img {
+    max-width: 200px;
+  }
+
+  #big4-hero h1 {
+    font-size: 2rem;
+  }
+
+  #big4-hero p {
+    font-size: 1rem;
+  }
+}
+
+/* ===== Big Four Pillars ===== */
+#big4-pillars {
+  background-color: #b71c1c;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Ensure content is above skyline background if needed */
+}
+
+/* Card styling */
+#big4-pillars .card {
+  text-align: center;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#big4-pillars .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Card title */
+#big4-pillars .card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .pillar-icon {
+    max-width: 60px;
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* ===== Introduction Section Styling ===== */
+.intro-section {
+  background-color: #f8f9fa; /* Light background */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.intro-section h2 {
+  font-size: 2rem;
+}
+
+.intro-section .lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.intro-section .video-wrapper iframe {
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.intro-section .video-wrapper iframe:hover {
+  transform: scale(1.02);
+}

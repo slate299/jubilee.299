@@ -1,0 +1,382 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}Achievements{%endblock %} 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/legacy.css' %}" />
+{% endblock %} {% block content %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="achievements-hero d-flex align-items-center">
+  <div class="container text-white text-center">
+    <div class="hero-content">
+      <div class="row align-items-center">
+        <!-- Uhuru Image -->
+        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+          <img
+            src="{% static 'party_images/uhuru_pdu.png' %}"
+            class="img-fluid rounded shadow"
+            alt="Uhuru Kenyatta"
+          />
+        </div>
+        <!-- Hero Text -->
+        <div class="col-lg-6 text-lg-start" data-aos="fade-left">
+          <h1 class="display-4 fw-bold">The Journey<br />of Transformation</h1>
+          <p class="hero-tagline mt-3">
+            A Decade of Promise, Performance, and Prosperity.
+          </p>
+          <a href="#key-achievements" class="btn btn-hero mt-3"
+            >See Achievements <i class="fas fa-arrow-down"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Hero Section -->
+
+<!-- ======= Promise Section ======= -->
+<section id="promise-section" class="py-5" style="background-color: #b71c1c">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div
+        class="col-lg-10 text-center"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <h2 class="section-title text-dark">We Promised, We Delivered</h2>
+        <div class="section-divider"></div>
+        <p class="lead text-white">
+          When Jubilee administration took over Kenya’s leadership in 2013,
+          President Uhuru Kenyatta promised to roll-out programmes that would
+          dignify and empower the lives of Kenyans. True to his word, Kenya has
+          recorded unprecedented transformation under the Jubilee regime. In
+          fact, the Jubilee administration has outperformed all previous
+          governments, with impeccable and unmatched development track record
+          over the last decade. At the heart of Jubilee’s stellar performance
+          record is mega infrastructural projects that dot the country,
+          exemplary COVID-19 management and the overarching Big Four agenda,
+          among other programmes. It is also under the Jubilee administration
+          that devolution took effect and turned out to be a game-changer,
+          taking development to every corner of Kenya.
+        </p>
+
+        <!-- Signature -->
+        <div
+          class="signature-wrapper mt-4"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          <img
+            src="{% static 'party_images/uk-sign-white.svg' %}"
+            alt="Uhuru Kenyatta Signature"
+            class="uk-signature"
+          />
+          <p class="text-white fw-bold mt-2">H.E. Uhuru Kenyatta</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Key Achievements Section ======= -->
+<section id="key-achievements" class="py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+        <h2 class="section-title">Our Transformative Legacy</h2>
+        <div class="section-divider"></div>
+        <p class="lead">
+          True to our word, Kenya has recorded unprecedented transformation
+          under the Jubilee regime.
+        </p>
+      </div>
+    </div>
+
+    <!-- Featured Projects Row -->
+    <div class="row mt-5">
+      {% for project in featured_projects %}
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:'0' }}00">
+        <div class="achievement-card h-100 shadow-sm">
+          <div class="achievement-img position-relative">
+            <img src="{{ project.image.url }}" alt="{{ project.title }}" class="img-fluid rounded" />
+            <span class="achievement-badge position-absolute top-0 start-0 m-2 bg-danger text-white px-2 py-1 rounded">
+              {{ project.get_category_display }}
+            </span>
+          </div>
+          <div class="achievement-body mt-3">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description|truncatewords:25 }}</p>
+            <!-- Removed Learn More button -->
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Centered button to see all achievements -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <a href="{% url 'achievements' %}" class="btn btn-danger btn-lg px-5 py-3 shadow-sm">
+          See All Achievements
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Big Four Intro Section ======= -->
+<section id="bigfour-intro" class="py-5">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8" data-aos="fade-up" data-aos-duration="1000">
+        <h2 class="mb-3 section-title">The Big Four Agenda in Action</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtext">
+          At the heart of Jubilee's stellar performance is the Big Four Agenda focusing on:
+        </p>
+        <ul class="big-four-list" data-aos="fade-up" data-aos-delay="200">
+          <li><i class="fas fa-home me-2"></i> Affordable Housing</li>
+          <li><i class="fas fa-briefcase-medical me-2"></i> Universal Healthcare</li>
+          <li><i class="fas fa-industry me-2"></i> Manufacturing</li>
+          <li><i class="fas fa-seedling me-2"></i> Food Security</li>
+        </ul>
+        <a href="/big4_home" class="btn btn-light mt-3" data-aos="zoom-in" data-aos-delay="400">
+          Explore Big Four
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Infrastructure Showcase ======= -->
+<section id="infrastructure-showcase" class="py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-center" data-aos="fade-up">
+        <h2 class="section-title">Mega Infrastructure Projects</h2>
+        <div class="section-divider"></div>
+        <p class="lead">
+          Jubilee's infrastructure development has connected Kenya like never
+          before
+        </p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-6 mb-4" data-aos="fade-right">
+        <div class="video-wrapper rounded-4 shadow">
+          <video
+            class="w-100"
+            controls
+            poster="{% static 'party_images/sgr-poster.jpg' %}"
+          >
+            <source
+              src="{% static 'videos/621366fecb32b36998f20bd3_5lin_jFtN7rtIqpB-transcode.mp4' %}"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="infrastructure-highlights">
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-train"></i>
+            </div>
+            <div class="highlight-content">
+              <h4>Standard Gauge Railway</h4>
+              <p>
+                Phase 1 (Mombasa-Nairobi) and Phase 2A (Nairobi-Naivasha)
+                completed, revolutionizing cargo transport.
+              </p>
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-road"></i>
+            </div>
+            <div class="highlight-content">
+              <h4>Road Network Expansion</h4>
+              <p>
+                10,000+ km of new roads including Nairobi Expressway and
+                dualling of key highways.
+              </p>
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-plane"></i>
+            </div>
+            <div class="highlight-content">
+              <h4>JKIA Modernization</h4>
+              <p>
+                World-class airport upgrades to position Kenya as Africa's
+                aviation hub.
+              </p>
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-tractor"></i>
+            </div>
+            <div class="highlight-content">
+              <h4>Agricultural Transformation</h4>
+              <p>
+                Boosting food security through irrigation projects, modern farming techniques,
+                and expanded agricultural exports.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Devolution Impact ======= -->
+<section id="devolution-impact" class="py-5" style="background-color: #b71c1c">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+        <h2 class="section-title text-dark">Devolution Revolution</h2>
+        <div class="section-divider"></div>
+        <p class="lead text-white">
+          Under Jubilee, devolution became a game-changer, taking development to
+          every corner of Kenya.
+        </p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-4 mb-4" data-aos="fade-up">
+        <div class="impact-card text-center shadow-sm">
+          <div class="impact-icon">
+            <i class="fas fa-hospital-alt"></i>
+          </div>
+          <h3 class="impact-number" data-target="98" data-suffix="+">0</h3>
+          <p>New Hospitals and Health Centers</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="impact-card text-center shadow-sm">
+          <div class="impact-icon">
+            <i class="fas fa-school"></i>
+          </div>
+          <h3 class="impact-number" data-target="12000" data-suffix="+">0</h3>
+          <p>New Classrooms Built</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="impact-card text-center shadow-sm">
+          <div class="impact-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="impact-number" data-target="75" data-suffix="%">0</h3>
+          <p>Electrification Rate (up from 27%)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Legacy Highlight Section ======= -->
+<section
+  id="legacy-highlight"
+  class="py-5"
+  style="background: linear-gradient(135deg, #f5f5f5, #ffffff);"
+>
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Video Column -->
+      <div class="col-lg-7 mb-4 mb-lg-0" data-aos="fade-right">
+        <div class="video-wrapper rounded-4 shadow-lg overflow-hidden" style="border: 6px solid #fff;">
+          <iframe
+            width="100%"
+            height="400"
+            src="https://www.youtube.com/embed/kWgh8KK4fgs"
+            title="Jubilee Legacy Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="border-radius: 1rem;"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Text & CTA Column -->
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="ps-lg-4 text-center text-lg-start">
+          <h2 class="mb-4 fw-bold" style="color: #b71c1c;">
+            Explore Our Full Legacy
+          </h2>
+          <div class="section-divider mb-3" style="margin: 0 auto 1rem auto; background-color: #b71c1c;"></div>
+          <p class="lead mb-4" style="line-height: 1.7;">
+            Watch our transformation journey and download the complete Jubilee Legacy Booklet to see how our promises have turned into tangible impact across Kenya.
+          </p>
+          <a
+            href="/downloads/jubilee-legacy-booklet.pdf"
+            class="btn btn-danger btn-lg px-5 py-3 shadow-sm"
+            style="border-radius: 50px; font-weight: 500; transition: all 0.3s ease;"
+            onmouseover="this.style.transform='scale(1.05)'"
+            onmouseout="this.style.transform='scale(1)'"
+          >
+            <i class="fas fa-download me-2"></i> Download Legacy Booklet
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %} 
+
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  AOS.init({ duration: 800, easing: "ease-in-out", once: true });
+
+  const counters = document.querySelectorAll(".impact-number");
+  let started = false;
+
+  function startCounting() {
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute("data-target"), 10);
+      const suffix = counter.getAttribute("data-suffix") || "";
+      const duration = 2000;
+      const frameRate = 30;
+      const increment = target / (duration / frameRate);
+
+      let current = 0;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counter.textContent = target.toLocaleString() + suffix;
+          clearInterval(timer);
+        } else {
+          counter.textContent = Math.floor(current).toLocaleString() + suffix;
+        }
+      }, frameRate);
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !started) {
+        started = true;
+        startCounting();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  const section = document.querySelector("#devolution-impact");
+  if (section) observer.observe(section);
+});
+</script>
+{% endblock %}
+

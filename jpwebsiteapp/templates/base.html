@@ -71,11 +71,11 @@
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="/flagship-projects/">Projects</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="/flagship-projects/">Projects</a></li> -->
             <li class="nav-item"><a class="nav-link" href="/achievements/">Achievements</a></li>
-            <li class="nav-item"><a class="nav-link" href="/events/">Events</a></li>
-            <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="/big4_home/">Big 4 Agenda</a></li>
+            <li class="nav-item"><a class="nav-link" href="/legacy/">Our Legacy</a></li>
+            <li class="nav-item"><a class="nav-link" href="/news/">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="/big4/">Big 4 Agenda</a></li>
             <!-- CTA Button INSIDE -->
             <li class="nav-item">
               <a href="https://membership.jubileeparty.ke/" class="btn btn-danger ms-lg-3 w-100 w-lg-auto">
@@ -160,14 +160,17 @@
         <hr class="footer-divider" />
         <div class="row align-items-center">
           <div class="col-md-6 text-md-start text-center mb-3 mb-md-0">
-            <p class="mb-0">© 2025 Jubilee Party.All rights reserved.</p>
+            <p class="mb-0">© 2025 Jubilee Party. All rights reserved.</p>
           </div>
-          <div class="col-md-6 text-md-end text-center">
-            <!-- <a href="/privacy/">Privacy Policy</a>
-          <a href="/terms/">Terms of Service</a> -->
+          <div class="col-md-6 text-md-end text-center footer-download-links">
+            <a href="{% static 'pdfs/party-constitution.pdf' %}" download>
+              Party Constitution
+            </a>
+            <a href="{% static 'pdfs/branding-guidelines.pdf' %}" download>
+              Branding Guidelines
+            </a>
           </div>
         </div>
-      </div>
     </footer>
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/9d3446ff1d.js"
@@ -176,7 +179,17 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>AOS.init();</script>
+    <script>  
+        AOS.init({
+        duration: 800,               // Longer animation duration (400-1000ms is ideal)
+        easing: 'ease-out-quad',     // Smoother easing (options: ease-out-quad, ease-out-cubic)
+        offset: 120,                // Trigger point (pixels from element bottom)
+        delay: 150,                 // Stagger delay between elements
+        once: true,                 // Only animate once
+        mirror: false,              // Don't animate again when scrolling back up
+        anchorPlacement: 'top-bottom' // Default trigger position
+      });
+    </script>
     <script>
       // Remove loader when page is fully loaded
       window.addEventListener("load", function () {
