@@ -295,12 +295,14 @@ footer h5 {
   margin-bottom: 20px;
   position: relative;
   padding-bottom: 10px;
+  text-align: center; /* make sure the title itself is centered */
 }
 
 footer h5::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%); /* shift back by half width */
   bottom: 0;
   width: 50px;
   height: 2px;
@@ -386,6 +388,11 @@ footer ul li i {
 .footer-download-links a:hover {
   color: #fff; 
   font-size: 1.05em; /* slight zoom effect */
+}
+
+footer iframe {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 /* ====== Animations ====== */
