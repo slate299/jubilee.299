@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, get_object_or_404
-from .models import NewsItem, Event, County, Volunteer, Project, Testimonial, HeroSlide, HighlightSlide
+from .models import NewsItem, Event, County, Volunteer, Project, Testimonial, HeroSlide, HighlightSlide, Category
 from .forms import ConcernForm
 from itertools import zip_longest
 
@@ -119,15 +119,23 @@ def concerns(request):
 
     return render(request, 'concerns.html', {'form': form, 'success': success})
 
-# News page
 def news(request):
-    news_items = NewsItem.objects.all().order_by('-date')
-    categories = ['All News', ...]
+    categories = Category.objects.all()
+
+    category_id = request.GET.get('category')
+
+    if category_id and category_id != 'all':
+        news_items = NewsItem.objects.filter(categories__id=category_id).order_by('-date')
+    else:
+        news_items = NewsItem.objects.all().order_by('-date')
+
     hero_image = 'party_images/Uhurupartyleader.jpg'
+
     return render(request, 'news.html', {
         'news_items': news_items,
         'categories': categories,
         'hero_image': hero_image,
+        'selected_category': int(category_id) if category_id and category_id != 'all' else 'all',
     })
    
 # big4_page

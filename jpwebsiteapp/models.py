@@ -13,6 +13,12 @@ class HeroSlide(models.Model):
     def __str__(self):
         return f"{self.title_part_one} {self.title_part_two}"
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
 
 class NewsItem(models.Model):
     title = models.CharField(max_length=200)
@@ -21,6 +27,9 @@ class NewsItem(models.Model):
     summary = models.TextField()
     url = models.URLField(blank=True)
     is_featured = models.BooleanField(default=False)  # ✅ NEW FIELD
+
+    # ✅ Add categories here
+    categories = models.ManyToManyField(Category, related_name="news_items")
 
     def __str__(self):
         return self.title
@@ -32,7 +41,6 @@ class NewsImage(models.Model):
 
     def __str__(self):
         return f"Extra image for: {self.news_item.title}"
-
 
 class Event(models.Model):
     title = models.CharField(max_length=200)
@@ -105,14 +113,14 @@ class Project(models.Model):
 
 class Concern(models.Model):
     first_name = models.CharField(max_length=100)
-    second_name = models.CharField(max_length=100)
+    second_name = models.CharField(max_length=100, blank=True)  # Optional
     surname = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=20)
-    email = models.EmailField()
-    issues = models.TextField()  # We'll store checked issues as a comma-separated string
-    other_issues = models.CharField(max_length=255, blank=True)
-    story = models.TextField(blank=True)
-    thanks = models.TextField(blank=True)
+    email = models.EmailField(blank=True)  # Optional
+    issues = models.TextField()  # Stored as comma-separated string
+    other_issues = models.CharField(max_length=255, blank=True)  # Optional
+    story = models.TextField(blank=True)  # Optional
+    thanks = models.TextField(blank=True)  # Optional
     submitted_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

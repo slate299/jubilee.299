@@ -1,37 +1,92 @@
 {% extends "base.html" %} 
-{% load static %}
-{% block title %}News and Updates{%endblock %} 
+{% load static %} 
+{% block title %}News andUpdates{%endblock %} 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/news.css' %}" />
 {% endblock %} 
 {% block content %}
 
 <!-- Hero Section -->
-<section class="news-hero">
-  <div
-    class="news-page news-hero d-flex flex-column justify-content-center align-items-center"
-  >
-    <!-- Add the image -->
+<section class="news-hero py-5" data-aos="fade-down">
+  <div class="container text-center">
     <img
-      src="{% static 'party_images/Uhurupartyleader.jpg' %}"
+      src="{% static 'party_images/news.webp' %}"
       alt="President Uhuru Kenyatta"
       class="hero-img mb-4"
+      width="1200"
+      height="675"
+      loading="lazy"
     />
     <h1 class="display-4 fw-bold mb-3">News & Updates</h1>
-    <p class="lead">Stay informed with the latest News from Jubilee Party</p>
+    <p class="lead mb-0">
+      Stay informed with the latest News from Jubilee Party
+    </p>
   </div>
 </section>
 
 <!-- Main Content -->
 <div class="container my-5">
   <div class="row">
-    <!-- News Items -->
-    <div class="col-lg-8">
-      <div class="row">
+    <!-- Sidebar -->
+    <aside class="news-sidebar col-lg-4 order-1 order-lg-2" data-aos="fade-left" >
+      <!-- Recent News (appears first on mobile) -->
+      <div class="news-categories mb-4">
+        <h4 class="mb-3 animated-underline">Recent News</h4>
+        {% for item in news_items|slice:":3" %}
+        <div class="recent-news-item mb-3">
+          <p class="fw-bold text-danger mb-1">{{ item.title }}</p>
+          <p class="small text-muted">{{ item.date }}</p>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Categories -->
+      <div class="news-categories mb-4">
+        <h4 class="mb-3">Categories</h4>
+
+        <!-- All News button -->
+        <button
+          class="category-btn {% if selected_category == 'all' %}active{% endif %}"
+          data-category="all"
+        >
+          All News
+        </button>
+
+        <!-- Dynamic categories -->
+        {% for category in categories %}
+        <button
+          class="category-btn {% if selected_category == category.id %}active{% endif %}"
+          data-category="{{ category.id }}"
+        >
+          {{ category.name }}
+        </button>
+        {% endfor %}
+      </div>
+
+      <!-- Newsletter (optional) -->
+      <!--
+      <div class="news-categories">
+        <h4 class="mb-3">Subscribe to Newsletter</h4>
+        <form>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Your Email" />
+          </div>
+          <button type="submit" class="btn btn-danger w-100">Subscribe</button>
+        </form>
+      </div>
+      -->
+    </aside>
+
+    <div class="col-lg-8 order-2 order-lg-1">
+      <div class="row" id="news-items-container">
         {% for item in news_items %}
-        <div class="col-md-6 mb-4">
+          <div
+            class="col-md-6 mb-4 news-card-container"
+            data-categories="{% for cat in item.categories.all %}{{ cat.id }}{% if not forloop.last %},{% endif %}{% endfor %}"
+            data-aos="fade-up"
+          >
           <div class="news-card">
-            <!-- ✅ Wrap main image in button to open lightbox -->
+            <!-- Main image button for lightbox -->
             <div class="news-main-image">
               <button
                 class="thumbnail-button p-0 border-0 bg-transparent"
@@ -65,8 +120,12 @@
 
             <!-- Content -->
             <div class="card-body">
-              <span class="date">{{ item.date }}</span>
-              <h3 class="card-title">{{ item.title }}</h3>
+              <time class="date" datetime="{{ item.date|date:'c' }}"
+                >{{ item.date }}</time
+              >
+              <h3 class="card-title" id="title-{{ forloop.counter }}">
+                {{ item.title }}
+              </h3>
               <p class="card-text">{{ item.summary }}</p>
               {% if item.url %}
               <a href="{{ item.url }}" class="btn btn-read-more">Read More</a>
@@ -74,46 +133,11 @@
             </div>
           </div>
         </div>
-        {% empty %}
-        <p>No news available at the moment.</p>
         {% endfor %}
       </div>
-    </div>
-
-    <!-- Sidebar -->
-    <div class="col-lg-4">
-      <!-- Categories -->
-      <div class="news-categories mb-4">
-        <h4 class="mb-3">Categories</h4>
-        {% for category in categories %}
-        <button class="category-btn {% if forloop.first %}active{% endif %}">
-          {{ category }}
-        </button>
-        {% endfor %}
-      </div>
-
-      <!-- Recent News -->
-      <div class="news-categories mb-4">
-        <h4 class="mb-3">Recent News</h4>
-        {% for item in news_items|slice:":3" %}
-        <div class="recent-news-item mb-3">
-          <a href="{{ item.url }}" class="text-dark fw-bold">
-            {{ item.title }}
-          </a>
-          <p class="small text-muted">{{ item.date }}</p>
-        </div>
-        {% endfor %}
-      </div>
-
-      <!-- Newsletter -->
-      <div class="news-categories">
-        <h4 class="mb-3">Subscribe to Newsletter</h4>
-        <form>
-          <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Your Email" />
-          </div>
-          <button type="submit" class="btn btn-danger w-100">Subscribe</button>
-        </form>
+      <!-- Fallback message for empty category -->
+      <div id="no-news-message" style="display: none; text-align: center; margin-top: 2rem;" data-aos="fade-up">
+        <p>No news available in this category.</p>
       </div>
     </div>
   </div>
@@ -128,7 +152,15 @@
   aria-hidden="true"
 >
   <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-transparent border-0">
+    <div class="modal-content bg-transparent border-0 position-relative">
+      <!-- Close button -->
+      <button
+        type="button"
+        class="btn-close btn-close-white position-absolute top-0 end-0 m-2"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+
       <img
         id="lightboxImage"
         src=""
@@ -139,7 +171,65 @@
   </div>
 </div>
 
+{% endblock %}
+
 <!-- Lightbox Script -->
+{% block scripts %}
+<script>
+  const buttons = document.querySelectorAll(".category-btn");
+  const newsCards = document.querySelectorAll(".news-card-container");
+  const noNewsMessage = document.getElementById("no-news-message");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const selected = btn.getAttribute("data-category");
+
+      // Update active class
+      buttons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      let anyVisible = false;
+      let visibleIndex = 0; // For staggered animation
+
+      // Show/hide news cards and apply AOS
+      newsCards.forEach((card) => {
+        const categories = card.getAttribute("data-categories")
+                               .split(",")
+                               .map(c => c.trim());
+
+        if (selected === "all" || categories.includes(selected)) {
+          card.style.display = "block";
+
+          // Reapply AOS attributes for visible cards
+          card.setAttribute("data-aos", "fade-up");
+          card.setAttribute("data-aos-delay", visibleIndex * 50);
+          visibleIndex++;
+
+          anyVisible = true;
+        } else {
+          card.style.display = "none";
+          card.removeAttribute("data-aos");
+          card.removeAttribute("data-aos-delay");
+        }
+      });
+
+      // Show fallback message if no cards visible
+      if (!anyVisible) {
+        noNewsMessage.style.display = "block";
+        noNewsMessage.setAttribute("data-aos", "fade-up");
+        noNewsMessage.setAttribute("data-aos-delay", 0);
+      } else {
+        noNewsMessage.style.display = "none";
+        noNewsMessage.removeAttribute("data-aos");
+        noNewsMessage.removeAttribute("data-aos-delay");
+      }
+
+      // Refresh AOS after DOM changes
+      AOS.refresh();
+    });
+  });
+</script>
+
 <script>
   const lightboxModal = document.getElementById("lightboxModal");
   const lightboxImage = document.getElementById("lightboxImage");
@@ -151,3 +241,4 @@
   });
 </script>
 {% endblock %}
+

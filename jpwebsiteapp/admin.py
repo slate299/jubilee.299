@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import NewsItem, NewsImage, Event, EventImage, County, Volunteer, Project, Concern, Testimonial, HeroSlide, HighlightSlide
+from .models import NewsItem, NewsImage, Event, EventImage, County, Volunteer, Project, Concern, Testimonial, HeroSlide, HighlightSlide, Category
 
 # ✅ Inline for News extra images
 class NewsImageInline(admin.TabularInline):
@@ -11,6 +11,10 @@ class NewsItemAdmin(admin.ModelAdmin):
     list_display = ('title', 'date', 'is_featured')
     inlines = [NewsImageInline]
 
+# ✅ Register Category
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
 
 # ✅ Inline for Event extra images
 class EventImageInline(admin.TabularInline):

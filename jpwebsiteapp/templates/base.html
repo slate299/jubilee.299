@@ -94,59 +94,53 @@
     <footer>
       <div class="container">
         <div class="row">
-          <!-- Logo & Tagline -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="col-lg-4 col-md-6 mb-4">
-              <img src="{% static 'party_images/jup-logo-300x241.png' %}"
-                   alt="Jubilee Party Logo"
-                   width="300"
-                   height="241"
-                   class="footer-logo mb-3" />
-            </div>
-            <!-- <p class="mb-2 fw-bold">#Mbele Pamoja</p> -->
+          
+          <!-- Logo & CTA -->
+          <div class="col-lg-2 col-md-6 mb-4 d-flex flex-column align-items-center text-center">
+            <img src="{% static 'party_images/jup-logo-300x241.png' %}"
+                alt="Jubilee Party Logo"
+                class="footer-logo mb-3" />
             <a href="https://membership.jubileeparty.ke/"
-               class="btn btn-outline-light btn-sm">Join Our Movement</a>
+              class="btn btn-outline-light btn-sm">Join Our Movement</a>
           </div>
+          
           <!-- Quick Links -->
-          <div class="col-lg-2 col-md-6 mb-4">
+          <div class="col-lg-2 col-md-6 mb-4 d-flex flex-column align-items-center text-center">
             <h5 class="fw-bold">Quick Links</h5>
             <ul class="list-unstyled">
-              <!-- <li><a href="/donate/"><i class="fas fa-chevron-right me-2"></i>Donate</a></li> -->
-              <li>
-                <a href="https://membership.jubileeparty.ke/"><i class="fas fa-chevron-right me-2"></i>Join Jubilee</a>
-              </li>
-              <!-- <li><a href="/contact/"><i class="fas fa-chevron-right me-2"></i>Contact</a></li> -->
-              <!-- <li><a href="/gallery/"><i class="fas fa-chevron-right me-2"></i>Gallery</a></li> -->
-              <!-- <li><a href="/manifesto/"><i class="fas fa-chevron-right me-2"></i>Manifesto</a></li> -->
-              <li>
-                <a href="/news/"><i class="fas fa-chevron-right me-2"></i>News & Updates</a>
-              </li>
-              <li>
-                <a href="/concerns/"><i class="fas fa-chevron-right me-2"></i>Share Concerns</a>
-              </li>
+              <li><a href="https://membership.jubileeparty.ke/"><i class="fas fa-chevron-right me-2"></i>Join Jubilee</a></li>
+              <li><a href="/news/"><i class="fas fa-chevron-right me-2"></i>News & Updates</a></li>
+              <li><a href="/concerns/"><i class="fas fa-chevron-right me-2"></i>Share Concerns</a></li>
             </ul>
           </div>
+          
           <!-- Contact Info -->
-          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="col-lg-2 col-md-6 mb-4 d-flex flex-column align-items-center text-center">
             <h5 class="fw-bold">Contact</h5>
             <ul class="list-unstyled">
-              <li>
-                <i class="fas fa-map-marker-alt me-2"></i> Daraja House,
-                Statehouse Road, Nairobi
-              </li>
-              <li>
-                <i class="fas fa-phone-alt me-2"></i> 0709 175 000
-              </li>
-              <li>
-                <i class="fas fa-phone-alt me-2"></i> 0709 175 111
-              </li>
-              <li>
-                <i class="fas fa-envelope me-2"></i> info@jubileepamoja.co.ke.
-              </li>
+              <li><i class="fas fa-map-marker-alt me-2"></i> Daraja House, Statehouse Road, Nairobi</li>
+              <li><i class="fas fa-phone-alt me-2"></i> 0709 175 000</li>
+              <li><i class="fas fa-phone-alt me-2"></i> 0709 175 111</li>
+              <li><i class="fas fa-envelope me-2"></i> info@jubileepamoja.co.ke</li>
             </ul>
           </div>
+          
+          <!-- Location Map -->
+          <div class="col-lg-4 col-md-12 mb-4">
+            <h5 class="fw-bold">Our Location</h5>
+            <div class="ratio ratio-16x9 rounded shadow overflow-hidden">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.814930822388!2d36.8057733!3d-1.2850054000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1100065ce257%3A0xee62b71f31f047d2!2sJubileePartyHQ!5e0!3m2!1sen!2ske!4v1755543878985!5m2!1sen!2ske" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
           <!-- Social Media -->
-          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="col-lg-2 col-md-6 mb-4 d-flex flex-column align-items-center text-center">
             <h5 class="fw-bold">Follow Us</h5>
             <div class="footer-social-links">
               <a href="https://web.facebook.com/TheJubileeParty"><i class="fab fa-facebook-f"></i></a>
@@ -156,22 +150,25 @@
               <a href="https://www.youtube.com/@jubileepartyk"><i class="fa-brands fa-youtube"></i></a>
             </div>
           </div>
+          
+          
         </div>
+
         <hr class="footer-divider" />
+
+        <!-- Bottom bar -->
         <div class="row align-items-center">
           <div class="col-md-6 text-md-start text-center mb-3 mb-md-0">
             <p class="mb-0">© 2025 Jubilee Party. All rights reserved.</p>
           </div>
           <div class="col-md-6 text-md-end text-center footer-download-links">
-            <a href="{% static 'pdfs/party-constitution.pdf' %}" download>
-              Party Constitution
-            </a>
-            <a href="{% static 'pdfs/branding-guidelines.pdf' %}" download>
-              Branding Guidelines
-            </a>
+            <a href="{% static 'pdfs/party-constitution.pdf' %}" download>Party Constitution</a>
+            <a href="{% static 'pdfs/branding-guidelines.pdf' %}" download>Branding Guidelines</a>
           </div>
         </div>
+      </div>
     </footer>
+
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/9d3446ff1d.js"
             crossorigin="anonymous"></script>

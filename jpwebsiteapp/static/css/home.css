@@ -5,6 +5,8 @@
   overflow: hidden;
 }
 
+#heroCarousel { --fade-duration: 2.2s; } /* tweak this */
+
 #heroCarousel {
   flex: 1;
   height: 100%;
@@ -39,6 +41,7 @@
   left: 50%;
   z-index: 2;
   transform: translate(-50%, 0);
+  transition: all 1.5s ease-in-out;
   padding: 0 1rem;
   width: 100%;
   min-height: 20vh;
@@ -50,6 +53,33 @@
   color: #fff;
   align-items: center;
   text-align: center;
+}
+
+/* Smooth fade for carousel */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 2s ease-in-out; /* slower fade */
+  transform: none !important;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Gentle zoom effect on hero images */
+.hero-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transform: scale(1);
+  transition: transform 6s ease-in-out; /* slow zoom */
+}
+
+.carousel-item.active .hero-image {
+  transform: scale(1.08); /* slight zoom in */
 }
 
 /* Title Styling */
@@ -132,10 +162,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.carousel-item {
-  transition: opacity 1s ease-in-out;
 }
 
 /* Indicators styling (optional) */
@@ -261,7 +287,6 @@
 }
 
 /* === FINAL HIGHLIGHTS SECTION === */
-
 .highlight-section {
   background: #ab0d18; /* Deep dark red */
   color: #fff;
@@ -307,6 +332,17 @@
 .highlight-section .highlight-btn:hover {
   background: #fff;
   color: #960c16;
+}
+
+/* === Subtle Zoom-in Effect on Carousel Images === */
+.highlight-section .carousel-item img {
+  transform: scale(1);
+  transition: transform 6s ease-in-out; /* slow + smooth */
+}
+
+/* When the slide is active, zoom it slightly */
+.highlight-section .carousel-item.active img {
+  transform: scale(1.08); /* adjust zoom level (1.05 - 1.1 is subtle) */
 }
 
 .highlight-section .highlight-carousel {
@@ -580,7 +616,6 @@
 }
 
 /* === TESTIMONIALS SECTION CUSTOM STYLES === */
-
 #testimonials-section {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -597,32 +632,33 @@
 }
 
 #testimonials-section .testimonial-item {
+  min-height: 450px; /* enough to cover the tallest testimonial */
   display: flex;
-  border-radius: 2px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 700px;
-  margin: 0 auto;
   text-align: center;
+  border-radius: 15px;       /* smooth rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* soft shadow */
+  padding: 2rem;             /* breathing room */
+  background: #fff;          /* clean background */
+  border: 1px solid #eee;    /* light border */
 }
 
-#testimonials-section .testimonial-item p {
-  min-height: 120px;
-}
 
 #testimonials-section .testimonial-img {
   object-fit: cover;
 }
 
 #testimonials-section .carousel-inner {
-  min-height: 350px;
   border-radius: 1rem;
 }
 
 #testimonials-section .carousel-item {
   justify-content: center;
   align-items: center; /* add this here! */
+  height: 100%;
+  transition: transform 1.2s ease-in-out;
 }
 
 #testimonials-section .carousel-indicators {
@@ -740,6 +776,14 @@
   text-align: center;
   min-height: 400px;
   background: rgba(0, 0, 0, 0.1);
+}
+
+#news-section .carousel-item h3 {
+  min-height: 110px;  /* adjust value depending on how tall your longest title is */
+}
+
+#news-section .carousel-item p.lead {
+  min-height: 200px;  /* adjust this until all summaries fit neatly */
 }
 
 #news-section .carousel-item .row {

@@ -1,50 +1,128 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load widget_tweaks %}
 {% block content %}
-
-<!-- SweetAlert2 CDN -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 <section id="concerns-page" class="py-5">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-8 bg-white p-5 rounded shadow">
-        <h2 class="text-danger fw-bold mb-4 text-center">Your Voice Matters</h2>
-        <p class="lead mb-4 text-center">
-          We value your thoughts and concerns. Share them with us and together,
-          let's shape the future of Jubilee!
-        </p>
+      <div class="col-lg-8 p-4 p-md-5 rounded shadow-lg">
+        <div class="text-center mb-4">
+          <img src="{% static 'party_images/jup-logo-300x241.png' %}" alt="Jubilee Party Logo" class="mb-3" style="width: 80px; height: 80px; object-fit: contain;">
+          <h2 class="text-danger fw-bold mb-3">Your Voice Matters</h2>
+          <p class="lead mb-0">
+            We value your thoughts and concerns. Share them with us and together,
+            let's shape the future of Jubilee!
+          </p>
+          <div class="divider my-4"><span></span></div>
+          <p class="text-muted small"><span class="text-danger">*</span> indicates required fields</p>
+        </div>
 
-        <form method="POST">
+        <form method="POST" class="needs-validation" novalidate>
           {% csrf_token %}
 
-          <!-- ✅ Loop through fields for Bootstrap styling -->
-              {% for field in form %}
-                <div class="mb-3">
-                  {{ field.label_tag }}
-
-                  {% if field.field.widget.input_type == "checkbox" %}
-                    {{ field }}
-                  {% else %}
-                    {{ field|add_class:"form-control form-control-lg" }}
-                  {% endif %}
-
-                  {% if field.errors %}
-                    <div class="text-danger small">{{ field.errors }}</div>
-                  {% endif %}
+          <!-- Personal Information Section -->
+          <div class="mb-4">
+            <h5 class="text-danger mb-3">Personal Information</h5>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="form-floating">
+                  {{ form.first_name|add_class:"form-control"|attr:"required" }}
+                  <label for="{{ form.first_name.id_for_label }}">First Name <span class="text-danger">*</span></label>
+                  <div class="invalid-feedback">Please provide your first name.</div>
                 </div>
-              {% endfor %}
+              </div>
+              <div class="col-md-4">
+                <div class="form-floating">
+                  {{ form.second_name|add_class:"form-control" }}
+                  <label for="{{ form.second_name.id_for_label }}">Middle Name <span class="text-muted small">(optional)</span></label>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-floating">
+                  {{ form.surname|add_class:"form-control"|attr:"required" }}
+                  <label for="{{ form.surname.id_for_label }}">Surname <span class="text-danger">*</span></label>
+                  <div class="invalid-feedback">Please provide your surname.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  {{ form.phone_number|add_class:"form-control"|attr:"required" }}
+                  <label for="{{ form.phone_number.id_for_label }}">Phone Number <span class="text-danger">*</span></label>
+                  <small class="text-muted">Format: 07XX XXX XXX</small>
+                  <div class="invalid-feedback">Please provide a valid phone number.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  {{ form.email|add_class:"form-control" }}
+                  <label for="{{ form.email.id_for_label }}">Email Address <span class="text-muted small">(optional)</span></label>
+                  <small class="text-muted">example@domain.com</small>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <p class="text-muted small">
-            Any information shared with the Jubilee Party is held with the utmost confidence.
+          <!-- Issues Section -->
+          <div class="mb-4">
+            <h5 class="text-danger mb-3">What are your concerns about? <span class="text-muted small">(select any that apply)</span></h5>
+            
+            <div class="row g-2">
+              {% for checkbox in form.issues %}
+              <div class="col-md-6">
+                <div class="form-check">
+                  {{ checkbox.tag }}
+                  <label class="form-check-label" for="{{ checkbox.id_for_label }}">
+                    {{ checkbox.choice_label }}
+                  </label>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            
+            <div class="mt-3">
+              <div class="form-floating">
+                {{ form.other_issues|add_class:"form-control" }}
+                <label for="{{ form.other_issues.id_for_label }}">Other Issues <span class="text-muted small">(please specify)</span></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story Section -->
+          <div class="mb-4">
+            <h5 class="text-danger mb-3">Tell Us Your Story <span class="text-muted small">(optional)</span></h5>
+            <div class="form-floating">
+              {{ form.story|add_class:"form-control"|attr:"style:height:120px"|attr:"placeholder: " }}
+              <label for="{{ form.story.id_for_label }}">Share details if you wish...</label>
+            </div>
+          </div>
+
+          <!-- Thanks Section -->
+          <div class="mb-4">
+            <h5 class="text-danger mb-3">What would you like to thank Jubilee for? <span class="text-muted small">(optional)</span></h5>
+            <div class="form-floating">
+              {{ form.thanks|add_class:"form-control"|attr:"style:height:120px"|attr:"placeholder: " }}
+              <label for="{{ form.thanks.id_for_label }}">Your appreciation message...</label>
+            </div>
+          </div>
+
+          <div class="p-3 rounded mb-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="consentCheck" required>
+              <label class="form-check-label small" for="consentCheck">
+                I confirm that the information provided is accurate and I consent to Jubilee Party
+                using this data to address my concerns. <span class="text-danger">*</span>
+              </label>
+              <div class="invalid-feedback">You must agree before submitting.</div>
+            </div>
+          </div>
+
+          <p class="text-muted small mb-4">
+            <i class="fas fa-lock me-2"></i> Any information shared with the Jubilee Party is held with the utmost confidence.
           </p>
 
           <div class="text-center">
-            <button
-              type="submit"
-              class="btn btn-danger btn-lg px-5 rounded-pill"
-            >
-              Submit
+            <button type="submit" class="btn btn-danger btn-lg px-5 rounded-pill fw-bold">
+              <i class="fas fa-paper-plane me-2"></i> Submit
             </button>
           </div>
         </form>
@@ -52,8 +130,13 @@
     </div>
   </div>
 </section>
+{% endblock %}
 
-<!-- ✅ SweetAlert2 SUCCESS -->
+{% block scripts %}
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- SweetAlert2 SUCCESS -->
 {% if success %}
 <script>
   window.onload = function() {
@@ -61,24 +144,56 @@
       icon: 'success',
       title: 'Thank you!',
       text: 'Your concern has been submitted successfully.',
-      confirmButtonColor: '#e30613'
+      confirmButtonColor: '#e30613',
+      timer: 5000,
+      timerProgressBar: true
     });
   };
 </script>
 {% endif %}
 
-<!-- ✅ SweetAlert2 ERROR if form has errors -->
+<!-- SweetAlert2 ERROR if form has errors -->
 {% if form.errors %}
 <script>
   window.onload = function() {
     Swal.fire({
       icon: 'error',
       title: 'Oops!',
-      text: 'Please correct the errors in the form and try again.',
+      html: `Please correct these errors:<br><br>
+        <ul class="text-start">
+          {% for field in form %}
+            {% if field.errors %}
+              <li><strong>{{ field.label }}</strong>: {{ field.errors|striptags }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>`,
       confirmButtonColor: '#e30613'
     });
   };
 </script>
 {% endif %}
 
+<!-- Form validation script -->
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
 {% endblock %}

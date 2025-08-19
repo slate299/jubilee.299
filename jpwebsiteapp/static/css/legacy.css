@@ -1,7 +1,7 @@
 /* === Achievements Hero Section === */
 .achievements-hero {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-  url("/static/party_images/nai_skyline2.jpg") center center/cover no-repeat;
+  url("/static/party_images/nai_skyline2.webp") center center/cover no-repeat;
   position: relative;
   min-height: 100vh;
   display: flex;

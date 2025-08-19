@@ -1,0 +1,200 @@
+/* ===== Concerns Form Styling ===== */
+#concerns-page {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  position: relative;
+}
+
+#concerns-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(135deg, rgba(227, 6, 19, 0.03) 0%, transparent 100%),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23e30613" fill-opacity="0.03" width="50" height="50" x="0" y="0"/></svg>');
+  background-size: 200px 200px;
+  z-index: 0;
+}
+
+#concerns-page .container {
+  position: relative;
+  z-index: 1;
+}
+
+#concerns-page .shadow-lg {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+  border-top: 4px solid #e30613;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#concerns-page .shadow-lg:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Header Section */
+#concerns-page .text-center img {
+  transition: transform 0.3s ease;
+}
+
+#concerns-page .text-center img:hover {
+  transform: scale(1.05);
+}
+
+#concerns-page h2 {
+  position: relative;
+  display: inline-block;
+}
+
+#concerns-page h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #e30613;
+  border-radius: 3px;
+}
+
+#concerns-page .divider {
+  position: relative;
+  margin: 2rem 0;
+}
+
+#concerns-page .divider span {
+  position: relative;
+  padding: 0 1rem;
+  background: white;
+  z-index: 1;
+}
+
+#concerns-page .divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(227, 6, 19, 0.3), transparent);
+}
+
+/* Form Elements */
+#concerns-page .form-floating {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+#concerns-page .form-control {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1.25rem 1rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+#concerns-page .form-control:focus {
+  border-color: #e30613;
+  box-shadow: 0 0 0 0.25rem rgba(227, 6, 19, 0.15);
+}
+
+#concerns-page .form-floating>label {
+  color: #6c757d;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+
+#concerns-page textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Checkboxes */
+#concerns-page .form-check {
+  margin-bottom: 0.75rem;
+}
+
+#concerns-page .form-check-input {
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: 0.15em;
+  border: 2px solid #adb5bd;
+  transition: all 0.2s ease;
+}
+
+#concerns-page .form-check-input:checked {
+  background-color: #e30613;
+  border-color: #e30613;
+}
+
+#concerns-page .form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(227, 6, 19, 0.25);
+}
+
+/* Consent Box */
+#concerns-page .bg-light {
+  background-color: rgba(227, 6, 19, 0.03) !important;
+  border-left: 3px solid #e30613;
+}
+
+/* Submit Button */
+#concerns-page .btn-danger {
+  background-color: #e30613;
+  border: none;
+  padding: 0.75rem 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+#concerns-page .btn-danger:hover {
+  background-color: #c00511;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(227, 6, 19, 0.3);
+}
+
+#concerns-page .btn-danger:active {
+  transform: translateY(0);
+}
+
+/* Invalid Feedback */
+#concerns-page .invalid-feedback {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #concerns-page .col-lg-8 {
+    padding: 1.25rem !important;
+  }
+  
+  #concerns-page .btn-lg {
+    width: 100%;
+    padding: 0.75rem !important;
+  }
+  
+  #concerns-page .form-control {
+    padding: 1rem 0.75rem;
+  }
+  
+  #concerns-page .divider {
+    margin: 1.5rem 0;
+  }
+}
+
+/* Animation for form submission */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#concerns-page .shadow-lg {
+  animation: fadeIn 0.5s ease forwards;
+}
